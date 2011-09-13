@@ -1,0 +1,40 @@
+\section{Open Problems / Future Issues}
+\label{sec:openproblems}
+
+These are some issues that need to be resolved at some point in the future, e.g., for API version 2.2 or 3.0. They are not addressed in 2.1 as they are likely to be complex or cause a lot of changes, and should not slow down or even stop the discussion process.
+
+\subsection{API Improvements (Year 3)}
+
+	\begin{enumerate}
+		\item Let all functions that use WiseML as parameter or return value use the XML Schema types instead of Strings.
+		\item Use versioning information and real URLs in the namespaces of WSDL files (e.g. http://testbed.wisebed.eu/wsn/sessionmanagement/v2.1.1).
+	\end{enumerate}
+
+\subsection{Interface to the Internet}
+
+Currently there is no standard way by which the sensor network can communicate with the ``outside world'', all communication methods stay within the federated network.
+
+\begin{enumerate}
+\item What are the applications? Middleware? 
+\item Do we need a standardized method for this?
+\item Would it be part of the WSN API?
+\item Would it be simply some code in the gateway nodes that can interface with the Internet?
+\end{enumerate}
+
+
+
+\subsection{Smart Access to Sensor Readings / State}
+
+The API call getPropertyValueOf() provides a means to poll individual sensor values. It may seem useful to push periodic reports or alerts, to minimize communication.
+
+\begin{enumerate}
+	\item Do we need a standardized method for this?
+	\item What kinds of pushes should be implemented? Some examples:
+	  \begin{itemize}
+	  \item ``send value every minute'',
+	  \item ``send update whenever the reading changes by $\Delta$'',
+	  \item ``send update when reading exceeds $\theta$''.
+	  \end{itemize}
+	\item How should events (i.e., binary sensors) be supported?
+	\item Should we support a complex query system (e.g., Corona~\cite{corona}), or just simple ones?
+\end{enumerate}

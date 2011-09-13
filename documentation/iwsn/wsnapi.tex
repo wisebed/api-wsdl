@@ -1,0 +1,409 @@
+%------------------------------------------------------------------------------------------------
+		\subsection{WSN API}
+%------------------------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{areNodesAlive}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestId areNodesAlive( URN[] nodeIds )} %Signature
+	{Returns the status (alive/dead) of a set of nodes defined by their addresses in the parameter ``nodeIds'' (WISEBED node URNs).  	
+	} % Semantics
+	{
+			\apiparameters{
+				\apiparam{nodeIds}{List of nodes}
+			}
+	} % Parameters
+	{Request identifier to match the asynchronous replies} % Returns
+	{ } % Rationale for addition/changes
+	{1.0 WSN API
+		\begin{itemize}
+			\item 1.0: Initial appearance as isNodeAlive()
+			\item 2.0: Operates asynchronously; Extended to multiple nodes that may be queried.
+		\end{itemize}
+	} % Since
+\end{apidoc}
+
+Upon successful invocation, it returns a request identifier to match the asynchronous replies. Any implementation must asynchronously send one or more RequestStatus message to the controller service (see API2.0::6.2).
+
+Each RequestStatus message contains a list of nodes and their status. The ``value'' field contains a ``1'' if the node is alive, a ``0'' if it is presumed dead and a ``-1'' if the node ID was not known to the testbed, where a node is deemed to be alive if it can be flashed with a new image. This list of return values may be expanded in future as necessary. This operation is completed when all nodes have been reported. The msg field may contain a human readable description about the operation. 
+
+Before any action is executed, this operation will validate all node IDs in nodeIds and if a node ID is invalid it will return a fault indication (InvalidNodeIdException) without executing the command for any of the nodes.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{resetNodes}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestId resetNodes( URN[] nodeIds )} %Signature
+	{Resets a set of nodes defined by their addresses in the parameter ``nodeIds'' (WISEBED node URNs). } % Semantics
+	{
+			\apiparameters{
+					\apiparam{nodeIds}{List of nodes}
+			}
+	} % Parameters
+	{Request identifier to match the asynchronous replies} % Returns
+	{ } % Rationale for addition/changes
+	{1.0 WSN API
+		\begin{itemize}
+			\item 1.0: Initial appearance
+			\item 2.0: Operates asynchronously; Extended to multiple nodes that may be queried.
+		\end{itemize}
+	} % Since
+\end{apidoc}
+
+Upon successful invocation, returns a request identifier to match the asynchronous replies. Any implementation must asynchronously send one or more RequestStatus messages to the controller service (see API2.0::6.2). Each RequestStatus contains a list of nodes which were reset or could not be reset. To indicate successful reset of a node, the ``value'' field contains a ``1''. Upon failure, it is set to ``0''. A value of ``-1'' indicates an unknown node ID. This operation is completed when all nodes have been reported. The msg field may contain a human readable description of the success or failure.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{send}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestId send( URN[] nodeIds, Message msg)} %Signature
+	{Sends message to a set of nodes defined by their addresses in the parameter ``nodeIds'' (WISEBED node URNs).} % Semantics
+	{
+			\apiparameters{
+					\apiparam{nodeIds}{List of nodes}
+			}
+	} % Parameters
+	{Request identifier to match the asynchronous replies} % Returns
+	{ } % Rationale for addition/changes
+	{1.0 WSN API
+		\begin{itemize}
+			\item 1.0: Initial appearance as ``runCommand()''
+			\item 2.0: Operates asynchronously; One message can be sent to multiple destination nodes; Messages are no longer restricted to being text-based but may also carry binary data instead; The Message data type comprises payload and metadata of a message (time, origin, etc.)
+		\end{itemize}
+	} % Since
+\end{apidoc}
+
+Upon successful invocation returns a request identifier to match the asynchronous replies. Any implementation must asynchronously send one or more RequestStatus message to the controller (see API2.0::6.2).
+
+Each RequestStatus message contains a list of nodes. If a message was delivered to a node, the ``value'' field is set to ``1'', else a ``0''. A value of ``-1'' indicates an unknown node ID. This operation is completed when all nodes have been reported. The msg field may contain a human readable description of the success or failure.
+
+This function could for example be used to inject events into the sensor network, send messages to sensor nodes from virtual links, or even upload individual components to sensor nodes if the experiment software is using a dynamic component-based OS.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{flashPrograms}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestId flashPrograms( URN[] nodeIds, int[] programIndices, Program[] programs )} %Signature
+	{Flashes a set of nodes specified by nodeIds defined by their addresses in the parameter "nodeIds" (WISEBED node URNs). } % Semantics
+	{
+			\apiparameters{
+				\apiparam{nodeIds}{}
+				\apiparam{programIndices}{}
+				\apiparam{programs}{}
+			}
+	} % Parameters
+	{Request identifier to match the asynchronous replies} % Returns
+	{ } % Rationale for addition/changes
+	{1.0 WSN API
+		\begin{itemize}
+			\item 1.0: Initial appearance as ``flashImagesToSensorNodes()''
+			\item 2.0: Operates asynchronously; Programs are now transmitted (1.0 required on-site MySQL image database)
+		\end{itemize}	
+	} % Since
+\end{apidoc}
+
+Upon successful invocation returns a request identifier to match the asynchronous replies. Any implementation must asynchronously send one or more RequestStatus to the controller (see API2.0::6.2). 
+
+Each RequestStatus contains a list of nodes and the current progress of the flashing. The ``value'' field indicates a progress from 0\% to 100\% using values from 0 to 100 where 100 indicates success. A value of -1 indicates failure, and -2 indicates an unknown node ID. The msg field may contain a human readable description of the success or failure. The operation is finished once all nodes have a reported value of -1, -2 or 100. Please note that for each node, multiple status updates may arrive to indicate the progress of the operation. Values greater or equal to 0 and less than 100 may therefore be safely ignored.  
+
+The programs are transmitted as an array of the Program data type. It contains the binary image as a byte array and metadata about the program (version, name, platform, other). To specify which program is flashed on which node, the parameter ``programIndices'' is used as follows: The arrays {\em nodeIds} and {\em programIndices} are the same length, and the value at programIndices[i] specifies the index into the array {\em programs} which should be flashed to nodeIds[i]. This is done for efficiency to avoid repeating the same program many times in the {\em programs} array.
+
+The following example in Java-based pseudo code illustrates how to flash Program X on nodes \lstinline{urn:wisebed:node:uzl-testbed:node345} and \lstinline{urn:wisebed:node:uzl-testbed:node678} and Program Y on node \lstinline{urn:wisebed:node:uzl-testbed:node123}: 
+ 
+\begin{lstlisting}
+String [] nodeIds = new String[] 
+	{  
+	"urn:wisebed:node:uzl-testbed:node123", 
+	"urn:wisebed:node:uzl-testbed:node345", 
+	"urn:wisebed:node:uzl-testbed:node678" 
+	}; 
+	
+Program pX = new Program(...), pY = new Program(...); 
+
+Program [] progs = new Program[] { pX,  pY }; 
+
+//Index 0 is Program X, index 1 is Program Y (see above) 
+int[] progIndices = new int[] { 1, 0, 0 }; 
+
+testbedService.flashPrograms( nodeIds, progIndices, progs ); 
+\end{lstlisting}
+
+Before any action is executed, this operation will validate that all the parameters are semantically consistent before executing any of the flash actions, i.e., if for every node ID there's a program index and for every program index there's a program. If the parameters are semantically inconsistent a fault is indicated (IllegalArgumentException). 
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getNetwork}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{WiseML getNetwork()} %Signature
+	{Returns the current state of the network (i.e. the state at the time this function is called) described as specified by the ``static'' part of a WiseML file} % Semantics
+	{none} % Parameters
+	{Description of the testbed in WiseML format. } % Returns
+	{\begin{itemize}
+			\item Allows a client of the WSN API to acquire the network topology of that instance. Using virtualisation this may not necessarily correspond to any physical testbed.
+			\item Allows querying of changes in the network after the reservation has been made (say, one node died and was replaced by one with different ID).
+		\end{itemize}
+	} % Rationale for addition/changes
+	{1.0 Monitoring API
+		\begin{itemize}
+			\item 1.0: Appeared as ``getRecords''
+			\item 2.1: Returns WiseML instead of GraphML
+		\end{itemize}
+	} % Since
+\end{apidoc}
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getVersion}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{String getVersion()} %Signature
+	{} % Semantics
+	{} % Parameters
+	{Version of the API (e.g., ``2.0''), the returned string matches \lstinline{[0-9]+\.[0-9]+}} % Returns
+	{Ability to distinguish what behaviour to expect from the API, useful in migrating between versions of this API -- for example allowing some sites to implement 1.0 while others test 2.0. Correct version string for WSN API 2.1 implementations is ``2.1''. (Note: Would be useful to retroactively add this to 1.0)} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{setVirtualLink}
+%------------------------------------------------------------------------------------------------
+\label{sssec:setvlink}
+
+%\todo{Definition of response values is missing, e.g. -1 for unknown node id, 1 for success, 0 for failure...}
+
+\begin{apidoc}
+	{RequestID setVirtualLink(URN source\_node, URN target\_node, URI remote\_service\_instance, String parameters[], String filters[] );} %Signature
+	{Creates part of a virtual link. To be exact: Creates a unidirectional link from source\_node to remote\_service\_instance. A detailed description follows below.} % Semantics
+	{
+			\apiparameters{
+				\apiparam{source_node}{URN of a node within the scope of the WSN API implementation on which this function is called}
+				\apiparam{target_node}{URN of the destination node, not necessarily in the remote\_service\_instance testbed}
+				\apiparam{remote_service_instance}{URI of a WSN API implementation that should receive the packets for the virtual links}
+				\apiparam{parameters}{Set of parameter strings, is passed to source\_node. Allows specialised configuration of individual virtual radio implementations.}
+				\apiparam{filters}{Description of a filter chain}
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{
+		This is the first time that we have specified in detail the Interconnection API from D2.2, specifically the ability to configure a virtual topology. While this could be a separate API we have chosen to merge it into the WSN API to promote a smaller set of APIs. See also Section~\ref{sec:implstrategy} which describes a timeline for when these more advanced functions are expected to be implemented. Until this time it is sufficient for most Wisebed partners to just throw an UnsupportedException in response to this API call.
+		
+		Essentially this reflects what was proposed in D2.2, Section 7. The only substantial change is that there is a generic ``filter'' concept, and that a user can opt to route virtual link packets through dedicated filter software at a site outside of federation-maintained infrastructure. The latter concept allows custom filtering models to be written and used in experiments; while routing many virtual links through a distant non-federation computer running these filters may be expensive (and so not very scalable) this is seen as a better alternative than allowing users to upload custom filter code to federation-maintained computers. This may help in providing a lower `entry curve' to the federation for member sites and their IT administration departments.
+		
+		%The reason behind this is that several groups working on virtual links wanted to be able to have ``realistic link behaviour'', but the resulting requirements were completely incompatible with each other. We ended up with the conclusion that every testbed service would have to ``run the exact same algorithm'' that deduces a certain packet loss pattern from LQI values, which in turn also change over time using some ``exact same algorithm''. We found it obvious that following this path will lead to mayhem.
+		
+		As a compromise to usability however we have decided to support within federation infrastructure a very basic set of simple filters that will be mandatory at each member site (so far, just ``set LQI value to a constant'', ``drop packets with constant probability'', and ``impose constant delay to each packet''). These `WISEBED official filters' will be installed and maintained by the WISEBED federation, with guarantees about version -- and therefore behaviour -- equality of these filters throughout the federation's member sites. Anything not provided by these provided filters needs to be done instead using custom filter software running at the user's site, which is to be written by the user.	
+	} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+\paragraph{Additional Documentation:} 
+Consider the example api$_1$.setVirtualLink( $s$, $t$, api$_2$, parameters, filters ):
+	\begin{itemize}
+		\item If api$_1$ is controlling the testbed containing $s$, it will inform $s$ that there is a new virtual link with $t$. It passes the parameters to $s$.
+		\item If api$_1$ is {\em not} controlling the testbed containing $s$, it will create a local forwarding rule. Another call of setVirtualLink with another WSN API ensures that packets travelling from $s$ to $t$ will show up at api$_1$.
+	\end{itemize} 
+When there is a packet from $s$ to process (because it originated in the local testbed, or because it arrived using api$_1$.send()), api$_1$ will:
+	\begin{enumerate}
+		\item Apply the filters described in {\em filters} in order.
+		\item Call api$_2$.send() to forward the packet.
+	\end{enumerate}
+	
+Calling setVirtualLink() again for same source and destination will overwrite a previously stored route (perhaps with different filters).
+
+\paragraph{Examples:} 
+Assume we have two testbeds, ULANC and TUBS. Node {\tt n\_ulanc} is in ULANC, node {\tt n\_tubs} is in TUBS. The corresponding testbed service APIs are running on {\tt tb\_ulanc} and {\tt tb\_tubs}. The user is operating a packet filtering software somewhere at a third location, {\tt filter\_host}.
+
+\begin{itemize}
+	\item To create a simple bi-directional virtual link between {\tt nn\_ulanc} and {\tt n\_tubs}, call:
+		\begin{lstlisting}
+tb_ulanc.setVirtualLink( n_ulanc, n_tubs, tb_tubs, (), () );
+tb_tubs.setVirtualLink( n_tubs, n_ulanc, tb_ulanc, (), () );
+\end{lstlisting}
+
+\item To create a virtual link with message loss, using a default filter installed in the testbed services of ULANC and TUBS, call:
+  \begin{lstlisting}
+tb_ulanc.setVirtualLink( n_ulanc, n_tubs, tb\_tubs, (),
+	("random_drop 5%") );
+tb_tubs.setVirtualLink( n_tubs, n_ulanc, tb\_ulanc, (), 
+	("random_drop 5%") );
+\end{lstlisting}
+
+\item To create a bi-directional virtual link that routes all packets through {\tt filter\_host} we have 4 virtual link segments configured as follows: 
+  \begin{lstlisting}
+tb_ulanc.setVirtualLink( n_ulanc, n_tubs, filter_host, (), () );
+filter_host.setVirtualLink( n_ulanc, n_tubs, tb_tubs, (),
+	("my_esoteric_filter weirdness=very") )
+
+tb_tubs.setVirtualLink( n_tubs, n_ulanc, filter_host, (), () );
+filter_host.setVirtualLink( n_tubs, n_ulanc, tb_ulanc, (),
+	("my_esoteric_filter weirdness=very") )
+\end{lstlisting}
+\end{itemize}
+
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{destroyVirtualLink}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestID destroyVirtualLink( URN source_node, URN target_node );} %Signature
+	{Deletes a virtual link} % Semantics
+	{ 
+			\apiparameters{
+				\apiparam{source_node}{URN of a node, not necessarily in the local testbed}
+				\apiparam{target_node}{URN of the destination node, not necessarily in the local testbed}
+			}	
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{see setVirtualLink()} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+Upon successful invocation returns a request identifier to match the asynchronous reply. Any implementation must asynchronously send a RequestStatus message to the controller (see API2.0::6.2).
+
+A RequestStatus message delivers the result of the operation; if the link was successfully removed the ``value'' field is set to ``1'', if no such link existed is set to ``2'', if the operation failed is set to ``0'', and if one of the node IDs was unknown is set to ``-1''.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getFilters}
+%------------------------------------------------------------------------------------------------
+
+
+\begin{apidoc}
+	{String[] getFilters();} %Signature
+	{Acquires available filters} % Semantics
+	{ } % Parameters
+	{List of filters that are implemented/available at a testbed service. If called on a federated testbed returns the intersection of filters provided by each individual testbed} % Returns
+	{see setVirtualLink()} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{enablePhysicalLink}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestID enablePhysicalLink( URN nodea, URN nodeb );} %Signature
+	{Enables the physical radio link nodea--nodeb in the topology control logic on the nodes. For simulated nodes: Actually creates a link.} % Semantics
+	{
+			\apiparameters{
+				\apiparam{nodea}{Node in the same testbed}
+				\apiparam{nodeb}{Node in the same testbed}
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{Completes the support required for complete virtual topology control, including de-activating and re-activating physical reachability.} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+Upon successful invocation returns a request identifier to match the asynchronous reply. Any implementation must asynchronously send a RequestStatus message to the controller (see API2.0::6.2).
+
+A RequestStatus message delivers the result of the operation; if the link was successfully enabled the ``value'' field is set to ``1'', if the operation failed it is set to ``0'', and if one of the node IDs was unknown is set to ``-1''.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{disablePhysicalLink}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestID disablePhysicalLink( URN nodea, URN nodeb );} %Signature
+	{Disables the link nodea--nodeb in the topology control logic on the nodes. In real WSN nodes this is supported by suppressing messages from the relevant source using an appropriate software component.} % Semantics
+	{
+			\apiparameters{
+				\apiparam{nodea}{Node in the same testbed}
+				\apiparam{nodeb}{Node in the same testbed}
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{see enablePhysicalLink()} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+Upon successful invocation returns a request identifier to match the asynchronous reply. Any implementation must asynchronously send a RequestStatus message to the controller (see API2.0::6.2).
+
+A RequestStatus message delivers the result of the operation; if the link was successfully disabled the ``value'' field is set to ``1'', if the operation failed it is set to ``0'', and if one of the node IDs was unknown is set to ``-1''.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{disableNode}
+%------------------------------------------------------------------------------------------------
+
+
+\begin{apidoc}
+	{RequestID disableNode( URN node )} %Signature
+	{Turns off a node} % Semantics
+	{
+			\apiparameters{
+				\apiparam{node}{A node in the local testbed or the federated testbed represented by this API}
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{The WiseML playback requires this functionality. We currently have no satisfactory solution for how this should be performed. (Just turn off the radio? This means the algorithm / software may still be running. Reflash node with a dummy image? Can all testbeds do this?)} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+A RequestStatus message delivers the result of the operation; if the node was successfully disabled the ``value'' field is set to ``1'', if the operation failed is set to ``0'', and if the node ID was unknown is set to ``-1''.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{enableNode}
+%------------------------------------------------------------------------------------------------
+
+
+\begin{apidoc}
+	{RequestID enableNode( URN Node )} %Signature
+	{Turns on a node} % Semantics
+	{
+			\apiparameters{
+				\apiparam{node}{A node in the local testbed or the federated testbed represented by this API}
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{The WiseML playback requires this functionality. We currently have no satisfactory solution for how this should be performed. Also see disableNode().} % Rationale for addition/changes
+	{2.1 WSN API} % Since
+\end{apidoc}
+
+A RequestStatus message delivers the result of the operation; if the node was successfully enabled the ``value'' field is set to ``1'', if the operation failed is set to ``0'', and if the node ID was unknown is set to ``-1''.
+
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{setChannelPipeline}
+%------------------------------------------------------------------------------------------------
+
+
+\begin{apidoc}
+	{RequestID setChannelPipeline( URN nodes[], ChannelHandlerConfiguration configurations[] )} %Signature
+	{Sets handlers for sensor node output} % Semantics
+	{
+			\apiparameters{
+				\apiparam{nodes}{Nodes in the testbed represented by this API}
+				\apiparam{configurations}{Pipeline handlers to attach to these nodes}
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{Necessary to put the user in control of how sensor node output is handled (particularly useful when bespoke framing formats such as virtual link packets are transmitted)} % Rationale for addition/changes
+	{2.3 WSN API} % Since
+\end{apidoc}
+
+A RequestStatus message delivers the result of the operation; if successful the ``value'' field is set to ``1'', if the operation failed is set to ``0'', and if any node ID was unknown is set to ``-1''.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getSupportedChannelHandlers}
+%------------------------------------------------------------------------------------------------
+
+
+\begin{apidoc}
+	{ChannelHandlerDescription[] getSupportedChannelHandlers( )} %Signature
+	{Gets available sensor node output handlers (may be none)} % Semantics
+	{
+			\apiparameters{
+			}
+	} % Parameters
+	{RequestID for asynchronous success reply to the controller} % Returns
+	{} % Rationale for addition/changes
+	{2.3 WSN API} % Since
+\end{apidoc}
+
+This function supplies the available sensor node output handlers on this particular server / implementation. Supported handlers can then be used with setChannelPipeline(). Note that servers / implementations are not obliged to provide any handlers.

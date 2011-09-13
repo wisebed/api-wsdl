@@ -1,0 +1,231 @@
+%------------------------------------------------------------------------------
+%- PAKETE
+%------------------------------------------------------------------------------
+
+		\usepackage{longtable}
+
+		\usepackage{floatrow}
+
+	%Grafiken
+		\usepackage{float} %Float-Handling mit Schalter H (gleiche Position wie im Skript)
+		\usepackage{placeins} %Barriere für Float-Umgebungen erzeugen mit \FloatBarrier
+	
+	%Verbessertes Beschriften mir div. Optionen
+		\usepackage{caption}
+	
+	%Zusaetzliche Symbole und Schriften (ams: american mathematical soc)
+		\usepackage{amssymb}
+
+	%Text Companion fonts which provide many text symbols (such as baht, bullet, copyright, musicalnote, onequarter, section, and yen) in the TS1 encoding.
+		\usepackage{textcomp}
+	
+	%Farbunterstützung (ausserhalb der Bilder)
+		\usepackage{color}
+	
+	%Ensure minimal spacing of table cells (http://www.ctan.org/tex-archive/help/Catalogue/entries/cellspace.html)
+		\usepackage{cellspace}
+	
+	%Subfigures
+		\usepackage{subfigure}
+		
+	% package to customize the three basic lists (enumerate, itemize and description) 
+	% by means of a set of parameters, and to clone them to define new "logical" lists.
+		\usepackage{enumitem}
+		\setitemize{enumsep=-3pt}
+		\setitemize{itemsep=-3pt}
+
+	%Definitionen
+		\usepackage{theorem}
+		\newcounter{theorem}
+		\newtheorem{definition}[theorem]{Definition}
+
+	%Zitate
+		\newcounter{quotectr}
+		\newtheorem{myquote}[quotectr]{Quote}
+
+%------------------------------------------------------------------------------
+%- Layout
+%------------------------------------------------------------------------------
+
+	%Tiefe des Inhaltsverzeichnisses und der Nummerierung der Kapitel
+		\setcounter{secnumdepth}{3}
+		\setcounter{tocdepth}{3}
+
+	% Listings schoen machen 
+		\renewcommand*\ttdefault{txtt}
+	
+	
+	% Absatzformatierungen:
+	% Keeps the distance between paragraphs constant
+		\setlength{\parskip}{2ex plus 1.0ex minus 1.0ex}
+		\setlength{\parindent}{0pt}
+	
+	% Modify the placement of figures: from faq source: You can adjust the cut-off value if you like, 
+	% but it makes no sense to go higher than .95 (LaTeX's default value is only .5). Also, the first 
+	% 3 values should be equal, and the last should be 1 - \floatpagefraction.  Otherwise, you are 
+	% likely to get floats flushed to the end. 
+		\renewcommand{\floatpagefraction}{0.9}
+		\renewcommand{\topfraction}{0.9}
+		\renewcommand{\bottomfraction}{0.9}
+		\renewcommand{\textfraction}{0.1}
+		\renewcommand{\textfloatsep}{5mm}
+	
+
+%------------------------------------------------------------------------------
+%- Textbausteine
+%------------------------------------------------------------------------------
+
+	\newcommand{\note}[2][]{{\bf (\ifthenelse{\equal{#1}{}}{}{[#1]: }\marginpar{{\bf\Large [!!!]}}#2})}
+	\newcommand{\question}[1]{{\textcolor{red}{\em #1}\marginpar{{\bf [?]}} }}
+	\newcommand{\proposal}[1]{{\textcolor{blue}{\em #1}\marginpar{{\bf [\&]}} }}
+	\newcommand{\eigenname}[1]	{{\em #1}}
+
+	%Englisch	
+		\newcommand{\figref}[1]		{Figure~\ref{fig:#1}}
+		\newcommand{\tabref}[1]		{Table~\ref{tab:#1}}
+		\newcommand{\equref}[1]		{Equation~\ref{equ:#1}}
+		\newcommand{\algref}[1]		{Algorithm~\ref{alg:#1}}
+		\newcommand{\defref}[1]		{Definition~\ref{def:#1}}
+		\newcommand{\quoteref}[1]	{Quote~\ref{quote:#1}}
+		
+		\newcommand{\chapref}[1]	{Chapter~\ref{cha:#1}}
+		\newcommand{\appref}[1]		{Appendix~\ref{cha:#1}}
+		\newcommand{\secref}[1]		{Section~\ref{sec:#1}}
+		\newcommand{\ssecref}[1]	{Section~\ref{ssec:#1}}
+		\newcommand{\sssecref}[1]	{Section~\ref{sssec:#1}}
+		
+	% REDEFINE UGLY STUFF
+		\renewcommand{\leq}				{\leqslant}
+		\renewcommand{\geq}       {\geqslant}
+		\renewcommand{\epsilon}   {\varepsilon}
+		\newcommand{\musec}       {$\mu sec$\xspace}
+		\newcommand{\muW}       	{$\mu W$\xspace}
+		\newcommand{\plusminus}		{$\pm $\xspace}
+	
+%------------------------------------------------------------------------------
+%- Worttrennung
+%------------------------------------------------------------------------------
+	
+	%\hyphenation{Ge-samt-ozon}	
+	\hyphenation{name-space}	
+	\hyphenation{name-spaces}	
+
+			
+%------------------------------------------------------------------------------
+%- Grafiken
+%------------------------------------------------------------------------------
+	
+	% Vereinfacht die Einbettung von Grafiken
+	% Beispiel: \myfig[5cm]{psdatei}{Übersicht über das Gesamtsystem}
+	\newcommand{\myfig}[3][\columnwidth]
+	{
+	 \begin{figure}[htbp]
+		 \begin{center}
+			 \includegraphics[width=#1]{img/#2}
+			 \caption{#3}
+			 \label{fig:#2}
+		 \end{center}
+	 \end{figure}
+	}
+	
+	\newcommand{\myfigtwo}[4][\columnwidth]
+	{
+		 \begin{figure}[htbp]
+				\begin{center}
+				  \mbox
+				  {
+				    \subfigure[#2] 
+				    { \includegraphics[width=.45\columnwidth]{img/#1-a} \label{fig:#1-a} } 
+				    \quad
+				    \subfigure[#3]
+				    { \includegraphics[width=.45\columnwidth]{img/#1-b} \label{fig:#1-b} }
+			    }
+				  \caption{#4}
+					\label{fig:#1}
+				\end{center}
+			\end{figure}
+	}
+	
+	\newcommand{\myfigthree}[5][\columnwidth]
+	{
+		 \begin{figure}[htbp]
+				\begin{center}
+				  \mbox{
+				    \subfigure[#2]
+				    {
+				    	\includegraphics[width=.3\columnwidth]{img/#1-a}
+				    	\label{fig:#1-a}
+				    } 
+%				    \quad
+				    \subfigure[#3]
+				    {
+							\includegraphics[width=.3\columnwidth]{img/#1-b}
+				    	\label{fig:#1-b}
+				    }
+%				    \quad
+				    \subfigure[#4]
+				    {
+							\includegraphics[width=.3\columnwidth]{img/#1-c}
+				    	\label{fig:#1-c}
+				    }
+			    }	
+				  \caption{#5}
+					\label{fig:#1}
+				\end{center}
+			\end{figure}
+	}
+	
+	\newcommand{\myfigfour}[6][\columnwidth]
+	{
+		 \begin{figure}[htbp]
+				\begin{center}
+				  \mbox
+				  {
+				    \subfigure[#2] 
+				    { \includegraphics[width=.45\columnwidth]{img/#1-a} \label{fig:#1-a} } 
+				    \quad
+				    \subfigure[#3]
+				    { \includegraphics[width=.45\columnwidth]{img/#1-b} \label{fig:#1-b} }
+			    }
+				  \mbox
+				  {
+				    \subfigure[#4] 
+				    { \includegraphics[width=.45\columnwidth]{img/#1-c} \label{fig:#1-c} } 
+				    \quad
+				    \subfigure[#5]
+				    { \includegraphics[width=.45\columnwidth]{img/#1-d} \label{fig:#1-d} }
+			    }
+			    
+				  \caption{#6}
+				\label{fig:#1}
+				\end{center}
+			\end{figure}
+	}
+	
+	
+
+\newenvironment{apidoc}[6]%
+{%
+
+		\begin{longtable}[t]{p{2cm}p{12.8cm}}
+      Semantics	 & #2 \\[0.5em]
+	    Signature	 & \lstinline{#1}\\[0.5em]
+	    Parameters & {#3} \\[0.5em]
+      Returns		 & #4 \\[0.5em]
+      Rationale \tabularnewline for changes & #5 \\[0.5em]
+      Since 		 & #6 \\[0.5em]
+		\end{longtable}
+
+ 	
+%	}
+	\begingroup
+%  }%
+%  {
+  \endgroup
+}	
+
+
+\newcommand{\apiparameters}[1]	{\hspace{-0.25cm}\begin{tabular}[t]{lp{10cm}} #1 \end{tabular}}
+
+\newcommand{\apiparam}[2]	{ \lstinline{#1} & #2 \\ }
+

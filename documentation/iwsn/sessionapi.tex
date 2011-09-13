@@ -1,0 +1,152 @@
+%------------------------------------------------------------------------------------------------
+		\subsection{Session Management API}
+		\label{sec:smapi}
+%------------------------------------------------------------------------------------------------
+The Session Management API runs on every testbed (physical or virtual) and provides access to the per-experiment WSN API.
+
+In some cases the WSN API will be a singleton and so the testbed service will always return the same address (this is the default behaviour on a privately owned testbed). For others, it will spawn a new API instance, for example on a different port, and return that one. This is necessary if different users reserve different parts of the same testbed. An alternative to this approach would be to use session keys on all WISEBED API calls so that the call is relative to your session; however this is problematic in several respects: Firstly a WSN API implementation would have to understand the notion of a `session', making it a more complex task; secondly the {\em client} of a WSN API must also understand what session keys are, making {\em this} a more complex implementation. Finally, a session-key-based approach would create additional work in the upgrade of WISEBED sites conforming to WSN API 1.0. For these reasons we elect to use API instancing rather than session-keys.
+
+\paragraph{Recommendation:} Use Strings for reservation IDs. We believe reservation IDs should be URNs, e.g., ``urn:wisebed:reservation:AeYaQu0ruphee9o'', but are not sure if this would require any changes in the reservation system.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getConfiguration}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{Configuration getConfiguration()} %Signature
+	{Returns the `configuration' relating to this server, including the web services endpoints of other relevant services associated with this session manager endpoint.} % Semantics
+	{none} % Parameters
+	{Server details. } % Returns
+	{Allows a WISEBED testbed to be identified by a since web services endpoint (i.e. that of the session manager)
+	} % Rationale for addition/changes
+	{2.3} % Since
+\end{apidoc}
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getNetwork}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{WiseML getNetwork()} %Signature
+	{Returns the average/static state of the network described as specified by the ``static'' part of a WiseML file. This function is also contained in the WSN API but this returns current data opposed to static data returned here.} % Semantics
+	{none} % Parameters
+	{Description of the testbed in WiseML format. } % Returns
+	{\begin{itemize}
+			\item Allows a client of the WSN API to acquire the network topology of that instance. Using virtualisation this may not necessarily correspond to any physical testbed.
+			\item Allows querying of changes in the network after the reservation has been made (say, one node died and was replaced by one with different ID).
+		\end{itemize}
+	} % Rationale for addition/changes
+	{1.1 Monitoring API} % Since
+\end{apidoc}
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{areNodesAlive}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{RequestId areNodesAlive( URN[] nodeIds, String controllerURL )} %Signature
+	{Returns the status (alive/dead) of a set of nodes defined by their addresses in the parameter ``nodeIds'' (WISEBED node URNs).  	
+	} % Semantics
+	{
+			\apiparameters{
+				\apiparam{nodeIds}{List of nodes}
+				\apiparam{controllerURL}{Web Services endpoint of the controller to which the asynchronous response(s) will be delivered}
+			}
+	} % Parameters
+	{Request identifier to match the asynchronous replies} % Returns
+	{ Added to the session management API (in addition to the WSN API) to allow querying of node liveness without having an active WSN instance. See notes below for important contraints.} % Rationale for addition/changes
+	{2.3
+	} % Since
+\end{apidoc}
+
+Upon successful invocation, it returns a request identifier to match the asynchronous replies. Any implementation must asynchronously send one or more RequestStatus message to the controller service (see API2.0::6.2).
+
+Each RequestStatus message contains a list of nodes and their status. The ``value'' field contains a ``1'' if the node is alive, a ``0'' if it is presumed dead and a ``-1'' if the node ID was not known to the testbed, where a node is deemed to be alive if it can be flashed with a new image. This list of return values may be expanded in future as necessary. This operation is completed when all nodes have been reported. The msg field may contain a human readable description about the operation. 
+
+Before any action is executed, this operation will validate all node IDs in nodeIds and if a node ID is invalid it will return a fault indication (InvalidNodeIdException) without executing the command for any of the nodes.
+
+{\bf Notes:} The implementation must ensure that this function does not interfere with running experiments. It must either check node liveness without quering any node-resident software; or else if a liveness check does require node-resident software communication you must first check if an experiment is in progess on that node and if so either return an error or else return a cached liveness value.
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{getInstance}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{URI getInstance( String reservation_id, URI controller_api );} %Signature
+	{
+		Returns an instance of the WSN API associated with the given reservation\_id.
+		
+		If the implementation is a federator calling this method may return a fault if one of the federated Session Management API endpoint is unreachable or returns a fault. Federator implementations  must not call the free() method if this happens.
+	} % Semantics
+	{
+			\apiparameters{
+				\apiparam{reservation_id}{A string that the reservation system / website returned when the reservation was made, used here as credentials. For a privately owned network without reservation IDs, this would be an empty string.}
+				\apiparam{controller_api}{The URI describing the `owner' of the experiment, i.e., the controller that should get the asynchronous replies to WSN API calls. This is often the entity which invoked getInstance()}
+			}
+	} % Parameters
+	{URI of the WSN API} % Returns
+	{See notes at beginning of~\ref{sec:smapi}. This operation can also be used to change the controller API URI at a later time.} % Rationale for addition/changes
+	{2.0
+		\begin{itemize}
+			\item 2.0: initial appearance as setPortalEndpoint()
+			%\item 2.1: split into getInstance() and setNewController()
+			\item 2.1: changed to getInstance() and moved to SessionManagement API
+		\end{itemize}
+	} % Since
+\end{apidoc}
+\proposal{Possible Exceptions:
+\begin{itemize}
+	\item unknown reservation id
+	\item controller api unreachable
+	\item experiment ended
+\end{itemize}}
+
+%------------------------------------------------------------------------------------------------
+			\subsubsection{free}
+%------------------------------------------------------------------------------------------------
+
+\begin{apidoc}
+	{void free( reservation\_id );} %Signature
+	{
+		Ends the experiment and makes the testbed available again. For a testbed without a reservation system, this call may be ignored (or an exception thrown).%
+		
+		If the reservation has already been freed calling this method has no effect.
+	} % Semantics
+	{
+			\apiparameters{
+				\apiparam{reservation_id}{Reservation ID as returned by the reservation system}
+			}
+	} % Parameters
+	{} % Returns
+	{
+	For a privately owned network (say, ``the student network'' in your working group), it means that you have finished using the network and release it for others to use. Additionally in ``commercially-run'' testbed federations this feature could be used to issue a refund of paid testbed time; or even in free-to-use federations could simply be used to relinquish reserved time that the user no longer requires.	
+	} % Rationale for addition/changes
+	{2.1} % Since
+\end{apidoc}
+\proposal{Possible Exceptions:
+\begin{itemize}
+	\item see getInstance()
+\end{itemize}}
+
+% %------------------------------------------------------------------------------------------------
+% 			\subsubsection{setNewController}
+% %------------------------------------------------------------------------------------------------
+
+% \begin{apidoc}
+% 	{void setNewController( reservation_id, URI controller_api );} %Signature
+% 	{Reconnects the testbed to a different controller} % Semantics
+% 	{
+% 			\apiparameters{
+% 				\apiparam{reservation_id}{Reservation ID as returned by the reservation system}
+% 				\apiparam{controller_api}{URI for a new controller}
+% 			}
+% 	} % Parameters
+% 	{} % Returns
+% 	{It is possible that the initial controller for example is on a laptop which crashes or moves between networks during an experiment. This API operation permits re-establishment of experiment control from an alternative address.} % Rationale for addition/changes
+% 	{2.0
+% 		\begin{itemize}
+% 			\item 2.0: initial appearance as setPortalEndpoint()
+% 			\item 2.1: split into getInstance() and setNewController()
+% 		\end{itemize}	
+% 	} % Since
+% \end{apidoc}

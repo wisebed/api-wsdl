@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="APIconcept3.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3249"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;">
+      <path
+         id="path3273"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mstart"
+       style="overflow:visible">
+      <path
+         id="path3270"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3246"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="597.09643"
+     inkscape:cy="399.65757"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="750"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="128.38004"
+       y="370.29504"
+       id="text2509"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="128.38004"
+         y="370.29504"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2511">Local testbed driver system</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3173"
+       width="176.59071"
+       height="36.559772"
+       x="44.229111"
+       y="264.94238" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="128.58003"
+       y="324.76236"
+       id="text3183"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="128.58003"
+         y="324.76236"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan3187">The WISEBED API</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 16.705806,334.26805 L 260.89762,334.26805"
+       id="path3193" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 17.395612,308.74518 L 261.58743,308.74518"
+       id="path3195" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="83.750427"
+       y="275.84204"
+       id="text3231"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="83.750427"
+         y="275.84204"
+         id="tspan3233"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Controller role</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="95.753082"
+       y="354.48007"
+       id="text3235"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="95.753082"
+         y="354.48007"
+         id="tspan3237"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Testbed Service role</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 55.748906,313.03068 L 55.748906,330.27587"
+       id="path3241" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 203.36768,312.68578 L 203.36768,329.93096"
+       id="path5602" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect5636"
+       width="176.59071"
+       height="36.559772"
+       x="40.573139"
+       y="343.72711" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 127.07498,380.6318 L 127.07498,404.77506"
+       id="path5638" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="128.07243"
+       y="415.9603"
+       id="text6175"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="128.07243"
+         y="415.9603"
+         style="font-size:10.62303352px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan6177">a testbed</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 128.10698,264.38356 L 128.10698,240.2403"
+       id="path2451" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="129.10442"
+       y="236.93961"
+       id="text2453"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="129.10442"
+         y="236.93961"
+         style="font-size:10.62303352px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2455">the user</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2499"
+       width="252.46951"
+       height="144.85953"
+       x="10.911414"
+       y="251.29292" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="222.61996"
+       y="260.89615"
+       id="text2501"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="222.61996"
+         y="260.89615"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2503">Portal Server</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="129.31409"
+       y="293.03662"
+       id="text2505"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="129.31409"
+         y="293.03662"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2507">TARWIS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="712.76758"
+       y="242.70477"
+       id="text2462"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="712.76758"
+         y="242.70477"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2464">Aggregating driver system</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2466"
+       width="176.59071"
+       height="36.559772"
+       x="628.61664"
+       y="137.35211" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="712.96759"
+       y="197.17209"
+       id="text2468"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="712.96759"
+         y="197.17209"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2470">The WISEBED API</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 601.09339,206.67779 L 845.2852,206.67779"
+       id="path2472" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 601.7832,181.15492 L 845.975,181.15492"
+       id="path2474" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="668.138"
+       y="148.25177"
+       id="text2476"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="668.138"
+         y="148.25177"
+         id="tspan2478"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Controller role</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="680.14063"
+       y="226.8898"
+       id="text2480"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="680.14063"
+         y="226.8898"
+         id="tspan2482"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Testbed Service role</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 640.13649,185.44042 L 640.13649,202.68561"
+       id="path2484" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 787.75527,185.09552 L 787.75527,202.3407"
+       id="path2486" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2488"
+       width="176.59071"
+       height="48.681602"
+       x="624.96069"
+       y="216.13684" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 712.71257,265.63781 L 512.66557,440.82951"
+       id="path2490"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 712.49457,136.7933 L 712.49457,112.65004"
+       id="path2496" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="713.49194"
+       y="109.34935"
+       id="text2498"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="713.49194"
+         y="109.34935"
+         style="font-size:10.62303352px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2500">the user</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2502"
+       width="252.46951"
+       height="144.85953"
+       x="595.29895"
+       y="123.70267" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="807.00751"
+       y="133.30588"
+       id="text2504"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="807.00751"
+         y="133.30588"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2506">Portal Server</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="713.70166"
+       y="165.44635"
+       id="text2508"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="713.70166"
+         y="165.44635"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2510">TARWIS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="509.42181"
+       y="505.76563"
+       id="text2512"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="509.42181"
+         y="505.76563"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2514">Local testbed driver system</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="509.62183"
+       y="460.23297"
+       id="text2518"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="509.62183"
+         y="460.23297"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2520">The WISEBED API</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 397.74758,469.73864 L 641.9394,469.73864"
+       id="path2522" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 398.43739,444.21577 L 642.62921,444.21577"
+       id="path2524" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="476.79486"
+       y="489.95068"
+       id="text2530"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="476.79486"
+         y="489.95068"
+         id="tspan2532"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Testbed Service role</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 436.79068,448.50127 L 436.79068,465.74646"
+       id="path2534" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 584.40946,448.15637 L 584.40946,465.40155"
+       id="path2536" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2538"
+       width="176.59071"
+       height="36.559772"
+       x="421.6149"
+       y="479.19772" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 508.11676,516.10239 L 508.11676,540.24565"
+       id="path2540" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="509.1142"
+       y="551.43091"
+       id="text2542"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="509.1142"
+         y="551.43091"
+         style="font-size:10.62303352px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2544">a testbed</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2552"
+       width="252.46951"
+       height="144.85953"
+       x="391.95319"
+       y="386.76352" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="603.66174"
+       y="396.36676"
+       id="text2554"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="603.66174"
+         y="396.36676"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2556">Portal Server</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="904.75183"
+       y="506.50543"
+       id="text2562"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="904.75183"
+         y="506.50543"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2564">Local testbed driver system</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="904.95184"
+       y="460.97281"
+       id="text2566"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="904.95184"
+         y="460.97281"
+         style="font-size:13.52022457px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2568">The WISEBED API</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 793.07762,470.47849 L 1037.2694,470.47849"
+       id="path2570" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#800080;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.7258425, 7.7258425;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 793.76743,444.95562 L 1037.9592,444.95562"
+       id="path2572" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="872.12488"
+       y="490.69049"
+       id="text2574"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="872.12488"
+         y="490.69049"
+         id="tspan2576"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Testbed Service role</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 832.12072,449.24112 L 832.12072,466.48631"
+       id="path2578" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;stroke-linecap:butt;stroke-linejoin:miter;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 979.7395,448.89622 L 979.7395,466.1414"
+       id="path2580" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2582"
+       width="176.59071"
+       height="36.559772"
+       x="816.94489"
+       y="479.93759" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 903.4468,516.84224 L 903.4468,540.9855"
+       id="path2584" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="904.44421"
+       y="552.17072"
+       id="text2586"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="904.44421"
+         y="552.17072"
+         style="font-size:10.62303352px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2588">a testbed</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.96573031;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect2590"
+       width="252.46951"
+       height="144.85953"
+       x="787.2832"
+       y="387.50339" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="998.99176"
+       y="397.10663"
+       id="text2592"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="998.99176"
+         y="397.10663"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2594">Portal Server</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.48286515px;stroke-linecap:butt;stroke-linejoin:miter;marker-end:url(#Arrow1Lend);stroke-opacity:1"
+       d="M 711.77366,265.3894 L 911.82066,439.57094"
+       id="path2634"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.31460571px;font-style:normal;font-weight:normal;line-height:100%;fill:#800080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="663.28827"
+       y="259.3284"
+       id="text2656"
+       sodipodi:linespacing="100%"><tspan
+         sodipodi:role="line"
+         x="663.28827"
+         y="259.3284"
+         id="tspan2658"
+         style="font-size:11.58876324px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:100%;writing-mode:lr-tb;text-anchor:middle;fill:#800080;font-family:Arial;-inkscape-font-specification:Arial">Controller role</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,202 @@
+\typeout{Document Style Option `wisebed-tr'.}
+
+%--- Packages used by this document
+    \usepackage{fancyhdr}
+    \usepackage{times}
+    \usepackage{fullpage}
+    \usepackage{xspace}
+    \usepackage{epsfig}
+    \usepackage{url}
+    \usepackage{ifpdf} 
+    \usepackage{subfigure}
+    \usepackage{caption}
+%    \usepackage[usenames]{color}
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \usepackage{sectsty}
+    \usepackage{rotating}
+    \usepackage{multirow}
+
+		\usepackage{setspace}
+    
+%--- Height of the header (enlarged for captions spanning 2 lines)
+	\setlength{\headheight}{27.5pt}
+
+%--- Keeps the distance between paragraphs constant
+	\setlength{\parskip}{1.5ex plus 0.0ex minus 0.0ex}
+	\setlength{\parindent}{0pt}
+
+%--- Set the graphics extension to pdf, png or jpg for pdflatex and to eps otherwise
+	\ifpdf
+	  \DeclareGraphicsExtensions{.pdf,.png,.jpg}   % for pdftex driver
+	\else
+	  \DeclareGraphicsExtensions{.eps}             % for dvips driver
+	\fi
+
+%--- 
+	%Call this after each chapter to avoid headlines on empty pages
+		\newcommand{\sectionfin}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+
+
+	\newcommand{\hint}[1]{{\small #1}}
+	
+
+%--- Layout for listings
+
+	\usepackage{caption}
+	\DeclareCaptionFont{white}{\color{white}}
+	\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+	\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+
+	\lstset{% general command to set parameter(s)
+	  basicstyle=\small, % print whole listing small
+	  keywordstyle=\color{black}\bfseries,
+	  identifierstyle=, % nothing happens
+	  commentstyle=\color{blue}\em, % white comments
+	  stringstyle=\ttfamily, % typewriter type for strings
+	  showstringspaces=false, % no special string spaces
+	  %
+		xleftmargin=50pt,%
+		xrightmargin=30pt,%
+    framexleftmargin=20pt,%
+    framexrightmargin=5pt,%
+    framexbottommargin=4pt,%
+    %
+	  frame=lr,%
+	  numbers=left,%
+	  tabsize=1,%
+	  numberstyle=\tiny,%
+	  numbersep=30pt,%
+    breaklines=true,% sets automatic line breaking
+    breakatwhitespace=false% sets if automatic breaks should only happen at whitespace
+	}
+
+		\lstdefinelanguage{XMLSchema}
+			{morekeywords={schema,element,annotation,appinfo,complexType,simpleType,choice,all,sequence},		
+			sensitive=true,
+%			morecomment=[l]{//},
+%			morecomment=[s]{/*}{*/},
+			morestring=[b]",
+		}		
+        
+        \lstdefinelanguage{WSDL}
+			{morekeywords={definitions,types,message,name,part,portType,operation,input,output,fault,binding,soap},		
+			sensitive=true,
+%			morecomment=[l]{//},
+%			morecomment=[s]{/*}{*/},
+			morestring=[b]",
+		}
+
+%--- Layout TOC and font sizes for the captions
+	\setcounter{secnumdepth}{3}
+	\setcounter{tocdepth}{2}
+
+%--- Place todo's into the text
+	\newcommand{\todo}[1]				{{\em [#1]}\marginpar{{\bf [!!!]}} }
+
+\setlength{\textwidth}{17.1cm} 
+\setlength{\oddsidemargin}{-0.4cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textheight}{25.5cm}
+\addtolength{\voffset}{-1.5cm}
+\addtolength{\headsep}{1.0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+
+%%%%%%%%%
+%%%%%%%%% Title & Acronym
+%%%%%%%%%
+\newcommand{\TITLE}{Wireless Sensor Network Testbeds\xspace}
+\newcommand{\TITLe}{Wireless Sensor Network Testbeds\xspace}
+\newcommand{\ACRONYM}{\textsf{WISEBED}\xspace}
+
+
+%%%%%%%%%
+%%%%%%%%% Parameters
+%%%%%%%%%
+
+\def\delivNumber#1{\gdef\@delivNumber{#1}}
+\def\delivTitle#1{\gdef\@delivTitle{#1}}
+\def\delivAuthor#1{\gdef\@delivAuthor{#1}}
+\def\delivDate#1{\gdef\@delivDate{#1}}
+
+
+%%%%%%%%%
+%%%%%%%%% Title Page
+%%%%%%%%%
+\def\titlep{%
+	\thispagestyle{empty}	
+	\bigskip
+	\begin{center}
+	\huge \textbf{SEVENTH FRAMEWORK PROGRAMME}\\
+	\huge \textbf{THEME 3}\\
+	\huge \textbf{Information and Communication Technologies}\\
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=3cm]{images/fp7-logo.jpg}	
+	\end{figure}	
+	\end{center}
+	\bigskip		
+	\noindent\Large \textbf{Grant agreement for:} \newline
+	\large Collaborative project, Small and medium-scale focused research project (STREP)\newline	\newline
+	\null\vskip0.5in
+	\begin{center}
+	\begin{tabular}{|p{\textwidth}|}
+		\hline \ \\
+		\Large Technical Report \textsf{\@delivNumber}:\\ \ \\
+		\Large \textbf{\@delivTitle} \\ \ \\ \hline
+	\end{tabular}
+	\end{center}
+	\null\vskip0.5in
+	\noindent \Large \textbf{Project acronym:} \ACRONYM \newline
+	\noindent \Large \textbf{Project full title:} \TITLE \newline
+	\noindent \Large \textbf{Grant agreement no.:} 224460 \newline
+	\vfill	
+	\begin{center}
+	\begin{tabular}{p{\textwidth}} 
+	\hline \ \\
+	\Large \textbf{Responsible Partner:} \textsf{\@delivAuthor} \\
+	\Large \textbf{Report Preparation Date:} \@delivDate \\ 
+	\end{tabular}
+	\end{center}
+  \normalsize
+}
+
+
+%%%%%%%%%
+%%%%%%%%% Table of Contents
+%%%%%%%%%
+\def\tocp{
+	\setlength{\textheight}{25.5cm}
+	\newpage
+	\vspace*{1.0cm}		
+	\tableofcontents
+}
+
+%%%%%%%%%
+%%%%%%%%% Document Body
+%%%%%%%%%
+\def\mainp{
+	\pagestyle{fancy}
+	\setcounter{page}{1} \makeatletter
+	\fancyhf{}
+	\fancyhead[LO]{Call identifier FP7-ICT-2007-2 / ICT-2007.1.6\\
+	Contract No. 224460}
+	\fancyhead[RO]{Small/medium-scale focused research project (STREP)\\
+	\ACRONYM}
+	\fancyfoot[L]{224460 (\ACRONYM) -- Deliverable \@delivNumber}
+	\fancyfoot[R]{Page~\thepage \hspace{0.04cm} of \pageref{lastpage}}
+}
+
+
+\def\prepareTitle{
+	\titlep
+	\mainp
+	\tocp
+	\setlength{\textheight}{25.5cm}
+	\addtolength{\headsep}{6.0pt}
+	\newpage
+}
+
+

@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+
+	\usepackage{wisebed-tr}
+	\usepackage{placeins}
+	\usepackage{hyperref}
+
+	\urlstyle{same}
+	\include{commands}
+	
+	\delivNumber{TR-iWSN-API-V2.3}
+	\delivTitle{iWSN API 2.3}
+	\delivAuthor{CTI, TUBS, ULANC, UZL}
+	\delivDate{\today}
+
+\begin{document}
+    
+  \prepareTitle
+  \newpage
+	
+	\tableofcontents
+	
+	\pagestyle{fancy}
+		
+	\input{requirements.tex}
+	\input{terms.tex}
+	\input{architecture.tex}
+	\input{addressing.tex}
+	
+	%------------------------------------------------------------------------------------------------
+	%------------------------------------------------------------------------------------------------
+	\section{iWSN API}
+	%------------------------------------------------------------------------------------------------
+	%------------------------------------------------------------------------------------------------
+		\input{sessionapi.tex}
+		\input{controllerapi.tex}
+		\input{wsnapi.tex}
+		\input{implementationstrategy.tex}
+		\input{openproblems.tex}
+		
+%--------------------------------------------------------------------------------------------------------
+	\sectionfin
+	\section{Appendix}
+	\label{sec:appendix}		
+%--------------------------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------
+			\subsection{WSDL of the Controller API}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=WSDL,basicstyle=\scriptsize]{wsdl/ControllerService.wsdl}
+
+%---------------------------------------------------------------------------
+			\subsection{WSDL of the Session Management API}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=WSDL,basicstyle=\scriptsize]{wsdl/SessionManagementService.wsdl}
+
+%---------------------------------------------------------------------------
+			\subsection{WSDL of the WSN API}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=WSDL,basicstyle=\scriptsize]{wsdl/WSNService.wsdl}
+
+%---------------------------------------------------------------------------
+			\subsection{Common Data Types (XML Schema)}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=XMLSchema,basicstyle=\scriptsize]{wsdl/CommonTypes.xsd}
+
+%---------------------------------------------------------------------------
+			\subsection{Data Types (XML Schema) for the Controller API}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=XMLSchema,basicstyle=\scriptsize]{wsdl/ControllerTypes.xsd}
+
+%---------------------------------------------------------------------------
+			\subsection{Data Types (XML Schema) for the Session Management API}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=XMLSchema,basicstyle=\scriptsize]{wsdl/SessionManagementTypes.xsd}
+
+%---------------------------------------------------------------------------
+			\subsection{Data Types (XML Schema) for the WSN API}
+%---------------------------------------------------------------------------
+	\lstinputlisting[language=XMLSchema,basicstyle=\scriptsize]{wsdl/WSNTypes.xsd}
+
+%--------------------------------------------------------------------------------------------------------
+%--  References
+%--------------------------------------------------------------------------------------------------------
+	\sectionfin
+	\addcontentsline{toc}{section}{References}
+	\bibliographystyle{abbrv}
+	\bibliography{references}
+
+	\label{lastpage}
+		
+
+\end{document}

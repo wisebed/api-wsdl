@@ -1,0 +1,68 @@
+%------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+\section{History and Requirements}
+%------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+In this section we discuss the rationale for moving from WSN API 2.0 to the APIs proposed in this document. First we give a brief summary of the changes proposed for WSN API 2.0, which follows WSN API 1.0 as specified in Deliverable 2.2. WSN API 2.0 proposed three categories of changes: 
+
+\begin{enumerate}
+	\item Removing the reliance on a database from the WSN API implementation; 
+	\item Making a number of synchronous calls asynchronous; and
+	\item Some naming changes to improve clarity.
+\end{enumerate}
+
+Category 2 represents a fundamental change affecting implementations of the WSN API, while categories 1 and 3 are changes with minor effects on implementations.
+
+We stress that the spirit of the WSN API 2.0 proposal is entirely intact here; the changes we propose are firstly additions to the set of functions available, and secondly the introduction of a new API (`Session Management') which can generate {\em instances} of WSN API implementations. Generally software which operates with the WSN API {\em does not need to be aware of} this additional API.
+
+The APIs discussed in this document also supercede both the `Monitoring API' and `Interconnection API' of Deliverable 2.2, which are now no longer required.
+
+The core reasons for this revision are:
+
+\begin{enumerate}
+	\item The integration of virtual networking technology into WISEBED APIs
+	\item The ability to perform WiseML network definition and playback as was agreed at TUD (WP3 meeting August 2009)
+	\item The ability to support privately-owned WSN testbeds, outside of the WISEBED federation, using the same WISEBED APIs (thus increasing their generality and utility)
+	\item Simplification of the Monitoring API presented in Deliverable 2.2
+\end{enumerate}
+
+In cases where we have added functionality, we recognise that the immediate priority in WISEBED is to implement the fundamental testbed capabilities established in the WSN API of Deliverable 2.2; this remains the priority before implementing any more advanced functionality. However, this API revision prepares the ground for the time when this advanced functionality can be implemented. We discuss the implementation strategy for this proposal in \secref{implstrategy}. In the remainder of this section we expand on the above four reasons for API revision, and discuss the requirements that this proposed API imposes on other WISEBED software components.
+
+%------------------------------------------------------------------------------------------------
+		\subsection{Virtual testbeds}
+%------------------------------------------------------------------------------------------------
+An important development in WISEBED is the ability to virtualise testbeds, including testbed federation, to move beyond the concept of single physical testbeds. A virtual testbed is either a single physical testbed with a virtualised topology, a simulated testbed, a federation of geographically distant testbeds made to appear as a single testbed, or any combination of the above.
+
+During the integration phase of the project (months 12--24) it is important to ensure at an early stage that virtual testbed support is {\em possible} within the WISEBED APIs, even though implementation support for it is an advanced goal beyond fundamental testbed operations. Virtual testbed support also encompasses support for actions such as splitting a single physical testbed in two such that two differents users can concurrenctly use one half of the network each.
+
+Architecturally the addition of virtual testbed support remains as in Deliverable 2.2: The user of the WSN API does not necessarily need to know that the underlying testbed is a physical or virtualised testbed. Instead, a virtualised testbed can be configured separately, an instance of the WSN API created which sees this virtualised testbed as a single unified testbed, and a client of this WSN API instance therefore may operate in the same way regardless of whether or not virtualisation is being used.
+
+The presence of virtualisation API calls, and the re-use of the WSN API's send() function, removes the need for the Interconnection API described in Deliverable 2.2.
+
+%------------------------------------------------------------------------------------------------
+		\subsection{WiseML setup and playback}
+%------------------------------------------------------------------------------------------------
+During discussions in WP3 at TUD the potential to use WiseML to specify a network topology was introduced, as was the potential to use a WiseML file to `replay' events over the course of an experiment. Again we seek here to enable this advanced future possibility within the standard WISEBED APIs.
+
+%------------------------------------------------------------------------------------------------
+		\subsection{Generality}
+%------------------------------------------------------------------------------------------------
+The concepts proposed in this document are designed to further enhance the generality of the WISEBED APIs beyond the single use-case of the WISEBED federation, enabling more wisespread management and federation of testbeds outside of the WISEBED mandate. This represents good practice in designing a durable, flexible, long-life concept of which the WISEBED federation is but one concrete application.
+
+%------------------------------------------------------------------------------------------------
+		\subsection{Monitoring API simplification}
+%------------------------------------------------------------------------------------------------
+Finally, the Monitoring API presented in Deliverable 2.2 included many remote function calls which operated over the same data to return different parts of that data. In this proposal we simplify this to a single remote call, getNetwork(), returning WiseML formatted data. Any transformations or queries required upon this data can be performed using a local library of functions designed to operate on the data. The only exceptions to this are a mechanism to return a description of a `capability', which is not something that WiseML provides; and functions relating to dynamic data.
+
+%------------------------------------------------------------------------------------------------
+		\subsection{Requirements on External Systems}
+%------------------------------------------------------------------------------------------------
+Throughout this document we assume that there is 
+\begin{enumerate}
+	\item An external authentication and authorisation system, and 
+	\item An external resource reservation system.
+\end{enumerate}
+
+The only dependency between these systems and this proposed API is that the resource reservation system needs to be capable of returning some kind of string-based secret key which uniquely identifies a complete reservation.
+
+An implicit dependency also exists between a reservation system (if one is being employed) and the session management API implementation; this implementation needs to be informed in some way of when reserved times begin so that it can prepare an associated instance of the WSN API; and furthermore needs to be informed of when the corresponding reservation ends so that it can destroy this instance. Further API evolution may occur as a result of this requirement.

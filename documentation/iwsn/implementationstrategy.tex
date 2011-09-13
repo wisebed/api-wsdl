@@ -1,0 +1,88 @@
+%------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+	\section{Implementation Strategy}
+	\label{sec:implstrategy}
+%------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+This section proposes a strategy for migrating to this version of the WISEBED APIs, assigning clear implementation phases and timeframes for those phases.
+
+We define three major phases of implementation:
+
+\begin{enumerate}
+
+	\item Implementing the WSN API 1.0 as defined in Deliverable 2.2 [{\bf October 2009}]
+	\label{step:basic}
+	\subitem {Note this can be achieved {\em either} be implementing a `plain' version of 1.0, or by implementing the `fundamentals' of the 2.1 proposal as discussed below {\bf with an adaptor layer to make it 1.0 compliant}}
+	
+	\item Implementing virtual testbed support using the new create/destroy/enable/disable functions [{\bf 2010}]
+	\label{step:vlink}
+	
+	\item Implementing WiseML support and related functions, including file parsing, and implementing setStartTime() [{\bf 2010}]
+	\label{step:definenet}
+	
+\end{enumerate}
+
+The work required for phases \ref{step:vlink} and \ref{step:definenet} is essentially believed to be the development of a single generic software package which will be able to operate unmodified at any WISEBED site due to the per-site implementations provided in phase \ref{step:basic}.
+
+In more detail, these stages involve the following parts of the WISEBED API proposed in this document:
+
+%------------------------------------------------------------------------------------------------
+		\subsection{Fundamentals [October 2009]}
+%------------------------------------------------------------------------------------------------
+This phase requires implementation of the following functions:
+
+\subsubsection{SessionManager API}
+\begin{list}{}{}
+\item getInstance() ({\bf NOTE: Will ignore {\em reservation\_id} and return the only instance})
+\item free()
+\end{list}
+
+\subsubsection{WSN API}
+\begin{list}{}{}
+\item areNodesAlive()
+\item resetNodes()
+\item send()
+\item flashPrograms()
+\item getNetwork() ({\bf NOTE: Using a primitive ML format as in WSN API 1.0, not full WiseML})
+\item getVersion()
+\end{list}
+
+\subsubsection{Controller API}
+NOTE: These functions are obviously for implementation by a controller, which is not required by October 2009; however the {\em calling} of these functions needs to be implemented in the WSN API implementation.
+\begin{list}{}{}
+\item receiveStatus()
+\item receive()
+\end{list}
+
+%------------------------------------------------------------------------------------------------
+		\subsection{Virtual testbed support [2010]}
+%------------------------------------------------------------------------------------------------
+The basic underyling technology for this is functional, but needs to be tied into the API calls and to Wiselib \& the OSA software.
+
+\subsubsection{WSN API}
+\begin{list}{}{}
+\item setVirtualLink()
+\item destroyVirtualLink()
+\item getFilters()
+\item enablePhysicalLink()
+\item disablePhysicalLink()
+\item enableNode()
+\item disableNode()
+\end{list}
+
+Note that the specification of the behaviour of enableNode / disableNode is not yet fully determined and will be agreed at a later date.
+
+%------------------------------------------------------------------------------------------------
+		\subsection{WiseML-based network definition and monitoring [2010]}
+%------------------------------------------------------------------------------------------------
+This includes parsing a WiseML file and invoking the other necessary functions of the WISEBED API as a result.
+
+\subsubsection{WSN API}
+\begin{list}{}{}
+\item getNetwork() ({\bf NOTE: Returning a WiseML-conforming document})
+\item defineNetwork()
+\item describeCapability()
+\item getNeighbourhood()
+\item getPropertyValueOf()
+\item setStartTime()
+\end{list}

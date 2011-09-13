@@ -1,0 +1,31 @@
+\section{Definition of terms}
+
+%\question{General question: Do node URNs need to be defined on a formal basis like a regular expression? Is there some specification already? Or at least specify the prefix?}\\
+%\proposal{Specify all URNs that are used in the APIs in this document at least for addressing of nodes (but excluding e.g. capability URNs) so that method semantics are clear.}
+
+\paragraph{Testbed.}
+A testbed refers to either a physical or virtual testbed, where virtual testbed is defined as a single physical testbed with a virtualised topology, a simulated testbed, a federation of geographically distant testbeds made to appear as a single testbed, or any combination of the above. For the remainder of this document, the general term {\bf network} is synonymous with {\bf testbed}.
+
+\paragraph{Testbed Service (TS).}
+Each testbed can be reached through a \textbf{testbed service}, which represents the testbed at experiment time and manages all experiment time configuration.
+
+\paragraph{Session Management API (SMA).}
+At experiment time, there is an instance of the Session Management API running on the testbed service. A controller (see below) or user can connect to it, provide reservation credentials, and receive the address of the WSN API responsible for this user and this experiment. The returned API may either be a singleton running in testbed services, or a freshly spawned instance, depending on the capabilities of the respective testbed. Testbeds supporting only one active user at a time -- including simulated testbeds -- will use a singleton, whereas testbeds supporting multiple users in parellel will use freshly spawned instances per user.
+
+\paragraph{WSN API.}
+The WSN API is the API by which testbed services expose their underlying testbed to the outside for a particular user. A WSN API instance endpoint becomes available at the start of a user's reservation and is destroyed or otherwise made inaccessible when the reservation -- and thus experiment -- terminates.
+
+\paragraph{Controller API.}
+The Controller API is the API implemented by the system controlling an experiment. It provides services to receive responses to asynchronous WSN API calls, and services to receive output from the simulation. It was previously called {\em portal service} and was renamed to resolve ``portal confusions''.
+
+\paragraph{Federator.}
+A Federator is a system that federates two or more testbeds. It provides both testbed services and controller API. It connects to two or more testbeds via their testbed services, and exposes a unified view of the resulting federated testbed via its testbed services. This service serves two purposes:
+\begin{enumerate}
+	\item A controller (e.g., TARWIS) can connect to this testbed service instance, thereby a federated network can be transparently controlled by TARWIS.
+	\item The WSN API can be used to route virtual link messages through the Federator, allowing to use custom filters that are not available at the testbeds themselves.
+\end{enumerate}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apis"
+%%% End: 

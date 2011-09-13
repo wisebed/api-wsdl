@@ -1,0 +1,26 @@
+
+
+\newenvironment{apidoc}[6]%
+{%
+
+		\begin{longtable}[t]{p{2cm}p{12.8cm}}
+      Semantics	 & #2 \\[0.5em]
+	    Signature	 & \lstinline{#1}\\[0.5em]
+	    Parameters & {#3} \\[0.5em]
+      Returns		 & #4 \\[0.5em]
+      Rationale \tabularnewline for changes & #5 \\[0.5em]
+      Since 		 & #6 \\[0.5em]
+		\end{longtable}
+
+ 	
+%	}
+	\begingroup
+%  }%
+%  {
+  \endgroup
+}	
+
+
+\newcommand{\apiparameters}[1]	{\hspace{-0.25cm}\begin{tabular}[t]{lp{10cm}} #1 \end{tabular}}
+
+\newcommand{\apiparam}[2]	{ \lstinline{#1} & #2 \\ }

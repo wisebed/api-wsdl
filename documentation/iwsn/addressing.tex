@@ -1,0 +1,20 @@
+%------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+\section{Addressing}
+%------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+An {\em address} specifies an API end-point; the location at which the API's implementation is hosted. Addresses are URIs and may be http- or https-formatted addresses, a JXTA resource locator referring to a location in a peer-to-peer network, or any other format that may be plugged in.
+
+An address can therefore be used to point to any {\bf testbed service} or any {\bf controller}. A controller uses an address to access a testbed service, and a testbed service uses an address to access a controller, such that both addresses are fully configurable.
+
+Within the WISEBED federation in particular we will intend to support HTTP, HTTPS, and JXTA addresses in all testbed service implementations. HTTP is the default interaction method when working with WISEBED federation resources; HTTPS adds security to these interactions if desired; and JXTA is relevant when a federated testbed includes both WISEBED resources and non-WISEBED resources such that non-WISEBED resources are operating behind NAT technology and therefore cannot establish asynchronous bi-directional communications required by the web-services based WISEBED API.
+
+The form of http and https addresses in WISEBED will be:
+\begin{list}{}
+\item urn:http:...
+\item urn:https:...
+\end{list}
+
+The form of jxta addresses will be determined at a later date.
+
+Finally, an address may optionally encode data additional to the literal end-point location, such as a secret `session key' to reinforce authentication and authorisation for addresses (e.g. to reduce the potential to `guess' a testbed service instance's endpoint address). No additional technology is required to achieve this, it is simply a re-use of the general addressing format.
