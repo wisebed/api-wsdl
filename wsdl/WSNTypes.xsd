@@ -6,8 +6,7 @@
 		   version="1.0">
 
 	<xs:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd" />
-	
-	<!--
+
 	<xs:complexType name="addController">
 		<xs:sequence>
 			<xs:element name="controllerEndpointUrl" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -16,7 +15,6 @@
 	<xs:complexType name="addControllerResponse">
 		<xs:sequence/>
 	</xs:complexType>
-	-->
 
 	<xs:complexType name="areNodesAlive">
 		<xs:sequence>
@@ -158,7 +156,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<!--
 	<xs:complexType name="removeController">
 		<xs:sequence>
 			<xs:element name="controllerEndpointUrl" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -167,7 +164,6 @@
 	<xs:complexType name="removeControllerResponse">
 		<xs:sequence/>
 	</xs:complexType>
-	-->
 
 	<xs:complexType name="resetNodes">
 		<xs:sequence>
@@ -219,10 +215,8 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<!--
 	<xs:element name="addController" type="tns:addController"/>
 	<xs:element name="addControllerResponse" type="tns:addControllerResponse"/>
-	-->
 	<xs:element name="areNodesAlive" type="tns:areNodesAlive" />
 	<xs:element name="areNodesAliveResponse" type="tns:areNodesAliveResponse" />
 	<xs:element name="destroyVirtualLink" type="tns:destroyVirtualLink" />
@@ -243,10 +237,8 @@
 	<xs:element name="getSupportedChannelHandlersResponse" type="tns:getSupportedChannelHandlersResponse" />
 	<xs:element name="getVersion" type="tns:getVersion" />
 	<xs:element name="getVersionResponse" type="tns:getVersionResponse" />
-	<!--
 	<xs:element name="removeController" type="tns:removeController"/>
 	<xs:element name="removeControllerResponse" type="tns:removeControllerResponse"/>
-	-->
 	<xs:element name="resetNodes" type="tns:resetNodes" />
 	<xs:element name="resetNodesResponse" type="tns:resetNodesResponse" />
 	<xs:element name="send" type="tns:send" />
