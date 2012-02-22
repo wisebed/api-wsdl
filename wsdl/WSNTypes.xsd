@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" targetNamespace="urn:WSNService"
-		   xmlns:tns="urn:WSNService" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   xmlns:ct="urn:CommonTypes">
+<xs:schema targetNamespace="urn:WSNService"
+		   xmlns:tns="urn:WSNService"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:ct="urn:CommonTypes"
+		   version="1.0">
 
 	<xs:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd" />
 	

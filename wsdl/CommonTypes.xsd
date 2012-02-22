@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" targetNamespace="urn:CommonTypes"
-		   xmlns:tns="urn:CommonTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="urn:CommonTypes"
+		   xmlns:tns="urn:CommonTypes"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   version="1.0">
 
 	<xs:complexType name="getNetwork">
 		<xs:sequence />
@@ -23,6 +25,21 @@
 			<xs:element name="sourceNodeId" type="xs:string" />
 			<xs:element name="timestamp" type="xs:dateTime" />
 			<xs:element name="binaryData" type="xs:base64Binary" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="secretAuthenticationKey">
+		<xs:sequence>
+			<xs:element name="username" type="xs:string"/>
+			<xs:element name="secretAuthenticationKey" type="xs:string"/>
+			<xs:element name="urnPrefix" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="secretReservationKey">
+		<xs:sequence>
+			<xs:element name="secretReservationKey" type="xs:string"/>
+			<xs:element name="urnPrefix" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:RSService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:RSService" name="RSService">
+
 	<types>
 		<xsd:schema>
 			<xsd:import namespace="urn:RSService" schemaLocation="RSTypes.xsd"/>
