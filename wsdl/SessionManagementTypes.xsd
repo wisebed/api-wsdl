@@ -42,7 +42,6 @@
 	<xs:complexType name="getInstance">
 		<xs:sequence>
 			<xs:element name="secretReservationKey" type="ct:secretReservationKey" maxOccurs="unbounded"/>
-			<xs:element name="controller" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getInstanceResponse">
