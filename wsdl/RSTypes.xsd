@@ -9,8 +9,8 @@
 
 	<xs:element name="AuthorizationFault" type="tns:AuthorizationException"/>
 	<xs:element name="RSFault" type="tns:RSException"/>
-	<xs:element name="ReservationConflictFault" type="tns:ReservervationConflictException"/>
-	<xs:element name="ReservationNotFoundFault" type="tns:ReservervationNotFoundException"/>
+	<xs:element name="ReservationConflictFault" type="tns:ReservationConflictException"/>
+	<xs:element name="ReservationNotFoundFault" type="tns:ReservationNotFoundException"/>
 
 	<xs:element name="deleteReservation" type="tns:deleteReservation"/>
 	<xs:element name="deleteReservationResponse" type="tns:deleteReservationResponse"/>
@@ -64,7 +64,7 @@
 			<xs:element name="secretReservationKey" type="ct:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ReservervationNotFoundException">
+	<xs:complexType name="ReservationNotFoundException">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
@@ -80,7 +80,7 @@
 			<xs:element name="secretReservationKey" type="ct:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ReservervationConflictException">
+	<xs:complexType name="ReservationConflictException">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>

@@ -103,7 +103,7 @@ Each testbed (with or without a wired backbone or simulated) exposes its feature
 %---------------------------------------------------------------------------
 	
 \begin{apidoc}
-	{List<SecretReservationKey> makeReservation(List<SecretAuthenticationKey> authenticationData, ConfidentialReservationData reservation) throws AuthorizationExceptionException, RSExceptionException, ReservervationConflictExceptionException;} %Signature
+	{List<SecretReservationKey> makeReservation(List<SecretAuthenticationKey> authenticationData, ConfidentialReservationData reservation) throws AuthorizationExceptionException, RSExceptionException, ReservationConflictExceptionException;} %Signature
 	{Reserves a set of nodes for an interval of time} % Semantics
 	{
 			\apiparameters{
@@ -137,7 +137,7 @@ The request and response messages of this function are visualized in Figure~\ref
 %---------------------------------------------------------------------------
 
 \begin{apidoc}
-	{public void deleteReservation(List<SecretAuthenticationKey> authenticationData, List<SecretReservationKey> secretReservationKey) throws RSExceptionException, ReservervationNotFoundExceptionException;} %Signature
+	{public void deleteReservation(List<SecretAuthenticationKey> authenticationData, List<SecretReservationKey> secretReservationKey) throws RSExceptionException, ReservationNotFoundExceptionException;} %Signature
 	{} % Semantics
 	{
 			\apiparameters{
@@ -185,7 +185,7 @@ This functions returs non-confidential reservation data for a certain time inter
 %---------------------------------------------------------------------------
 	
 \begin{apidoc}
-	{public List<ConfidentialReservationData> getReservation(List<SecretReservationKey> secretReservationKey) throws RSExceptionException, ReservervationNotFoundExceptionException;} %Signature
+	{public List<ConfidentialReservationData> getReservation(List<SecretReservationKey> secretReservationKey) throws RSExceptionException, ReservationNotFoundExceptionException;} %Signature
 	{Returns data about a single reservation (including confidential information)} % Semantics
 	{
 			\apiparameters{
