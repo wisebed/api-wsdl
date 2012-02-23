@@ -6,57 +6,79 @@
 		   xmlns:ct="urn:CommonTypes"
 		   version="1.0">
 
-	<xs:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd"/>
+	<xs:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd" />
 
-	<xs:element name="AuthenticationFault" type="tns:AuthenticationException"/>
-	<xs:element name="SNAAFault" type="tns:SNAAException"/>
-	<xs:element name="authenticate" type="tns:authenticate"/>
-	<xs:element name="authenticateResponse" type="tns:authenticateResponse"/>
-	<xs:element name="isAuthorized" type="tns:isAuthorized"/>
-	<xs:element name="isAuthorizedResponse" type="tns:isAuthorizedResponse"/>
+	<xs:element name="AuthenticationFault" type="tns:AuthenticationException" />
+	<xs:element name="SNAAFault" type="tns:SNAAException" />
+
+	<xs:element name="authenticate" type="tns:authenticate" />
+	<xs:element name="authenticateResponse" type="tns:authenticateResponse" />
+	<xs:element name="isAuthorized" type="tns:isAuthorized" />
+	<xs:element name="isAuthorizedResponse" type="tns:isAuthorizedResponse" />
 
 	<xs:complexType name="SNAAException">
 		<xs:sequence>
-			<xs:element name="message" type="xs:string"/>
+			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
+
 	<xs:complexType name="AuthenticationException">
 		<xs:sequence>
-			<xs:element name="message" type="xs:string"/>
+			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
+
 	<xs:complexType name="authenticate">
 		<xs:sequence>
-			<xs:element name="authenticationData" type="tns:authenticationTriple" nillable="false" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="authenticationTriple">
-		<xs:sequence>
-			<xs:element name="password" type="xs:string"/>
-			<xs:element name="urnPrefix" type="xs:string"/>
-			<xs:element name="username" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="action">
-		<xs:sequence>
-			<xs:element name="action" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="isAuthorizedResponse">
-		<xs:sequence>
-			<xs:element name="authorization" type="xs:boolean"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="isAuthorized">
-		<xs:sequence>
-			<xs:element name="authenticationData" type="ct:secretAuthenticationKey" nillable="false" maxOccurs="unbounded"/>
-			<xs:element name="action" type="tns:action"/>
+			<xs:element name="authenticationData" type="tns:authenticationTriple" nillable="false" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="authenticateResponse">
 		<xs:sequence>
-			<xs:element name="secretAuthenticationKey" type="ct:secretAuthenticationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretAuthenticationKey" type="ct:secretAuthenticationKey" nillable="false" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="authenticationTriple">
+		<xs:sequence>
+			<xs:element name="password" type="xs:string" />
+			<xs:element name="urnPrefix" type="xs:string" />
+			<xs:element name="username" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="isAuthorized">
+		<xs:sequence>
+			<xs:element name="usernames" type="ct:UsernameUrnPrefixPair" nillable="false" maxOccurs="unbounded" />
+			<xs:element name="action" type="tns:Action" />
+			<xs:element name="nodeUrns" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="isAuthorizedResponse">
+		<xs:sequence>
+			<xs:element name="nodeUrn" type="xs:string" />
+			<xs:element name="authorized" type="xs:boolean" />
+			<xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Action">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="RS_DELETE_RESERVATION" />
+			<xs:enumeration value="RS_GET_RESERVATIONS" />
+			<xs:enumeration value="RS_MAKE_RESERVATION" />
+			<xs:enumeration value="SM_ARE_NODES_ALIVE" />
+			<xs:enumeration value="SM_FREE" />
+			<xs:enumeration value="WSN_ARE_NODES_ALIVE" />
+			<xs:enumeration value="WSN_DESTROY_VIRTUAL_LINK" />
+			<xs:enumeration value="WSN_DISABLE_NODE" />
+			<xs:enumeration value="WSN_DISABLE_PHYSICAL_LINK" />
+			<xs:enumeration value="WSN_ENABLE_NODE" />
+			<xs:enumeration value="WSN_ENABLE_PHYSICAL_LINK" />
+			<xs:enumeration value="WSN_FLASH_PROGRAMS" />
+			<xs:enumeration value="WSN_RESET_NODES" />
+			<xs:enumeration value="WSN_SEND" />
+			<xs:enumeration value="WSN_SET_CHANNEL_PIPELINE" />
+			<xs:enumeration value="WSN_SET_VIRTUAL_LINK" />
+		</xs:restriction>
+	</xs:simpleType>
 
 </xs:schema>
