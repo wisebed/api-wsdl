@@ -137,11 +137,10 @@ The request and response messages of this function are visualized in Figure~\ref
 %---------------------------------------------------------------------------
 
 \begin{apidoc}
-	{public void deleteReservation(List<SecretAuthenticationKey> authenticationData, List<SecretReservationKey> secretReservationKey) throws RSExceptionException, ReservationNotFoundExceptionException;} %Signature
+	{public void deleteReservation(List<SecretReservationKey> secretReservationKey) throws RSExceptionException, ReservationNotFoundExceptionException;} %Signature
 	{} % Semantics
 	{
 			\apiparameters{
-				\apiparam{authenticationData}{A sequence of $(urnprefix, secretauthenticationkey)$ tuples. These were obtained from a call to authorize() using the SNAA API.}
 				\apiparam{secretReservationKey}{A $(urnprefix, secretreservationkey)$ tuple identifying a single reservation as returned by makeReservation().}
 			}
 	} % Parameters

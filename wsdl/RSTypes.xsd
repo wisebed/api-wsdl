@@ -87,7 +87,6 @@
 	</xs:complexType>
 	<xs:complexType name="deleteReservation">
 		<xs:sequence>
-			<xs:element name="authenticationData" type="ct:secretAuthenticationKey" nillable="false" maxOccurs="unbounded"/>
 			<xs:element name="secretReservationKey" type="ct:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
