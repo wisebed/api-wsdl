@@ -51,4 +51,11 @@
 	<xs:element name="getNetworkResponse" type="tns:getNetworkResponse" />
 	<xs:element name="message" type="tns:message" />
 
+	<xs:complexType name="UsernameUrnPrefixPair">
+		<xs:sequence>
+			<xs:element name="username" type= "xs:string" />
+			<xs:element name="password" type= "xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
 </xs:schema>
