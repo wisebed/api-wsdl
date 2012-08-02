@@ -53,13 +53,22 @@
 			<xs:element name="nodeUrns" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="isAuthorizedResponse">
-		<xs:sequence>
-			<xs:element name="nodeUrn" type="xs:string" />
-			<xs:element name="authorized" type="xs:boolean" />
-			<xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1" />
-		</xs:sequence>
-	</xs:complexType>
+
+    <xs:complexType name="isAuthorizedResponse">
+        <xs:sequence>
+            <xs:element name="resp" type="tns:AuthorizationResponse" />
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="AuthorizationResponse">
+        <xs:sequence>
+            <xs:element name="nodeUrn" type="xs:string" />
+            <xs:element name="authorized" type="xs:boolean" />
+            <xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
 	<xs:simpleType name="Action">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="RS_DELETE_RESERVATION" />
