@@ -20,12 +20,6 @@
 	<message name="areNodesAliveResponse">
 		<part name="parameters" element="tns:areNodesAliveResponse" />
 	</message>
-	<message name="free">
-		<part name="parameters" element="tns:free" />
-	</message>
-	<message name="freeResponse">
-		<part name="parameters" element="tns:freeResponse" />
-	</message>
 	<message name="getConfiguration">
 		<part name="parameters" element="tns:getConfiguration" />
 	</message>
@@ -57,12 +51,6 @@
 			<input message="tns:areNodesAlive" />
 			<output message="tns:areNodesAliveResponse" />
 		</operation>
-		<operation name="free">
-			<input message="tns:free" />
-			<output message="tns:freeResponse" />
-			<fault message="tns:ExperimentNotRunningException" name="ExperimentNotRunningException" />
-			<fault message="tns:UnknownReservationIdException" name="UnknownReservationIdException" />
-		</operation>
 		<operation name="getConfiguration">
 			<input message="tns:getConfiguration" />
 			<output message="tns:getConfigurationResponse" />
@@ -89,21 +77,6 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
-		</operation>
-		<operation name="free">
-			<soap:operation soapAction="" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-			<fault name="ExperimentNotRunningException">
-				<soap:fault name="ExperimentNotRunningException" use="literal" />
-			</fault>
-			<fault name="UnknownReservationIdException">
-				<soap:fault name="UnknownReservationIdException" use="literal" />
-			</fault>
 		</operation>
 		<operation name="getConfiguration">
 			<soap:operation soapAction="" />

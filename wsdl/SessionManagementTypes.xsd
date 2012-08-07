@@ -19,15 +19,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="free">
-		<xs:sequence>
-			<xs:element name="secretReservationKey" type="ct:secretReservationKey" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="freeResponse">
-		<xs:sequence />
-	</xs:complexType>
-
 	<xs:complexType name="getConfiguration">
 		<xs:sequence />
 	</xs:complexType>
@@ -65,8 +56,6 @@
 
 	<xs:element name="areNodesAlive" type="tns:areNodesAlive" />
 	<xs:element name="areNodesAliveResponse" type="tns:areNodesAliveResponse" />
-	<xs:element name="free" type="tns:free" />
-	<xs:element name="freeResponse" type="tns:freeResponse" />
 	<xs:element name="getConfiguration" type="tns:getConfiguration" />
 	<xs:element name="getConfigurationResponse" type="tns:getConfigurationResponse" />
 	<xs:element name="getInstance" type="tns:getInstance" />
