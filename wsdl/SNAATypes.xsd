@@ -16,6 +16,9 @@
 	<xs:element name="isAuthorized" type="tns:isAuthorized" />
 	<xs:element name="isAuthorizedResponse" type="tns:isAuthorizedResponse" />
 
+    <xs:element name="isValid" type="tns:isValid"/>
+    <xs:element name="isValidResponse" type="tns:isValidResponse"/>
+
 	<xs:complexType name="SNAAException">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" />
@@ -68,6 +71,27 @@
             <xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
     </xs:complexType>
+
+
+
+    <xs:complexType name="isValid">
+        <xs:sequence>
+            <xs:element name="secretAuthenticationKey" type="ct:secretAuthenticationKey"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="isValidResponse">
+        <xs:sequence>
+            <xs:element name="ValidationResult">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="valid" type="xs:boolean" />
+                        <xs:element name="message" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
 
 	<xs:simpleType name="Action">
 		<xs:restriction base="xs:string">

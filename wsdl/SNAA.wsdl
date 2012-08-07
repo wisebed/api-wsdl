@@ -31,6 +31,12 @@
     <message name="isAuthorizedResponse">
         <part name="parameters" element="tns:isAuthorizedResponse"/>
     </message>
+    <message name="isValid">
+        <part name="parameters" element="tns:isValid"/>
+    </message>
+    <message name="isValidResponse">
+        <part name="parameters" element="tns:isValidResponse"/>
+    </message>
 
     <portType name="SNAA">
         <operation name="authenticate">
@@ -42,6 +48,11 @@
         <operation name="isAuthorized">
             <input message="tns:isAuthorized"/>
             <output message="tns:isAuthorizedResponse"/>
+            <fault message="tns:SNAAExceptionException" name="SNAAExceptionException"/>
+        </operation>
+        <operation name="isValid">
+            <input message="tns:isValid"/>
+            <output message="tns:isValidResponse"/>
             <fault message="tns:SNAAExceptionException" name="SNAAExceptionException"/>
         </operation>
     </portType>
@@ -75,6 +86,19 @@
                 <soap:fault name="SNAAExceptionException" use="literal"/>
             </fault>
         </operation>
+        <operation name="isValid">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="SNAAExceptionException">
+                <soap:fault name="SNAAExceptionException" use="literal"/>
+            </fault>
+        </operation>
+
     </binding>
 
     <service name="SNAAService">
