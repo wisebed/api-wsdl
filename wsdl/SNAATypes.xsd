@@ -51,9 +51,8 @@
 
 	<xs:complexType name="isAuthorized">
 		<xs:sequence>
-			<xs:element name="usernames" type="ct:UsernameUrnPrefixPair" nillable="false" maxOccurs="unbounded" />
+            <xs:element name="usernameNodeUrnsMapList" type="ct:usernameNodeUrnsMap" nillable="false" maxOccurs="unbounded" />
 			<xs:element name="action" type="tns:Action" />
-			<xs:element name="nodeUrns" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 

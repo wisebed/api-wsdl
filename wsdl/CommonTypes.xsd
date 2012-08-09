@@ -58,4 +58,11 @@
 		</xs:sequence>
 	</xs:complexType>
 
+    <xs:complexType name="usernameNodeUrnsMap">
+        <xs:sequence>
+            <xs:element name="username" type="tns:UsernameUrnPrefixPair" nillable="false"/>
+            <xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>
