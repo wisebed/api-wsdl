@@ -33,12 +33,19 @@
 			<xs:element name="configuration" type="ct:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<xs:complexType name="ChannelHandlerDescription">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="configurationOptions" type="ct:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ChannelPipelinesMap">
+		<xs:sequence>
+			<xs:element name="nodeUrns" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="channelHandlers" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -110,6 +117,17 @@
 	<xs:complexType name="flashProgramsResponse">
 		<xs:sequence>
 			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getChannelPipelines">
+		<xs:sequence>
+			<xs:element name="nodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="getChannelPipelinesResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:ChannelPipelinesMap" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -231,6 +249,8 @@
 	<xs:element name="enablePhysicalLinkResponse" type="tns:enablePhysicalLinkResponse" />
 	<xs:element name="flashPrograms" type="tns:flashPrograms" />
 	<xs:element name="flashProgramsResponse" type="tns:flashProgramsResponse" />
+	<xs:element name="getChannelPipelines" type="tns:getChannelPipelines" />
+	<xs:element name="getChannelPipelinesResponse" type="tns:getChannelPipelinesResponse" />
 	<xs:element name="getFilters" type="tns:getFilters" />
 	<xs:element name="getFiltersResponse" type="tns:getFiltersResponse" />
 	<xs:element name="getSupportedChannelHandlers" type="tns:getSupportedChannelHandlers" />

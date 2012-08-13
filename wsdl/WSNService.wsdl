@@ -61,6 +61,12 @@
 	<message name="flashProgramsResponse">
 		<part name="parameters" element="tns:flashProgramsResponse" />
 	</message>
+	<message name="getChannelPipelines">
+		<part name="parameters" element="tns:getChannelPipelines" />
+	</message>
+	<message name="getChannelPipelinesResponse">
+		<part name="parameters" element="tns:getChannelPipelinesResponse" />
+	</message>
 	<message name="getFilters">
 		<part name="parameters" element="tns:getFilters" />
 	</message>
@@ -148,6 +154,10 @@
 		<operation name="flashPrograms">
 			<input message="tns:flashPrograms" />
 			<output message="tns:flashProgramsResponse" />
+		</operation>
+		<operation name="getChannelPipelines">
+			<input message="tns:getChannelPipelines" />
+			<output message="tns:getChannelPipelinesResponse" />
 		</operation>
 		<operation name="getSupportedChannelHandlers">
 			<input message="tns:getSupportedChannelHandlers" />
