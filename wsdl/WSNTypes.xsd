@@ -109,9 +109,7 @@
 
 	<xs:complexType name="flashPrograms">
 		<xs:sequence>
-			<xs:element name="nodeIds" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="programIndices" type="xs:int" nillable="false" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="programs" type="tns:program" nillable="false" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="configurations" type="tns:FlashProgramsConfiguration" nillable="false" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="flashProgramsResponse">
@@ -158,19 +156,10 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="program">
+	<xs:complexType name="FlashProgramsConfiguration">
 		<xs:sequence>
-			<xs:element name="metaData" type="tns:programMetaData" minOccurs="0" />
+			<xs:element name="nodeUrns" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element name="program" type="xs:base64Binary" minOccurs="1" />
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="programMetaData">
-		<xs:sequence>
-			<xs:element name="version" type="xs:string" minOccurs="0" />
-			<xs:element name="name" type="xs:string" minOccurs="0" />
-			<xs:element name="platform" type="xs:string" minOccurs="0" />
-			<xs:element name="other" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
