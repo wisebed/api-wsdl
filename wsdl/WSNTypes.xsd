@@ -45,7 +45,7 @@
 	<xs:complexType name="ChannelPipelinesMap">
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="channelHandlers" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="channelHandlers" type="tns:ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
