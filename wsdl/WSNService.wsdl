@@ -278,6 +278,9 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
+			<fault name="VirtualizationNotSupported">
+				<soap:fault name="VirtualizationNotSupported" use="literal"/>
+			</fault>
 		</operation>
 		<operation name="enableVirtualization">
 			<soap:operation soapAction="" />
@@ -287,6 +290,9 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
+			<fault name="VirtualizationNotSupported">
+				<soap:fault name="VirtualizationNotSupported" use="literal"/>
+			</fault>
 		</operation>
 		<operation name="enableNode">
 			<soap:operation soapAction="" />
