@@ -84,6 +84,20 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="disableVirtualization">
+		<xs:sequence />
+	</xs:complexType>
+	<xs:complexType name="disableVirtualizationResponse">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="enableVirtualization">
+		<xs:sequence />
+	</xs:complexType>
+	<xs:complexType name="enableVirtualizationResponse">
+		<xs:sequence />
+	</xs:complexType>
+
 	<xs:complexType name="enableNode">
 		<xs:sequence>
 			<xs:element name="node" type="xs:string" minOccurs="1" maxOccurs="1" />
@@ -222,6 +236,12 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="VirtualizationNotSupported">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:element name="addController" type="tns:addController"/>
 	<xs:element name="addControllerResponse" type="tns:addControllerResponse"/>
 	<xs:element name="areNodesAlive" type="tns:areNodesAlive" />
@@ -232,6 +252,10 @@
 	<xs:element name="disableNodeResponse" type="tns:disableNodeResponse" />
 	<xs:element name="disablePhysicalLink" type="tns:disablePhysicalLink" />
 	<xs:element name="disablePhysicalLinkResponse" type="tns:disablePhysicalLinkResponse" />
+	<xs:element name="disableVirtualization" type="tns:disableVirtualization" />
+	<xs:element name="disableVirtualizationResponse" type="tns:disableVirtualizationResponse" />
+	<xs:element name="enableVirtualization" type="tns:enableVirtualization" />
+	<xs:element name="enableVirtualizationResponse" type="tns:enableVirtualizationResponse" />
 	<xs:element name="enableNode" type="tns:enableNode" />
 	<xs:element name="enableNodeResponse" type="tns:enableNodeResponse" />
 	<xs:element name="enablePhysicalLink" type="tns:enablePhysicalLink" />
@@ -256,6 +280,8 @@
 	<xs:element name="setChannelPipelineResponse" type="tns:setChannelPipelineResponse" />
 	<xs:element name="setVirtualLink" type="tns:setVirtualLink" />
 	<xs:element name="setVirtualLinkResponse" type="tns:setVirtualLinkResponse" />
+
+	<xs:element name="VirtualizationNotSupported" type="tns:VirtualizationNotSupported" />
 
 </xs:schema>
 

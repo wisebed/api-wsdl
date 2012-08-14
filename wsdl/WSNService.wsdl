@@ -43,6 +43,18 @@
 	<message name="disablePhysicalLinkResponse">
 		<part name="parameters" element="tns:disablePhysicalLinkResponse" />
 	</message>
+	<message name="disableVirtualization">
+		<part name="parameters" element="tns:disableVirtualization" />
+	</message>
+	<message name="disableVirtualizationResponse">
+		<part name="parameters" element="tns:disableVirtualizationResponse" />
+	</message>
+	<message name="enableVirtualization">
+		<part name="parameters" element="tns:enableVirtualization" />
+	</message>
+	<message name="enableVirtualizationResponse">
+		<part name="parameters" element="tns:enableVirtualizationResponse" />
+	</message>
 	<message name="enableNode">
 		<part name="parameters" element="tns:enableNode" />
 	</message>
@@ -122,6 +134,10 @@
 		<part name="parameters" element="tns:setVirtualLinkResponse" />
 	</message>
 
+	<message name="VirtualizationNotSupported">
+		<part name="fault" element="tns:VirtualizationNotSupported" />
+	</message>
+
 	<portType name="WSN">
 		<operation name="addController">
 			<input message="tns:addController"/>
@@ -142,6 +158,16 @@
 		<operation name="disablePhysicalLink">
 			<input message="tns:disablePhysicalLink" />
 			<output message="tns:disablePhysicalLinkResponse" />
+		</operation>
+		<operation name="disableVirtualization">
+			<input message="tns:disableVirtualization" />
+			<output message="tns:disableVirtualizationResponse" />
+			<fault message="tns:VirtualizationNotSupported" name="VirtualizationNotSupported" />
+		</operation>
+		<operation name="enableVirtualization">
+			<input message="tns:enableVirtualization" />
+			<output message="tns:enableVirtualizationResponse" />
+			<fault message="tns:VirtualizationNotSupported" name="VirtualizationNotSupported" />
 		</operation>
 		<operation name="enableNode">
 			<input message="tns:enableNode" />
@@ -236,6 +262,24 @@
 			</output>
 		</operation>
 		<operation name="disablePhysicalLink">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="disableVirtualization">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="enableVirtualization">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
