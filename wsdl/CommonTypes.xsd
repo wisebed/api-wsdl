@@ -22,7 +22,7 @@
 
 	<xs:complexType name="message">
 		<xs:sequence>
-			<xs:element name="sourceNodeId" type="xs:string" />
+			<xs:element name="sourceNodeUrn" type="xs:string" />
 			<xs:element name="timestamp" type="xs:dateTime" />
 			<xs:element name="binaryData" type="xs:base64Binary" />
 		</xs:sequence>

@@ -18,7 +18,7 @@
 
 	<xs:complexType name="areNodesAlive">
 		<xs:sequence>
-			<xs:element name="nodes" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="areNodesAliveResponse">
@@ -51,8 +51,8 @@
 
 	<xs:complexType name="destroyVirtualLink">
 		<xs:sequence>
-			<xs:element name="sourceNode" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="targetNode" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="destroyVirtualLinkResponse">
@@ -63,7 +63,7 @@
 
 	<xs:complexType name="disableNode">
 		<xs:sequence>
-			<xs:element name="node" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="nodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disableNodeResponse">
@@ -74,8 +74,8 @@
 
 	<xs:complexType name="disablePhysicalLink">
 		<xs:sequence>
-			<xs:element name="nodeA" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="nodeB" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disablePhysicalLinkResponse">
@@ -100,7 +100,7 @@
 
 	<xs:complexType name="enableNode">
 		<xs:sequence>
-			<xs:element name="node" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="nodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enableNodeResponse">
@@ -111,8 +111,8 @@
 
 	<xs:complexType name="enablePhysicalLink">
 		<xs:sequence>
-			<xs:element name="nodeA" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="nodeB" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enablePhysicalLinkResponse">
@@ -188,7 +188,7 @@
 
 	<xs:complexType name="resetNodes">
 		<xs:sequence>
-			<xs:element name="nodes" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="resetNodesResponse">
@@ -199,7 +199,7 @@
 
 	<xs:complexType name="send">
 		<xs:sequence>
-			<xs:element name="nodeIds" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element name="message" type="ct:message" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
@@ -211,7 +211,7 @@
 
 	<xs:complexType name="setChannelPipeline">
 		<xs:sequence>
-			<xs:element name="nodes" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="channelHandlerConfigurations" type="tns:ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -223,8 +223,8 @@
 
 	<xs:complexType name="setVirtualLink">
 		<xs:sequence>
-			<xs:element name="sourceNode" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="targetNode" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="remoteServiceInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="parameters" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="filters" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />

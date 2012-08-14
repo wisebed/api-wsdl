@@ -9,7 +9,7 @@
 
 	<xs:complexType name="areNodesAlive">
 		<xs:sequence>
-			<xs:element name="nodes" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element name="controllerEndpointUrl" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>

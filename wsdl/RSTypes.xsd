@@ -47,7 +47,7 @@
 	<xs:complexType name="publicReservationData">
 		<xs:sequence>
 			<xs:element name="from" type="xs:dateTime"/>
-			<xs:element name="nodeURNs" type="xs:string" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="nodeUrns" type="xs:string" nillable="false" maxOccurs="unbounded"/>
 			<xs:element name="to" type="xs:dateTime"/>
 			<xs:element name="userData" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
