@@ -18,13 +18,12 @@
 
 	<xs:complexType name="areNodesAlive">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrns" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="areNodesAliveResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="ChannelHandlerConfiguration">
@@ -51,37 +50,34 @@
 
 	<xs:complexType name="destroyVirtualLink">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="destroyVirtualLinkResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="disableNode">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disableNodeResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="disablePhysicalLink">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disablePhysicalLinkResponse">
-		<xs:sequence>
-			<xs:element name="return" type="xs:string" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="disableVirtualization">
@@ -100,36 +96,33 @@
 
 	<xs:complexType name="enableNode">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enableNodeResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="enablePhysicalLink">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enablePhysicalLinkResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="flashPrograms">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="configurations" type="FlashProgramsConfiguration" nillable="false" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="flashProgramsResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="getChannelPipelines">
@@ -188,41 +181,39 @@
 
 	<xs:complexType name="resetNodes">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrns" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="resetNodesResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="send">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element name="message" type="common:message" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="sendResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="setChannelPipeline">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="channelHandlerConfigurations" type="ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="setChannelPipelineResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="setVirtualLink">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="sourceNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="targetNodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="remoteServiceInstance" type="xs:string" minOccurs="1" maxOccurs="1" />
@@ -231,9 +222,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="setVirtualLinkResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="VirtualizationNotSupported">

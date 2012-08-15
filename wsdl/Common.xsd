@@ -45,7 +45,7 @@
 	</xs:complexType>
 
 	<xs:simpleType name="requestId">
-		<xs:restriction base="xs:string" />
+		<xs:restriction base="xs:long" />
 	</xs:simpleType>
 
 	<xs:complexType name="UsernameUrnPrefixPair">

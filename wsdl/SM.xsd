@@ -9,14 +9,13 @@
 
 	<xs:complexType name="areNodesAlive">
 		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrns" type="xs:string" nillable="true" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element name="controllerEndpointUrl" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="areNodesAliveResponse">
-		<xs:sequence>
-			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
-		</xs:sequence>
+		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="getConfiguration">
