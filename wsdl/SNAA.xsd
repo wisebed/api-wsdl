@@ -78,22 +78,42 @@
 
 	<xs:simpleType name="Action">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="RS_DELETE_RESERVATION" />
+
+			<!-- Operations on RS service -->
 			<xs:enumeration value="RS_GET_RESERVATIONS" />
+			<xs:enumeration value="RS_GET_RESERVATION" />
+			<xs:enumeration value="RS_GET_CONFIDENTIAL_RESERVATIONS" />
+			<xs:enumeration value="RS_DELETE_RESERVATION" />
 			<xs:enumeration value="RS_MAKE_RESERVATION" />
+
+			<!-- Operations on SM service -->
 			<xs:enumeration value="SM_ARE_NODES_ALIVE" />
-			<xs:enumeration value="SM_FREE" />
+			<xs:enumeration value="SM_GET_CONFIGURATION" />
+			<xs:enumeration value="SM_GET_INSTANCE" />
+			<xs:enumeration value="SM_GET_NETWORK" />
+
+			<!-- Operations on WSN service -->
+			<xs:enumeration value="WSN_ADD_CONTROLLER" />
 			<xs:enumeration value="WSN_ARE_NODES_ALIVE" />
 			<xs:enumeration value="WSN_DESTROY_VIRTUAL_LINK" />
 			<xs:enumeration value="WSN_DISABLE_NODE" />
 			<xs:enumeration value="WSN_DISABLE_PHYSICAL_LINK" />
+			<xs:enumeration value="WSN_DISABLE_VIRTUALIZATION" />
 			<xs:enumeration value="WSN_ENABLE_NODE" />
 			<xs:enumeration value="WSN_ENABLE_PHYSICAL_LINK" />
+			<xs:enumeration value="WSN_ENABLE_VIRTUALIZATION" />
 			<xs:enumeration value="WSN_FLASH_PROGRAMS" />
+			<xs:enumeration value="WSN_GET_CHANNEL_PIPELINES" />
+			<xs:enumeration value="WSN_GET_SUPPORTED_VIRTUAL_LINK_FILTERS" />
+			<xs:enumeration value="WSN_GET_SUPPORTED_CHANNEL_HANDLERS" />
+			<xs:enumeration value="WSN_GET_NETWORK" />
+			<xs:enumeration value="WSN_GET_VERSION" />
+			<xs:enumeration value="WSN_REMOVE_CONTROLLER" />
 			<xs:enumeration value="WSN_RESET_NODES" />
 			<xs:enumeration value="WSN_SEND" />
 			<xs:enumeration value="WSN_SET_CHANNEL_PIPELINE" />
 			<xs:enumeration value="WSN_SET_VIRTUAL_LINK" />
+
 		</xs:restriction>
 	</xs:simpleType>
 

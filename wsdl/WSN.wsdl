@@ -80,11 +80,11 @@
 	<message name="getChannelPipelinesResponse">
 		<part name="parameters" element="wsn:getChannelPipelinesResponse" />
 	</message>
-	<message name="getFilters">
-		<part name="parameters" element="wsn:getFilters" />
+	<message name="getSupportedVirtualLinkFilters">
+		<part name="parameters" element="wsn:getSupportedVirtualLinkFilters" />
 	</message>
-	<message name="getFiltersResponse">
-		<part name="parameters" element="wsn:getFiltersResponse" />
+	<message name="getSupportedVirtualLinkFiltersResponse">
+		<part name="parameters" element="wsn:getSupportedVirtualLinkFiltersResponse" />
 	</message>
 	<message name="getSupportedChannelHandlers">
 		<part name="parameters" element="wsn:getSupportedChannelHandlers" />
@@ -190,9 +190,9 @@
 			<input message="wsn:getSupportedChannelHandlers" />
 			<output message="wsn:getSupportedChannelHandlersResponse" />
 		</operation>
-		<operation name="getFilters">
-			<input message="wsn:getFilters" />
-			<output message="wsn:getFiltersResponse" />
+		<operation name="getSupportedVirtualLinkFilters">
+			<input message="wsn:getSupportedVirtualLinkFilters" />
+			<output message="wsn:getSupportedVirtualLinkFiltersResponse" />
 		</operation>
 		<operation name="getNetwork">
 			<input message="wsn:getNetwork" />
@@ -340,7 +340,7 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="getFilters">
+		<operation name="getSupportedVirtualLinkFilters">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
