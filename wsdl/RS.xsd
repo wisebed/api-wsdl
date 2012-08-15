@@ -94,7 +94,8 @@
 	<xs:complexType name="getConfidentialReservations">
 		<xs:sequence>
 			<xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" maxOccurs="unbounded"/>
-			<xs:element name="period" type="getReservations"/>
+			<xs:element name="from" type="xs:dateTime"/>
+			<xs:element name="to" type="xs:dateTime"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getConfidentialReservationsResponse">
