@@ -1,90 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:RSService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:RSService" name="RSService">
+<definitions name="RSService"
+			 targetNamespace="http://wisebed.eu/api/v3/rs"
+			 xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 xmlns:rs="http://wisebed.eu/api/v3/rs"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+			 xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<types>
-		<xsd:schema>
-			<xsd:import namespace="urn:RSService" schemaLocation="RSTypes.xsd"/>
-		</xsd:schema>
+		<xs:schema>
+			<xs:import namespace="http://wisebed.eu/api/v3/rs" schemaLocation="RS.xsd"/>
+		</xs:schema>
 	</types>
 
 	<message name="getConfidentialReservations">
-		<part name="parameters" element="tns:getConfidentialReservations"/>
+		<part name="parameters" element="rs:getConfidentialReservations"/>
 	</message>
 	<message name="getConfidentialReservationsResponse">
-		<part name="parameters" element="tns:getConfidentialReservationsResponse"/>
+		<part name="parameters" element="rs:getConfidentialReservationsResponse"/>
 	</message>
 
 	<message name="getReservations">
-		<part name="parameters" element="tns:getReservations"/>
+		<part name="parameters" element="rs:getReservations"/>
 	</message>
 	<message name="getReservationsResponse">
-		<part name="parameters" element="tns:getReservationsResponse"/>
+		<part name="parameters" element="rs:getReservationsResponse"/>
 	</message>
 	<message name="RSException_Exception">
-		<part name="fault" element="tns:RSFault"/>
+		<part name="fault" element="rs:RSFault"/>
 	</message>
 	<message name="getReservation">
-		<part name="parameters" element="tns:getReservation"/>
+		<part name="parameters" element="rs:getReservation"/>
 	</message>
 	<message name="getReservationResponse">
-		<part name="parameters" element="tns:getReservationResponse"/>
+		<part name="parameters" element="rs:getReservationResponse"/>
 	</message>
 	<message name="ReservationNotFoundException_Exception">
-		<part name="fault" element="tns:ReservationNotFoundFault"/>
+		<part name="fault" element="rs:ReservationNotFoundFault"/>
 	</message>
 	<message name="deleteReservation">
-		<part name="parameters" element="tns:deleteReservation"/>
+		<part name="parameters" element="rs:deleteReservation"/>
 	</message>
 	<message name="deleteReservationResponse">
-		<part name="parameters" element="tns:deleteReservationResponse"/>
+		<part name="parameters" element="rs:deleteReservationResponse"/>
 	</message>
 	<message name="makeReservation">
-		<part name="parameters" element="tns:makeReservation"/>
+		<part name="parameters" element="rs:makeReservation"/>
 	</message>
 	<message name="makeReservationResponse">
-		<part name="parameters" element="tns:makeReservationResponse"/>
+		<part name="parameters" element="rs:makeReservationResponse"/>
 	</message>
 	<message name="AuthorizationException_Exception">
-		<part name="fault" element="tns:AuthorizationFault"/>
+		<part name="fault" element="rs:AuthorizationFault"/>
 	</message>
 	<message name="ReservationConflictException_Exception">
-		<part name="fault" element="tns:ReservationConflictFault"/>
+		<part name="fault" element="rs:ReservationConflictFault"/>
 	</message>
 	<portType name="RS">
 		<operation name="getReservations">
-			<input message="tns:getReservations"/>
-			<output message="tns:getReservationsResponse"/>
-			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
+			<input message="rs:getReservations"/>
+			<output message="rs:getReservationsResponse"/>
+			<fault message="rs:RSException_Exception" name="RSException_Exception"/>
 		</operation>
 		<operation name="getReservation">
-			<input message="tns:getReservation"/>
-			<output message="tns:getReservationResponse"/>
-			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
-			<fault message="tns:ReservationNotFoundException_Exception" name="ReservationNotFoundException_Exception"/>
+			<input message="rs:getReservation"/>
+			<output message="rs:getReservationResponse"/>
+			<fault message="rs:RSException_Exception" name="RSException_Exception"/>
+			<fault message="rs:ReservationNotFoundException_Exception" name="ReservationNotFoundException_Exception"/>
 		</operation>
 		<operation name="deleteReservation">
-			<input message="tns:deleteReservation"/>
-			<output message="tns:deleteReservationResponse"/>
-			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
-			<fault message="tns:ReservationNotFoundException_Exception" name="ReservationNotFoundException_Exception"/>
+			<input message="rs:deleteReservation"/>
+			<output message="rs:deleteReservationResponse"/>
+			<fault message="rs:RSException_Exception" name="RSException_Exception"/>
+			<fault message="rs:ReservationNotFoundException_Exception" name="ReservationNotFoundException_Exception"/>
 		</operation>
 		<operation name="makeReservation">
-			<input message="tns:makeReservation"/>
-			<output message="tns:makeReservationResponse"/>
-			<fault message="tns:AuthorizationException_Exception" name="AuthorizationException_Exception"/>
-			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
-			<fault message="tns:ReservationConflictException_Exception" name="ReservationConflictException_Exception"/>
+			<input message="rs:makeReservation"/>
+			<output message="rs:makeReservationResponse"/>
+			<fault message="rs:AuthorizationException_Exception" name="AuthorizationException_Exception"/>
+			<fault message="rs:RSException_Exception" name="RSException_Exception"/>
+			<fault message="rs:ReservationConflictException_Exception" name="ReservationConflictException_Exception"/>
 		</operation>
 		
 		<operation name="getConfidentialReservations">
-			<input message="tns:getConfidentialReservations"/>
-			<output message="tns:getConfidentialReservationsResponse"/>
-			<fault message="tns:RSException_Exception" name="RSException_Exception"/>
+			<input message="rs:getConfidentialReservations"/>
+			<output message="rs:getConfidentialReservationsResponse"/>
+			<fault message="rs:RSException_Exception" name="RSException_Exception"/>
 		</operation>
 		
 		
 	</portType>
-	<binding name="RSPortBinding" type="tns:RS">
+	<binding name="RSPortBinding" type="rs:RS">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 		<operation name="getReservations">
 			<soap:operation soapAction=""/>
@@ -163,7 +168,7 @@
 		</operation>
 	</binding>
 	<service name="RSService">
-		<port name="RSPort" binding="tns:RSPortBinding">
+		<port name="RSPort" binding="rs:RSPortBinding">
 			<soap:address location="REPLACE_WITH_ACTUAL_URL"/>
 		</port>
 	</service>

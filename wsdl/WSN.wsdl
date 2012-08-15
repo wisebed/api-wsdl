@@ -1,229 +1,230 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<definitions targetNamespace="urn:WSNService"
-			 name="WSNService" xmlns="http://schemas.xmlsoap.org/wsdl/"
-			 xmlns:tns="urn:WSNService"
-			 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-			 xmlns:ct="urn:CommonTypes">
+<definitions name="WSNService"
+			 targetNamespace="http://wisebed.eu/api/v3/wsn"
+			 xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 xmlns:wsn="http://wisebed.eu/api/v3/wsn"
+			 xmlns:common="http://wisebed.eu/api/v3/common"
+			 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 
 	<types>
-		<xsd:schema>
-			<xsd:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd" />
-			<xsd:import namespace="urn:WSNService" schemaLocation="WSNTypes.xsd" />
-		</xsd:schema>
+		<xs:schema>
+			<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
+			<xs:import namespace="http://wisebed.eu/api/v3/wsn" schemaLocation="WSN.xsd" />
+		</xs:schema>
 	</types>
 
 	<message name="addController">
-		<part name="parameters" element="tns:addController"/>
+		<part name="parameters" element="wsn:addController"/>
 	</message>
 	<message name="addControllerResponse">
-		<part name="parameters" element="tns:addControllerResponse"/>
+		<part name="parameters" element="wsn:addControllerResponse"/>
 	</message>
 	<message name="areNodesAlive">
-		<part name="parameters" element="tns:areNodesAlive" />
+		<part name="parameters" element="wsn:areNodesAlive" />
 	</message>
 	<message name="areNodesAliveResponse">
-		<part name="parameters" element="tns:areNodesAliveResponse" />
+		<part name="parameters" element="wsn:areNodesAliveResponse" />
 	</message>
 	<message name="destroyVirtualLink">
-		<part name="parameters" element="tns:destroyVirtualLink" />
+		<part name="parameters" element="wsn:destroyVirtualLink" />
 	</message>
 	<message name="destroyVirtualLinkResponse">
-		<part name="parameters" element="tns:destroyVirtualLinkResponse" />
+		<part name="parameters" element="wsn:destroyVirtualLinkResponse" />
 	</message>
 	<message name="disableNode">
-		<part name="parameters" element="tns:disableNode" />
+		<part name="parameters" element="wsn:disableNode" />
 	</message>
 	<message name="disableNodeResponse">
-		<part name="parameters" element="tns:disableNodeResponse" />
+		<part name="parameters" element="wsn:disableNodeResponse" />
 	</message>
 	<message name="disablePhysicalLink">
-		<part name="parameters" element="tns:disablePhysicalLink" />
+		<part name="parameters" element="wsn:disablePhysicalLink" />
 	</message>
 	<message name="disablePhysicalLinkResponse">
-		<part name="parameters" element="tns:disablePhysicalLinkResponse" />
+		<part name="parameters" element="wsn:disablePhysicalLinkResponse" />
 	</message>
 	<message name="disableVirtualization">
-		<part name="parameters" element="tns:disableVirtualization" />
+		<part name="parameters" element="wsn:disableVirtualization" />
 	</message>
 	<message name="disableVirtualizationResponse">
-		<part name="parameters" element="tns:disableVirtualizationResponse" />
+		<part name="parameters" element="wsn:disableVirtualizationResponse" />
 	</message>
 	<message name="enableVirtualization">
-		<part name="parameters" element="tns:enableVirtualization" />
+		<part name="parameters" element="wsn:enableVirtualization" />
 	</message>
 	<message name="enableVirtualizationResponse">
-		<part name="parameters" element="tns:enableVirtualizationResponse" />
+		<part name="parameters" element="wsn:enableVirtualizationResponse" />
 	</message>
 	<message name="enableNode">
-		<part name="parameters" element="tns:enableNode" />
+		<part name="parameters" element="wsn:enableNode" />
 	</message>
 	<message name="enableNodeResponse">
-		<part name="parameters" element="tns:enableNodeResponse" />
+		<part name="parameters" element="wsn:enableNodeResponse" />
 	</message>
 	<message name="enablePhysicalLink">
-		<part name="parameters" element="tns:enablePhysicalLink" />
+		<part name="parameters" element="wsn:enablePhysicalLink" />
 	</message>
 	<message name="enablePhysicalLinkResponse">
-		<part name="parameters" element="tns:enablePhysicalLinkResponse" />
+		<part name="parameters" element="wsn:enablePhysicalLinkResponse" />
 	</message>
 	<message name="flashPrograms">
-		<part name="parameters" element="tns:flashPrograms" />
+		<part name="parameters" element="wsn:flashPrograms" />
 	</message>
 	<message name="flashProgramsResponse">
-		<part name="parameters" element="tns:flashProgramsResponse" />
+		<part name="parameters" element="wsn:flashProgramsResponse" />
 	</message>
 	<message name="getChannelPipelines">
-		<part name="parameters" element="tns:getChannelPipelines" />
+		<part name="parameters" element="wsn:getChannelPipelines" />
 	</message>
 	<message name="getChannelPipelinesResponse">
-		<part name="parameters" element="tns:getChannelPipelinesResponse" />
+		<part name="parameters" element="wsn:getChannelPipelinesResponse" />
 	</message>
 	<message name="getFilters">
-		<part name="parameters" element="tns:getFilters" />
+		<part name="parameters" element="wsn:getFilters" />
 	</message>
 	<message name="getFiltersResponse">
-		<part name="parameters" element="tns:getFiltersResponse" />
+		<part name="parameters" element="wsn:getFiltersResponse" />
 	</message>
 	<message name="getSupportedChannelHandlers">
-		<part name="parameters" element="tns:getSupportedChannelHandlers" />
+		<part name="parameters" element="wsn:getSupportedChannelHandlers" />
 	</message>
 	<message name="getSupportedChannelHandlersResponse">
-		<part name="parameters" element="tns:getSupportedChannelHandlersResponse" />
+		<part name="parameters" element="wsn:getSupportedChannelHandlersResponse" />
 	</message>
 	<message name="getNetwork">
-		<part name="parameters" element="ct:getNetwork" />
+		<part name="parameters" element="common:getNetwork" />
 	</message>
 	<message name="getNetworkResponse">
-		<part name="parameters" element="ct:getNetworkResponse" />
+		<part name="parameters" element="common:getNetworkResponse" />
 	</message>
 	<message name="getVersion">
-		<part name="parameters" element="tns:getVersion" />
+		<part name="parameters" element="wsn:getVersion" />
 	</message>
 	<message name="getVersionResponse">
-		<part name="parameters" element="tns:getVersionResponse" />
+		<part name="parameters" element="wsn:getVersionResponse" />
 	</message>
 	<message name="removeController">
-		<part name="parameters" element="tns:removeController"/>
+		<part name="parameters" element="wsn:removeController"/>
 	</message>
 	<message name="removeControllerResponse">
-		<part name="parameters" element="tns:removeControllerResponse"/>
+		<part name="parameters" element="wsn:removeControllerResponse"/>
 	</message>
 	<message name="resetNodes">
-		<part name="parameters" element="tns:resetNodes" />
+		<part name="parameters" element="wsn:resetNodes" />
 	</message>
 	<message name="resetNodesResponse">
-		<part name="parameters" element="tns:resetNodesResponse" />
+		<part name="parameters" element="wsn:resetNodesResponse" />
 	</message>
 	<message name="send">
-		<part name="parameters" element="tns:send" />
+		<part name="parameters" element="wsn:send" />
 	</message>
 	<message name="sendResponse">
-		<part name="parameters" element="tns:sendResponse" />
+		<part name="parameters" element="wsn:sendResponse" />
 	</message>
 	<message name="setChannelPipeline">
-		<part name="parameters" element="tns:setChannelPipeline" />
+		<part name="parameters" element="wsn:setChannelPipeline" />
 	</message>
 	<message name="setChannelPipelineResponse">
-		<part name="parameters" element="tns:setChannelPipelineResponse" />
+		<part name="parameters" element="wsn:setChannelPipelineResponse" />
 	</message>
 	<message name="setVirtualLink">
-		<part name="parameters" element="tns:setVirtualLink" />
+		<part name="parameters" element="wsn:setVirtualLink" />
 	</message>
 	<message name="setVirtualLinkResponse">
-		<part name="parameters" element="tns:setVirtualLinkResponse" />
+		<part name="parameters" element="wsn:setVirtualLinkResponse" />
 	</message>
 
 	<message name="VirtualizationNotSupported">
-		<part name="fault" element="tns:VirtualizationNotSupported" />
+		<part name="fault" element="wsn:VirtualizationNotSupported" />
 	</message>
 
 	<portType name="WSN">
 		<operation name="addController">
-			<input message="tns:addController"/>
-			<output message="tns:addControllerResponse"/>
+			<input message="wsn:addController"/>
+			<output message="wsn:addControllerResponse"/>
 		</operation>
 		<operation name="areNodesAlive">
-			<input message="tns:areNodesAlive" />
-			<output message="tns:areNodesAliveResponse" />
+			<input message="wsn:areNodesAlive" />
+			<output message="wsn:areNodesAliveResponse" />
 		</operation>
 		<operation name="destroyVirtualLink">
-			<input message="tns:destroyVirtualLink" />
-			<output message="tns:destroyVirtualLinkResponse" />
+			<input message="wsn:destroyVirtualLink" />
+			<output message="wsn:destroyVirtualLinkResponse" />
 		</operation>
 		<operation name="disableNode">
-			<input message="tns:disableNode" />
-			<output message="tns:disableNodeResponse" />
+			<input message="wsn:disableNode" />
+			<output message="wsn:disableNodeResponse" />
 		</operation>
 		<operation name="disablePhysicalLink">
-			<input message="tns:disablePhysicalLink" />
-			<output message="tns:disablePhysicalLinkResponse" />
+			<input message="wsn:disablePhysicalLink" />
+			<output message="wsn:disablePhysicalLinkResponse" />
 		</operation>
 		<operation name="disableVirtualization">
-			<input message="tns:disableVirtualization" />
-			<output message="tns:disableVirtualizationResponse" />
-			<fault message="tns:VirtualizationNotSupported" name="VirtualizationNotSupported" />
+			<input message="wsn:disableVirtualization" />
+			<output message="wsn:disableVirtualizationResponse" />
+			<fault message="wsn:VirtualizationNotSupported" name="VirtualizationNotSupported" />
 		</operation>
 		<operation name="enableVirtualization">
-			<input message="tns:enableVirtualization" />
-			<output message="tns:enableVirtualizationResponse" />
-			<fault message="tns:VirtualizationNotSupported" name="VirtualizationNotSupported" />
+			<input message="wsn:enableVirtualization" />
+			<output message="wsn:enableVirtualizationResponse" />
+			<fault message="wsn:VirtualizationNotSupported" name="VirtualizationNotSupported" />
 		</operation>
 		<operation name="enableNode">
-			<input message="tns:enableNode" />
-			<output message="tns:enableNodeResponse" />
+			<input message="wsn:enableNode" />
+			<output message="wsn:enableNodeResponse" />
 		</operation>
 		<operation name="enablePhysicalLink">
-			<input message="tns:enablePhysicalLink" />
-			<output message="tns:enablePhysicalLinkResponse" />
+			<input message="wsn:enablePhysicalLink" />
+			<output message="wsn:enablePhysicalLinkResponse" />
 		</operation>
 		<operation name="flashPrograms">
-			<input message="tns:flashPrograms" />
-			<output message="tns:flashProgramsResponse" />
+			<input message="wsn:flashPrograms" />
+			<output message="wsn:flashProgramsResponse" />
 		</operation>
 		<operation name="getChannelPipelines">
-			<input message="tns:getChannelPipelines" />
-			<output message="tns:getChannelPipelinesResponse" />
+			<input message="wsn:getChannelPipelines" />
+			<output message="wsn:getChannelPipelinesResponse" />
 		</operation>
 		<operation name="getSupportedChannelHandlers">
-			<input message="tns:getSupportedChannelHandlers" />
-			<output message="tns:getSupportedChannelHandlersResponse" />
+			<input message="wsn:getSupportedChannelHandlers" />
+			<output message="wsn:getSupportedChannelHandlersResponse" />
 		</operation>
 		<operation name="getFilters">
-			<input message="tns:getFilters" />
-			<output message="tns:getFiltersResponse" />
+			<input message="wsn:getFilters" />
+			<output message="wsn:getFiltersResponse" />
 		</operation>
 		<operation name="getNetwork">
-			<input message="tns:getNetwork" />
-			<output message="tns:getNetworkResponse" />
+			<input message="wsn:getNetwork" />
+			<output message="wsn:getNetworkResponse" />
 		</operation>
 		<operation name="getVersion">
-			<input message="tns:getVersion" />
-			<output message="tns:getVersionResponse" />
+			<input message="wsn:getVersion" />
+			<output message="wsn:getVersionResponse" />
 		</operation>
 		<operation name="removeController">
-			<input message="tns:removeController"/>
-			<output message="tns:removeControllerResponse"/>
+			<input message="wsn:removeController"/>
+			<output message="wsn:removeControllerResponse"/>
 		</operation>
 		<operation name="resetNodes">
-			<input message="tns:resetNodes" />
-			<output message="tns:resetNodesResponse" />
+			<input message="wsn:resetNodes" />
+			<output message="wsn:resetNodesResponse" />
 		</operation>
 		<operation name="send">
-			<input message="tns:send" />
-			<output message="tns:sendResponse" />
+			<input message="wsn:send" />
+			<output message="wsn:sendResponse" />
 		</operation>
 		<operation name="setChannelPipeline">
-			<input message="tns:setChannelPipeline" />
-			<output message="tns:setChannelPipelineResponse" />
+			<input message="wsn:setChannelPipeline" />
+			<output message="wsn:setChannelPipelineResponse" />
 		</operation>
 		<operation name="setVirtualLink">
-			<input message="tns:setVirtualLink" />
-			<output message="tns:setVirtualLinkResponse" />
+			<input message="wsn:setVirtualLink" />
+			<output message="wsn:setVirtualLinkResponse" />
 		</operation>
 	</portType>
 
-	<binding name="WSNPortBinding" type="tns:WSN">
+	<binding name="WSNPortBinding" type="wsn:WSN">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
 		<operation name="addController">
 			<soap:operation soapAction=""/>
@@ -414,7 +415,7 @@
 	</binding>
 
 	<service name="WSNService">
-		<port name="WSNPort" binding="tns:WSNPortBinding">
+		<port name="WSNPort" binding="wsn:WSNPortBinding">
 			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
 		</port>
 	</service>

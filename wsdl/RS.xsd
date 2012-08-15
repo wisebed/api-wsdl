@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="urn:RSService"
-		   xmlns:tns="urn:RSService"
-		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   xmlns:ct="urn:CommonTypes"
-		   version="1.0">
+<xs:schema version="1.0"
+		   targetNamespace="http://wisebed.eu/api/v3/rs"
+		   xmlns="http://wisebed.eu/api/v3/rs"
+		   xmlns:common="http://wisebed.eu/api/v3/common"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<xs:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd"/>
-
-	<xs:element name="AuthorizationFault" type="tns:AuthorizationException"/>
-	<xs:element name="RSFault" type="tns:RSException"/>
-	<xs:element name="ReservationConflictFault" type="tns:ReservationConflictException"/>
-	<xs:element name="ReservationNotFoundFault" type="tns:ReservationNotFoundException"/>
-
-	<xs:element name="deleteReservation" type="tns:deleteReservation"/>
-	<xs:element name="deleteReservationResponse" type="tns:deleteReservationResponse"/>
-	<xs:element name="getReservation" type="tns:getReservation"/>
-	<xs:element name="getReservationResponse" type="tns:getReservationResponse"/>
-	<xs:element name="getReservations" type="tns:getReservations"/>
-	<xs:element name="getReservationsResponse" type="tns:getReservationsResponse"/>
-	<xs:element name="makeReservation" type="tns:makeReservation"/>
-	<xs:element name="makeReservationResponse" type="tns:makeReservationResponse"/>
+	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd"/>
 
 	<xs:complexType name="RSException">
 		<xs:sequence>
@@ -31,15 +17,15 @@
 	</xs:complexType>
 	<xs:complexType name="makeReservation">
 		<xs:sequence>
-			<xs:element name="authenticationData" type="ct:secretAuthenticationKey" nillable="false" maxOccurs="unbounded"/>
-			<xs:element name="reservation" type="tns:confidentialReservationData"/>
+			<xs:element name="authenticationData" type="common:secretAuthenticationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="reservation" type="confidentialReservationData"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="confidentialReservationData">
 		<xs:complexContent>
-			<xs:extension base="tns:publicReservationData">
+			<xs:extension base="publicReservationData">
 				<xs:sequence>
-					<xs:element name="data" type="tns:data" nillable="false" maxOccurs="unbounded"/>
+					<xs:element name="data" type="data" nillable="false" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -61,7 +47,7 @@
 	</xs:complexType>
 	<xs:complexType name="getReservation">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="ct:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ReservationNotFoundException">
@@ -77,7 +63,7 @@
 	</xs:complexType>
 	<xs:complexType name="makeReservationResponse">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="ct:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ReservationConflictException">
@@ -87,12 +73,12 @@
 	</xs:complexType>
 	<xs:complexType name="deleteReservation">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="ct:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getReservationsResponse">
 		<xs:sequence>
-			<xs:element name="reservations" type="tns:publicReservationData" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="reservations" type="publicReservationData" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AuthorizationException">
@@ -102,20 +88,35 @@
 	</xs:complexType>
 	<xs:complexType name="getReservationResponse">
 		<xs:sequence>
-			<xs:element name="reservationData" type="tns:confidentialReservationData" maxOccurs="unbounded"/>
+			<xs:element name="reservationData" type="confidentialReservationData" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getConfidentialReservations">
 		<xs:sequence>
-			<xs:element name="secretAuthenticationKey" type="ct:secretAuthenticationKey" maxOccurs="unbounded"/>
-			<xs:element name="period" type="tns:getReservations"/>
+			<xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" maxOccurs="unbounded"/>
+			<xs:element name="period" type="getReservations"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getConfidentialReservationsResponse">
 		<xs:sequence>
-			<xs:element name="reservationData" type="tns:confidentialReservationData" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="reservationData" type="confidentialReservationData" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="getConfidentialReservations" type="tns:getConfidentialReservations"/>
-	<xs:element name="getConfidentialReservationsResponse" type="tns:getConfidentialReservationsResponse"/>
+
+	<xs:element name="deleteReservation" type="deleteReservation"/>
+	<xs:element name="deleteReservationResponse" type="deleteReservationResponse"/>
+	<xs:element name="getConfidentialReservations" type="getConfidentialReservations"/>
+	<xs:element name="getConfidentialReservationsResponse" type="getConfidentialReservationsResponse"/>
+	<xs:element name="getReservation" type="getReservation"/>
+	<xs:element name="getReservationResponse" type="getReservationResponse"/>
+	<xs:element name="getReservations" type="getReservations"/>
+	<xs:element name="getReservationsResponse" type="getReservationsResponse"/>
+	<xs:element name="makeReservation" type="makeReservation"/>
+	<xs:element name="makeReservationResponse" type="makeReservationResponse"/>
+
+	<xs:element name="AuthorizationFault" type="AuthorizationException"/>
+	<xs:element name="RSFault" type="RSException"/>
+	<xs:element name="ReservationConflictFault" type="ReservationConflictException"/>
+	<xs:element name="ReservationNotFoundFault" type="ReservationNotFoundException"/>
+
 </xs:schema>

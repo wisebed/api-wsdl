@@ -1,63 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-             xmlns:tns="http://testbed.wisebed.eu/api/snaa/v1/"
-             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-             xmlns="http://schemas.xmlsoap.org/wsdl/"
-             targetNamespace="http://testbed.wisebed.eu/api/snaa/v1/"
-             name="SNAAService">
+<definitions name="SNAAService"
+			 targetNamespace="http://wisebed.eu/api/v3/snaa"
+			 xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 xmlns:snaa="http://wisebed.eu/api/v3/snaa"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <types>
-        <xsd:schema>
-            <xsd:import namespace="http://testbed.wisebed.eu/api/snaa/v1/"
-                        schemaLocation="SNAATypes.xsd"/>
-        </xsd:schema>
+        <xs:schema>
+            <xs:import namespace="http://wisebed.eu/api/v3/snaa" schemaLocation="SNAA.xsd"/>
+        </xs:schema>
     </types>
 
     <message name="authenticate">
-        <part name="parameters" element="tns:authenticate"/>
+        <part name="parameters" element="snaa:authenticate"/>
     </message>
     <message name="authenticateResponse">
-        <part name="parameters" element="tns:authenticateResponse"/>
+        <part name="parameters" element="snaa:authenticateResponse"/>
     </message>
     <message name="AuthenticationExceptionException">
-        <part name="fault" element="tns:AuthenticationFault"/>
+        <part name="fault" element="snaa:AuthenticationFault"/>
     </message>
     <message name="SNAAExceptionException">
-        <part name="fault" element="tns:SNAAFault"/>
+        <part name="fault" element="snaa:SNAAFault"/>
     </message>
     <message name="isAuthorized">
-        <part name="parameters" element="tns:isAuthorized"/>
+        <part name="parameters" element="snaa:isAuthorized"/>
     </message>
     <message name="isAuthorizedResponse">
-        <part name="parameters" element="tns:isAuthorizedResponse"/>
+        <part name="parameters" element="snaa:isAuthorizedResponse"/>
     </message>
     <message name="isValid">
-        <part name="parameters" element="tns:isValid"/>
+        <part name="parameters" element="snaa:isValid"/>
     </message>
     <message name="isValidResponse">
-        <part name="parameters" element="tns:isValidResponse"/>
+        <part name="parameters" element="snaa:isValidResponse"/>
     </message>
 
     <portType name="SNAA">
         <operation name="authenticate">
-            <input message="tns:authenticate"/>
-            <output message="tns:authenticateResponse"/>
-            <fault message="tns:AuthenticationExceptionException" name="AuthenticationExceptionException"/>
-            <fault message="tns:SNAAExceptionException" name="SNAAExceptionException"/>
+            <input message="snaa:authenticate"/>
+            <output message="snaa:authenticateResponse"/>
+            <fault message="snaa:AuthenticationExceptionException" name="AuthenticationExceptionException"/>
+            <fault message="snaa:SNAAExceptionException" name="SNAAExceptionException"/>
         </operation>
         <operation name="isAuthorized">
-            <input message="tns:isAuthorized"/>
-            <output message="tns:isAuthorizedResponse"/>
-            <fault message="tns:SNAAExceptionException" name="SNAAExceptionException"/>
+            <input message="snaa:isAuthorized"/>
+            <output message="snaa:isAuthorizedResponse"/>
+            <fault message="snaa:SNAAExceptionException" name="SNAAExceptionException"/>
         </operation>
         <operation name="isValid">
-            <input message="tns:isValid"/>
-            <output message="tns:isValidResponse"/>
-            <fault message="tns:SNAAExceptionException" name="SNAAExceptionException"/>
+            <input message="snaa:isValid"/>
+            <output message="snaa:isValidResponse"/>
+            <fault message="snaa:SNAAExceptionException" name="SNAAExceptionException"/>
         </operation>
     </portType>
 
-    <binding name="SNAAPortBinding" type="tns:SNAA">
+    <binding name="SNAAPortBinding" type="snaa:SNAA">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <operation name="authenticate">
             <soap:operation soapAction=""/>
@@ -102,7 +101,7 @@
     </binding>
 
     <service name="SNAAService">
-        <port name="SNAAPort" binding="tns:SNAAPortBinding">
+        <port name="SNAAPort" binding="snaa:SNAAPortBinding">
             <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
         </port>
     </service>

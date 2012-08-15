@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0"
+		   targetNamespace="http://wisebed.eu/api/v3/controller"
+		   xmlns="http://wisebed.eu/api/v3/controller"
+		   xmlns:common="http://wisebed.eu/api/v3/common"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
+
+	<xs:complexType name="experimentEnded">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="receive">
+		<xs:sequence>
+			<xs:element name="msg" type="common:message" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="receiveNotification">
+		<xs:sequence>
+			<xs:element name="msg" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="receiveStatus">
+		<xs:sequence>
+			<xs:element name="status" type="requestStatus" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="requestStatus">
+		<xs:sequence>
+			<xs:element name="requestId" type="common:requestId" minOccurs="1" maxOccurs="1" />
+			<xs:element name="status" type="status" nillable="true" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="status">
+		<xs:sequence>
+			<xs:element name="nodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="value" type="xs:int" minOccurs="0" maxOccurs="1" />
+			<xs:element name="msg" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="experimentEnded" type="experimentEnded" />
+	<xs:element name="receive" type="receive" />
+	<xs:element name="receiveNotification" type="receiveNotification" />
+	<xs:element name="receiveStatus" type="receiveStatus" />
+	<xs:element name="requestStatus" type="requestStatus" />
+
+</xs:schema>

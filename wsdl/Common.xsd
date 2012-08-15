@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema targetNamespace="urn:CommonTypes"
-		   xmlns:tns="urn:CommonTypes"
-		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   version="1.0">
+<xs:schema version="1.0"
+		   targetNamespace="http://wisebed.eu/api/v3/common"
+		   xmlns="http://wisebed.eu/api/v3/common"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xs:complexType name="getNetwork">
 		<xs:sequence />
 	</xs:complexType>
+
 	<xs:complexType name="getNetworkResponse">
 		<xs:sequence>
 			<xs:element name="return" type="xs:string" minOccurs="1" maxOccurs="1" />
@@ -47,10 +48,6 @@
 		<xs:restriction base="xs:string" />
 	</xs:simpleType>
 
-	<xs:element name="getNetwork" type="tns:getNetwork" />
-	<xs:element name="getNetworkResponse" type="tns:getNetworkResponse" />
-	<xs:element name="message" type="tns:message" />
-
 	<xs:complexType name="UsernameUrnPrefixPair">
 		<xs:sequence>
 			<xs:element name="username" type= "xs:string" />
@@ -60,9 +57,13 @@
 
     <xs:complexType name="usernameNodeUrnsMap">
         <xs:sequence>
-            <xs:element name="username" type="tns:UsernameUrnPrefixPair" nillable="false"/>
+            <xs:element name="username" type="UsernameUrnPrefixPair" nillable="false"/>
             <xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
+
+	<xs:element name="getNetwork" type="getNetwork" />
+	<xs:element name="getNetworkResponse" type="getNetworkResponse" />
+	<xs:element name="message" type="message" />
 
 </xs:schema>

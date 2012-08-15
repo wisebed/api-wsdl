@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<definitions targetNamespace="urn:SessionManagementService"
-			 name="SessionManagementService"
+<definitions name="SessionManagementService"
+			 targetNamespace="http://wisebed.eu/api/v3/sm"
 			 xmlns="http://schemas.xmlsoap.org/wsdl/"
-			 xmlns:tns="urn:SessionManagementService"
-			 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-			 xmlns:ct="urn:CommonTypes">
+			 xmlns:sm="http://wisebed.eu/api/v3/sm"
+			 xmlns:common="http://wisebed.eu/api/v3/common"
+			 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
 
 	<types>
-		<xsd:schema>
-			<xsd:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd" />
-			<xsd:import namespace="urn:SessionManagementService" schemaLocation="SessionManagementTypes.xsd" />
-		</xsd:schema>
+		<xs:schema>
+			<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
+			<xs:import namespace="http://wisebed.eu/api/v3/sm" schemaLocation="SM.xsd" />
+		</xs:schema>
 	</types>
 
 	<message name="areNodesAlive">
-		<part name="parameters" element="tns:areNodesAlive" />
+		<part name="parameters" element="sm:areNodesAlive" />
 	</message>
 	<message name="areNodesAliveResponse">
-		<part name="parameters" element="tns:areNodesAliveResponse" />
+		<part name="parameters" element="sm:areNodesAliveResponse" />
 	</message>
 	<message name="getConfiguration">
-		<part name="parameters" element="tns:getConfiguration" />
+		<part name="parameters" element="sm:getConfiguration" />
 	</message>
 	<message name="getConfigurationResponse">
-		<part name="parameters" element="tns:getConfigurationResponse" />
+		<part name="parameters" element="sm:getConfigurationResponse" />
 	</message>
 	<message name="getInstance">
-		<part name="parameters" element="tns:getInstance" />
+		<part name="parameters" element="sm:getInstance" />
 	</message>
 	<message name="getInstanceResponse">
-		<part name="parameters" element="tns:getInstanceResponse" />
+		<part name="parameters" element="sm:getInstanceResponse" />
 	</message>
 	<message name="getNetwork">
-		<part name="parameters" element="ct:getNetwork" />
+		<part name="parameters" element="common:getNetwork" />
 	</message>
 	<message name="getNetworkResponse">
-		<part name="parameters" element="ct:getNetworkResponse" />
+		<part name="parameters" element="common:getNetworkResponse" />
 	</message>
 
 	<message name="ExperimentNotRunningException">
-		<part name="fault" element="tns:ExperimentNotRunningException" />
+		<part name="fault" element="sm:ExperimentNotRunningException" />
 	</message>
 	<message name="UnknownReservationIdException">
-		<part name="fault" element="tns:UnknownReservationIdException" />
+		<part name="fault" element="sm:UnknownReservationIdException" />
 	</message>
 
 	<portType name="SessionManagement">
 		<operation name="areNodesAlive">
-			<input message="tns:areNodesAlive" />
-			<output message="tns:areNodesAliveResponse" />
+			<input message="sm:areNodesAlive" />
+			<output message="sm:areNodesAliveResponse" />
 		</operation>
 		<operation name="getConfiguration">
-			<input message="tns:getConfiguration" />
-			<output message="tns:getConfigurationResponse" />
+			<input message="sm:getConfiguration" />
+			<output message="sm:getConfigurationResponse" />
 		</operation>
 		<operation name="getInstance">
-			<input message="tns:getInstance" />
-			<output message="tns:getInstanceResponse" />
-			<fault message="tns:ExperimentNotRunningException" name="ExperimentNotRunningException" />
-			<fault message="tns:UnknownReservationIdException" name="UnknownReservationIdException" />
+			<input message="sm:getInstance" />
+			<output message="sm:getInstanceResponse" />
+			<fault message="sm:ExperimentNotRunningException" name="ExperimentNotRunningException" />
+			<fault message="sm:UnknownReservationIdException" name="UnknownReservationIdException" />
 		</operation>
 		<operation name="getNetwork">
-			<input message="tns:getNetwork" />
-			<output message="tns:getNetworkResponse" />
+			<input message="sm:getNetwork" />
+			<output message="sm:getNetworkResponse" />
 		</operation>
 	</portType>
 
-	<binding name="SessionManagementPortBinding" type="tns:SessionManagement">
+	<binding name="SessionManagementPortBinding" type="sm:SessionManagement">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
 		<operation name="areNodesAlive">
 			<soap:operation soapAction="" />
@@ -114,7 +114,7 @@
 	</binding>
 
 	<service name="SessionManagementService">
-		<port name="SessionManagementPort" binding="tns:SessionManagementPortBinding">
+		<port name="SessionManagementPort" binding="sm:SessionManagementPortBinding">
 			<soap:address location="REPLACE_WITH_ACTUAL_URL" />
 		</port>
 	</service>

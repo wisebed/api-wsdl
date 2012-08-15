@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema targetNamespace="urn:WSNService"
-		   xmlns:tns="urn:WSNService"
-		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   xmlns:ct="urn:CommonTypes"
-		   version="1.0">
+<xs:schema version="1.0"
+		   targetNamespace="http://wisebed.eu/api/v3/wsn"
+		   xmlns="http://wisebed.eu/api/v3/wsn"
+		   xmlns:common="http://wisebed.eu/api/v3/common"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<xs:import namespace="urn:CommonTypes" schemaLocation="CommonTypes.xsd" />
+	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
 
 	<xs:complexType name="addController">
 		<xs:sequence>
@@ -23,14 +23,14 @@
 	</xs:complexType>
 	<xs:complexType name="areNodesAliveResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="ChannelHandlerConfiguration">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="configuration" type="ct:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="configuration" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -38,14 +38,14 @@
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
 			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
-			<xs:element name="configurationOptions" type="ct:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="configurationOptions" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="ChannelPipelinesMap">
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="channelHandlers" type="tns:ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="channelHandlers" type="ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -57,7 +57,7 @@
 	</xs:complexType>
 	<xs:complexType name="destroyVirtualLinkResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -68,7 +68,7 @@
 	</xs:complexType>
 	<xs:complexType name="disableNodeResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -105,7 +105,7 @@
 	</xs:complexType>
 	<xs:complexType name="enableNodeResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -117,18 +117,18 @@
 	</xs:complexType>
 	<xs:complexType name="enablePhysicalLinkResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="flashPrograms">
 		<xs:sequence>
-			<xs:element name="configurations" type="tns:FlashProgramsConfiguration" nillable="false" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="configurations" type="FlashProgramsConfiguration" nillable="false" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="flashProgramsResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -139,7 +139,7 @@
 	</xs:complexType>
 	<xs:complexType name="getChannelPipelinesResponse">
 		<xs:sequence>
-			<xs:element name="return" type="tns:ChannelPipelinesMap" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="return" type="ChannelPipelinesMap" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -157,7 +157,7 @@
 	</xs:complexType>
 	<xs:complexType name="getSupportedChannelHandlersResponse">
 		<xs:sequence>
-			<xs:element name="return" type="tns:ChannelHandlerDescription" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="return" type="ChannelHandlerDescription" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -193,31 +193,31 @@
 	</xs:complexType>
 	<xs:complexType name="resetNodesResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="send">
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="message" type="ct:message" minOccurs="1" />
+			<xs:element name="message" type="common:message" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="sendResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="setChannelPipeline">
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-			<xs:element name="channelHandlerConfigurations" type="tns:ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="channelHandlerConfigurations" type="ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="setChannelPipelineResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -232,7 +232,7 @@
 	</xs:complexType>
 	<xs:complexType name="setVirtualLinkResponse">
 		<xs:sequence>
-			<xs:element name="return" type="ct:requestId" maxOccurs="1" minOccurs="1" />
+			<xs:element name="return" type="common:requestId" maxOccurs="1" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -242,46 +242,46 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="addController" type="tns:addController"/>
-	<xs:element name="addControllerResponse" type="tns:addControllerResponse"/>
-	<xs:element name="areNodesAlive" type="tns:areNodesAlive" />
-	<xs:element name="areNodesAliveResponse" type="tns:areNodesAliveResponse" />
-	<xs:element name="destroyVirtualLink" type="tns:destroyVirtualLink" />
-	<xs:element name="destroyVirtualLinkResponse" type="tns:setVirtualLinkResponse" />
-	<xs:element name="disableNode" type="tns:disableNode" />
-	<xs:element name="disableNodeResponse" type="tns:disableNodeResponse" />
-	<xs:element name="disablePhysicalLink" type="tns:disablePhysicalLink" />
-	<xs:element name="disablePhysicalLinkResponse" type="tns:disablePhysicalLinkResponse" />
-	<xs:element name="disableVirtualization" type="tns:disableVirtualization" />
-	<xs:element name="disableVirtualizationResponse" type="tns:disableVirtualizationResponse" />
-	<xs:element name="enableVirtualization" type="tns:enableVirtualization" />
-	<xs:element name="enableVirtualizationResponse" type="tns:enableVirtualizationResponse" />
-	<xs:element name="enableNode" type="tns:enableNode" />
-	<xs:element name="enableNodeResponse" type="tns:enableNodeResponse" />
-	<xs:element name="enablePhysicalLink" type="tns:enablePhysicalLink" />
-	<xs:element name="enablePhysicalLinkResponse" type="tns:enablePhysicalLinkResponse" />
-	<xs:element name="flashPrograms" type="tns:flashPrograms" />
-	<xs:element name="flashProgramsResponse" type="tns:flashProgramsResponse" />
-	<xs:element name="getChannelPipelines" type="tns:getChannelPipelines" />
-	<xs:element name="getChannelPipelinesResponse" type="tns:getChannelPipelinesResponse" />
-	<xs:element name="getFilters" type="tns:getFilters" />
-	<xs:element name="getFiltersResponse" type="tns:getFiltersResponse" />
-	<xs:element name="getSupportedChannelHandlers" type="tns:getSupportedChannelHandlers" />
-	<xs:element name="getSupportedChannelHandlersResponse" type="tns:getSupportedChannelHandlersResponse" />
-	<xs:element name="getVersion" type="tns:getVersion" />
-	<xs:element name="getVersionResponse" type="tns:getVersionResponse" />
-	<xs:element name="removeController" type="tns:removeController"/>
-	<xs:element name="removeControllerResponse" type="tns:removeControllerResponse"/>
-	<xs:element name="resetNodes" type="tns:resetNodes" />
-	<xs:element name="resetNodesResponse" type="tns:resetNodesResponse" />
-	<xs:element name="send" type="tns:send" />
-	<xs:element name="sendResponse" type="tns:sendResponse" />
-	<xs:element name="setChannelPipeline" type="tns:setChannelPipeline" />
-	<xs:element name="setChannelPipelineResponse" type="tns:setChannelPipelineResponse" />
-	<xs:element name="setVirtualLink" type="tns:setVirtualLink" />
-	<xs:element name="setVirtualLinkResponse" type="tns:setVirtualLinkResponse" />
+	<xs:element name="addController" type="addController"/>
+	<xs:element name="addControllerResponse" type="addControllerResponse"/>
+	<xs:element name="areNodesAlive" type="areNodesAlive" />
+	<xs:element name="areNodesAliveResponse" type="areNodesAliveResponse" />
+	<xs:element name="destroyVirtualLink" type="destroyVirtualLink" />
+	<xs:element name="destroyVirtualLinkResponse" type="setVirtualLinkResponse" />
+	<xs:element name="disableNode" type="disableNode" />
+	<xs:element name="disableNodeResponse" type="disableNodeResponse" />
+	<xs:element name="disablePhysicalLink" type="disablePhysicalLink" />
+	<xs:element name="disablePhysicalLinkResponse" type="disablePhysicalLinkResponse" />
+	<xs:element name="disableVirtualization" type="disableVirtualization" />
+	<xs:element name="disableVirtualizationResponse" type="disableVirtualizationResponse" />
+	<xs:element name="enableVirtualization" type="enableVirtualization" />
+	<xs:element name="enableVirtualizationResponse" type="enableVirtualizationResponse" />
+	<xs:element name="enableNode" type="enableNode" />
+	<xs:element name="enableNodeResponse" type="enableNodeResponse" />
+	<xs:element name="enablePhysicalLink" type="enablePhysicalLink" />
+	<xs:element name="enablePhysicalLinkResponse" type="enablePhysicalLinkResponse" />
+	<xs:element name="flashPrograms" type="flashPrograms" />
+	<xs:element name="flashProgramsResponse" type="flashProgramsResponse" />
+	<xs:element name="getChannelPipelines" type="getChannelPipelines" />
+	<xs:element name="getChannelPipelinesResponse" type="getChannelPipelinesResponse" />
+	<xs:element name="getFilters" type="getFilters" />
+	<xs:element name="getFiltersResponse" type="getFiltersResponse" />
+	<xs:element name="getSupportedChannelHandlers" type="getSupportedChannelHandlers" />
+	<xs:element name="getSupportedChannelHandlersResponse" type="getSupportedChannelHandlersResponse" />
+	<xs:element name="getVersion" type="getVersion" />
+	<xs:element name="getVersionResponse" type="getVersionResponse" />
+	<xs:element name="removeController" type="removeController"/>
+	<xs:element name="removeControllerResponse" type="removeControllerResponse"/>
+	<xs:element name="resetNodes" type="resetNodes" />
+	<xs:element name="resetNodesResponse" type="resetNodesResponse" />
+	<xs:element name="send" type="send" />
+	<xs:element name="sendResponse" type="sendResponse" />
+	<xs:element name="setChannelPipeline" type="setChannelPipeline" />
+	<xs:element name="setChannelPipelineResponse" type="setChannelPipelineResponse" />
+	<xs:element name="setVirtualLink" type="setVirtualLink" />
+	<xs:element name="setVirtualLinkResponse" type="setVirtualLinkResponse" />
 
-	<xs:element name="VirtualizationNotSupported" type="tns:VirtualizationNotSupported" />
+	<xs:element name="VirtualizationNotSupported" type="VirtualizationNotSupported" />
 
 </xs:schema>
 
