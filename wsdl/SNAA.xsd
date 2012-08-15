@@ -8,13 +8,13 @@
 
 	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
 
-	<xs:complexType name="SNAAException">
+	<xs:complexType name="SNAAFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="AuthenticationException">
+	<xs:complexType name="AuthenticationFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
@@ -124,7 +124,7 @@
 	<xs:element name="isValid" type="isValid"/>
 	<xs:element name="isValidResponse" type="isValidResponse"/>
 
-	<xs:element name="AuthenticationFault" type="AuthenticationException" />
-	<xs:element name="SNAAFault" type="SNAAException" />
+	<xs:element name="AuthenticationFault" type="AuthenticationFault" />
+	<xs:element name="SNAAFault" type="SNAAFault" />
 
 </xs:schema>

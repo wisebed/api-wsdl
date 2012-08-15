@@ -18,10 +18,10 @@
     <message name="authenticateResponse">
         <part name="parameters" element="snaa:authenticateResponse"/>
     </message>
-    <message name="AuthenticationExceptionException">
+    <message name="AuthenticationFault">
         <part name="fault" element="snaa:AuthenticationFault"/>
     </message>
-    <message name="SNAAExceptionException">
+    <message name="SNAAFault">
         <part name="fault" element="snaa:SNAAFault"/>
     </message>
     <message name="isAuthorized">
@@ -41,18 +41,18 @@
         <operation name="authenticate">
             <input message="snaa:authenticate"/>
             <output message="snaa:authenticateResponse"/>
-            <fault message="snaa:AuthenticationExceptionException" name="AuthenticationExceptionException"/>
-            <fault message="snaa:SNAAExceptionException" name="SNAAExceptionException"/>
+            <fault message="snaa:AuthenticationFault" name="AuthenticationFault"/>
+            <fault message="snaa:SNAAFault" name="SNAAFault"/>
         </operation>
         <operation name="isAuthorized">
             <input message="snaa:isAuthorized"/>
             <output message="snaa:isAuthorizedResponse"/>
-            <fault message="snaa:SNAAExceptionException" name="SNAAExceptionException"/>
+            <fault message="snaa:SNAAFault" name="SNAAFault"/>
         </operation>
         <operation name="isValid">
             <input message="snaa:isValid"/>
             <output message="snaa:isValidResponse"/>
-            <fault message="snaa:SNAAExceptionException" name="SNAAExceptionException"/>
+            <fault message="snaa:SNAAFault" name="SNAAFault"/>
         </operation>
     </portType>
 
@@ -66,11 +66,11 @@
             <output>
                 <soap:body use="literal"/>
             </output>
-            <fault name="AuthenticationExceptionException">
-                <soap:fault name="AuthenticationExceptionException" use="literal"/>
+            <fault name="AuthenticationFault">
+                <soap:fault name="AuthenticationFault" use="literal"/>
             </fault>
-            <fault name="SNAAExceptionException">
-                <soap:fault name="SNAAExceptionException" use="literal"/>
+            <fault name="SNAAFault">
+                <soap:fault name="SNAAFault" use="literal"/>
             </fault>
         </operation>
         <operation name="isAuthorized">
@@ -81,8 +81,8 @@
             <output>
                 <soap:body use="literal"/>
             </output>
-            <fault name="SNAAExceptionException">
-                <soap:fault name="SNAAExceptionException" use="literal"/>
+            <fault name="SNAAFault">
+                <soap:fault name="SNAAFault" use="literal"/>
             </fault>
         </operation>
         <operation name="isValid">
@@ -93,8 +93,8 @@
             <output>
                 <soap:body use="literal"/>
             </output>
-            <fault name="SNAAExceptionException">
-                <soap:fault name="SNAAExceptionException" use="literal"/>
+            <fault name="SNAAFault">
+                <soap:fault name="SNAAFault" use="literal"/>
             </fault>
         </operation>
 

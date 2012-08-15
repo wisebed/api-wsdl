@@ -7,7 +7,7 @@
 
 	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd"/>
 
-	<xs:complexType name="RSException">
+	<xs:complexType name="RSFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
@@ -50,7 +50,7 @@
 			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ReservationNotFoundException">
+	<xs:complexType name="ReservationNotFoundFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
@@ -66,7 +66,7 @@
 			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ReservationConflictException">
+	<xs:complexType name="ReservationConflictFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
@@ -81,7 +81,7 @@
 			<xs:element name="reservations" type="publicReservationData" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="AuthorizationException">
+	<xs:complexType name="AuthorizationFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
@@ -114,9 +114,9 @@
 	<xs:element name="makeReservation" type="makeReservation"/>
 	<xs:element name="makeReservationResponse" type="makeReservationResponse"/>
 
-	<xs:element name="AuthorizationFault" type="AuthorizationException"/>
-	<xs:element name="RSFault" type="RSException"/>
-	<xs:element name="ReservationConflictFault" type="ReservationConflictException"/>
-	<xs:element name="ReservationNotFoundFault" type="ReservationNotFoundException"/>
+	<xs:element name="AuthorizationFault" type="AuthorizationFault"/>
+	<xs:element name="RSFault" type="RSFault"/>
+	<xs:element name="ReservationConflictFault" type="ReservationConflictFault"/>
+	<xs:element name="ReservationNotFoundFault" type="ReservationNotFoundFault"/>
 
 </xs:schema>

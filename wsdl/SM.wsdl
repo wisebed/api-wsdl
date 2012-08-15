@@ -39,11 +39,11 @@
 		<part name="parameters" element="common:getNetworkResponse" />
 	</message>
 
-	<message name="ExperimentNotRunningException">
-		<part name="fault" element="sm:ExperimentNotRunningException" />
+	<message name="ExperimentNotRunningFault">
+		<part name="fault" element="sm:ExperimentNotRunningFault" />
 	</message>
-	<message name="UnknownReservationIdException">
-		<part name="fault" element="sm:UnknownReservationIdException" />
+	<message name="UnknownReservationIdFault">
+		<part name="fault" element="sm:UnknownReservationIdFault" />
 	</message>
 
 	<portType name="SessionManagement">
@@ -58,8 +58,8 @@
 		<operation name="getInstance">
 			<input message="sm:getInstance" />
 			<output message="sm:getInstanceResponse" />
-			<fault message="sm:ExperimentNotRunningException" name="ExperimentNotRunningException" />
-			<fault message="sm:UnknownReservationIdException" name="UnknownReservationIdException" />
+			<fault message="sm:ExperimentNotRunningFault" name="ExperimentNotRunningFault" />
+			<fault message="sm:UnknownReservationIdFault" name="UnknownReservationIdFault" />
 		</operation>
 		<operation name="getNetwork">
 			<input message="sm:getNetwork" />
@@ -95,11 +95,11 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
-			<fault name="ExperimentNotRunningException">
-				<soap:fault name="ExperimentNotRunningException" use="literal" />
+			<fault name="ExperimentNotRunningFault">
+				<soap:fault name="ExperimentNotRunningFault" use="literal" />
 			</fault>
-			<fault name="UnknownReservationIdException">
-				<soap:fault name="UnknownReservationIdException" use="literal" />
+			<fault name="UnknownReservationIdFault">
+				<soap:fault name="UnknownReservationIdFault" use="literal" />
 			</fault>
 		</operation>
 		<operation name="getNetwork">
