@@ -86,12 +86,6 @@
 	<message name="getSupportedVirtualLinkFiltersResponse">
 		<part name="parameters" element="wsn:getSupportedVirtualLinkFiltersResponse" />
 	</message>
-	<message name="getSupportedChannelHandlers">
-		<part name="parameters" element="wsn:getSupportedChannelHandlers" />
-	</message>
-	<message name="getSupportedChannelHandlersResponse">
-		<part name="parameters" element="wsn:getSupportedChannelHandlersResponse" />
-	</message>
 	<message name="getNetwork">
 		<part name="parameters" element="common:getNetwork" />
 	</message>
@@ -185,10 +179,6 @@
 		<operation name="getChannelPipelines">
 			<input message="wsn:getChannelPipelines" />
 			<output message="wsn:getChannelPipelinesResponse" />
-		</operation>
-		<operation name="getSupportedChannelHandlers">
-			<input message="wsn:getSupportedChannelHandlers" />
-			<output message="wsn:getSupportedChannelHandlersResponse" />
 		</operation>
 		<operation name="getSupportedVirtualLinkFilters">
 			<input message="wsn:getSupportedVirtualLinkFilters" />
@@ -323,15 +313,6 @@
 			</output>
 		</operation>
 		<operation name="getChannelPipelines">
-			<soap:operation soapAction="" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="getSupportedChannelHandlers">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />

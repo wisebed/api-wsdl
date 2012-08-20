@@ -38,6 +38,12 @@
 	<message name="getNetworkResponse">
 		<part name="parameters" element="common:getNetworkResponse" />
 	</message>
+	<message name="getSupportedChannelHandlers">
+		<part name="parameters" element="sm:getSupportedChannelHandlers" />
+	</message>
+	<message name="getSupportedChannelHandlersResponse">
+		<part name="parameters" element="sm:getSupportedChannelHandlersResponse" />
+	</message>
 
 	<message name="ExperimentNotRunningFault">
 		<part name="fault" element="sm:ExperimentNotRunningFault" />
@@ -64,6 +70,10 @@
 		<operation name="getNetwork">
 			<input message="sm:getNetwork" />
 			<output message="sm:getNetworkResponse" />
+		</operation>
+		<operation name="getSupportedChannelHandlers">
+			<input message="sm:getSupportedChannelHandlers" />
+			<output message="sm:getSupportedChannelHandlersResponse" />
 		</operation>
 	</portType>
 
@@ -103,6 +113,15 @@
 			</fault>
 		</operation>
 		<operation name="getNetwork">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="getSupportedChannelHandlers">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />

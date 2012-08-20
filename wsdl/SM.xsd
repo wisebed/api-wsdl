@@ -40,6 +40,23 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="getSupportedChannelHandlers">
+		<xs:sequence />
+	</xs:complexType>
+	<xs:complexType name="getSupportedChannelHandlersResponse">
+		<xs:sequence>
+			<xs:element name="return" type="ChannelHandlerDescription" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ChannelHandlerDescription">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="configurationOptions" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:complexType name="ExperimentNotRunningFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0" />
@@ -59,6 +76,8 @@
 	<xs:element name="getConfigurationResponse" type="getConfigurationResponse" />
 	<xs:element name="getInstance" type="getInstance" />
 	<xs:element name="getInstanceResponse" type="getInstanceResponse" />
+	<xs:element name="getSupportedChannelHandlers" type="getSupportedChannelHandlers" />
+	<xs:element name="getSupportedChannelHandlersResponse" type="getSupportedChannelHandlersResponse" />
 
 	<xs:element name="ExperimentNotRunningFault" type="ExperimentNotRunningFault" />
 	<xs:element name="UnknownReservationIdFault" type="UnknownReservationIdFault" />

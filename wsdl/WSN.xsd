@@ -33,14 +33,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="ChannelHandlerDescription">
-		<xs:sequence>
-			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
-			<xs:element name="configurationOptions" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
-		</xs:sequence>
-	</xs:complexType>
-
 	<xs:complexType name="ChannelPipelinesMap">
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
@@ -142,15 +134,6 @@
 	<xs:complexType name="getSupportedVirtualLinkFiltersResponse">
 		<xs:sequence>
 			<xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="getSupportedChannelHandlers">
-		<xs:sequence />
-	</xs:complexType>
-	<xs:complexType name="getSupportedChannelHandlersResponse">
-		<xs:sequence>
-			<xs:element name="return" type="ChannelHandlerDescription" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -255,8 +238,6 @@
 	<xs:element name="getChannelPipelinesResponse" type="getChannelPipelinesResponse" />
 	<xs:element name="getSupportedVirtualLinkFilters" type="getSupportedVirtualLinkFilters" />
 	<xs:element name="getSupportedVirtualLinkFiltersResponse" type="getSupportedVirtualLinkFiltersResponse" />
-	<xs:element name="getSupportedChannelHandlers" type="getSupportedChannelHandlers" />
-	<xs:element name="getSupportedChannelHandlersResponse" type="getSupportedChannelHandlersResponse" />
 	<xs:element name="getVersion" type="getVersion" />
 	<xs:element name="getVersionResponse" type="getVersionResponse" />
 	<xs:element name="removeController" type="removeController"/>
