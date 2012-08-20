@@ -193,7 +193,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" maxOccurs="1" minOccurs="1" />
 			<xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="message" type="common:message" minOccurs="1" />
+			<xs:element name="message" type="xs:base64Binary" minOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="sendResponse">

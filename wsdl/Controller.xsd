@@ -16,6 +16,7 @@
 			<xs:element name="msg" type="common:message" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
+
 	<xs:complexType name="receiveNotification">
 		<xs:sequence>
 			<xs:element name="msg" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
@@ -27,6 +28,7 @@
 			<xs:element name="status" type="requestStatus" minOccurs="1" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
+
 	<xs:complexType name="requestStatus">
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" minOccurs="1" maxOccurs="1" />
