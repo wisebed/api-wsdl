@@ -11,6 +11,10 @@
 		<xs:sequence />
 	</xs:complexType>
 
+	<xs:complexType name="experimentStarted">
+		<xs:sequence />
+	</xs:complexType>
+
 	<xs:complexType name="receive">
 		<xs:sequence>
 			<xs:element name="msg" type="common:message" minOccurs="1" maxOccurs="unbounded" />
@@ -44,6 +48,7 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:element name="experimentStarted" type="experimentStarted" />
 	<xs:element name="experimentEnded" type="experimentEnded" />
 	<xs:element name="receive" type="receive" />
 	<xs:element name="receiveNotification" type="receiveNotification" />

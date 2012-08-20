@@ -12,6 +12,9 @@
 		</xs:schema>
 	</types>
 
+	<message name="experimentStarted">
+		<part name="parameters" element="controller:experimentStarted" />
+	</message>
 	<message name="experimentEnded">
 		<part name="parameters" element="controller:experimentEnded" />
 	</message>
@@ -26,6 +29,9 @@
 	</message>
 
 	<portType name="Controller">
+		<operation name="experimentStarted">
+			<input message="controller:experimentStarted" />
+		</operation>
 		<operation name="experimentEnded">
 			<input message="controller:experimentEnded" />
 		</operation>
@@ -42,6 +48,12 @@
 
 	<binding name="ControllerPortBinding" type="controller:Controller">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<operation name="experimentStarted">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+		</operation>
 		<operation name="experimentEnded">
 			<soap:operation soapAction="" />
 			<input>
