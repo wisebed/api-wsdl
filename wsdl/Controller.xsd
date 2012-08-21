@@ -23,7 +23,15 @@
 
 	<xs:complexType name="receiveNotification">
 		<xs:sequence>
-			<xs:element name="msg" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="notifications" type="Notification" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Notification">
+		<xs:sequence>
+			<xs:element name="nodeUrn" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+			<xs:element name="msg" type="xs:string" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 
