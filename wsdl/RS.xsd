@@ -12,39 +12,45 @@
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
+
 	<xs:complexType name="deleteReservationResponse">
 		<xs:sequence/>
 	</xs:complexType>
+
 	<xs:complexType name="makeReservation">
 		<xs:sequence>
-			<xs:element name="authenticationData" type="common:secretAuthenticationKey" nillable="false" maxOccurs="unbounded"/>
-			<xs:element name="reservation" type="confidentialReservationData"/>
+			<xs:element name="secretAuthenticationKeys" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="from" type="xs:dateTime" />
+			<xs:element name="to" type="xs:dateTime" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="confidentialReservationData">
-		<xs:complexContent>
-			<xs:extension base="publicReservationData">
-				<xs:sequence>
-					<xs:element name="data" type="data" nillable="false" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="publicReservationData">
+
+	<xs:complexType name="ConfidentialReservationData">
 		<xs:sequence>
-			<xs:element name="from" type="xs:dateTime"/>
-			<xs:element name="nodeUrns" type="xs:string" nillable="false" maxOccurs="unbounded"/>
-			<xs:element name="to" type="xs:dateTime"/>
-			<xs:element name="userData" type="xs:string" minOccurs="0"/>
+			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="from" type="xs:dateTime" />
+			<xs:element name="to" type="xs:dateTime" />
+			<xs:element name="keys" type="ConfidentialReservationDataKey"  maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="data">
+
+	<xs:complexType name="ConfidentialReservationDataKey">
 		<xs:sequence>
-			<xs:element name="urnPrefix" type="xs:string"/>
-			<xs:element name="username" type="xs:string"/>
-			<xs:element name="secretReservationKey" type="xs:string"/>
+			<xs:element name="urnPrefix" type="xs:string" />
+			<xs:element name="username" type="xs:string" />
+			<xs:element name="secretReservationKey" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
+
+	<xs:complexType name="PublicReservationData">
+		<xs:sequence>
+			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="from" type="xs:dateTime" />
+			<xs:element name="to" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:complexType name="getReservation">
 		<xs:sequence>
 			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
@@ -63,7 +69,7 @@
 	</xs:complexType>
 	<xs:complexType name="makeReservationResponse">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ReservationConflictFault">
@@ -79,7 +85,7 @@
 	</xs:complexType>
 	<xs:complexType name="getReservationsResponse">
 		<xs:sequence>
-			<xs:element name="reservations" type="publicReservationData" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="reservations" type="PublicReservationData" nillable="false" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AuthorizationFault">
@@ -89,7 +95,7 @@
 	</xs:complexType>
 	<xs:complexType name="getReservationResponse">
 		<xs:sequence>
-			<xs:element name="reservationData" type="confidentialReservationData" maxOccurs="unbounded"/>
+			<xs:element name="reservationData" type="ConfidentialReservationData" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getConfidentialReservations">
@@ -101,7 +107,7 @@
 	</xs:complexType>
 	<xs:complexType name="getConfidentialReservationsResponse">
 		<xs:sequence>
-			<xs:element name="reservationData" type="confidentialReservationData" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="reservationData" type="ConfidentialReservationData" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
