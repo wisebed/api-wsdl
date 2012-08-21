@@ -7,11 +7,11 @@
 
 	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
 
-	<xs:complexType name="experimentEnded">
+	<xs:complexType name="reservationEnded">
 		<xs:sequence />
 	</xs:complexType>
 
-	<xs:complexType name="experimentStarted">
+	<xs:complexType name="reservationStarted">
 		<xs:sequence />
 	</xs:complexType>
 
@@ -48,8 +48,8 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="experimentStarted" type="experimentStarted" />
-	<xs:element name="experimentEnded" type="experimentEnded" />
+	<xs:element name="reservationStarted" type="reservationStarted" />
+	<xs:element name="reservationEnded" type="reservationEnded" />
 	<xs:element name="receive" type="receive" />
 	<xs:element name="receiveNotification" type="receiveNotification" />
 	<xs:element name="receiveStatus" type="receiveStatus" />

@@ -12,11 +12,11 @@
 		</xs:schema>
 	</types>
 
-	<message name="experimentStarted">
-		<part name="parameters" element="controller:experimentStarted" />
+	<message name="reservationStarted">
+		<part name="parameters" element="controller:reservationStarted" />
 	</message>
-	<message name="experimentEnded">
-		<part name="parameters" element="controller:experimentEnded" />
+	<message name="reservationEnded">
+		<part name="parameters" element="controller:reservationEnded" />
 	</message>
 	<message name="receive">
 		<part name="parameters" element="controller:receive" />
@@ -29,11 +29,11 @@
 	</message>
 
 	<portType name="Controller">
-		<operation name="experimentStarted">
-			<input message="controller:experimentStarted" />
+		<operation name="reservationStarted">
+			<input message="controller:reservationStarted" />
 		</operation>
-		<operation name="experimentEnded">
-			<input message="controller:experimentEnded" />
+		<operation name="reservationEnded">
+			<input message="controller:reservationEnded" />
 		</operation>
 		<operation name="receive">
 			<input message="controller:receive" />
@@ -48,13 +48,13 @@
 
 	<binding name="ControllerPortBinding" type="controller:Controller">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-		<operation name="experimentStarted">
+		<operation name="reservationStarted">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
 			</input>
 		</operation>
-		<operation name="experimentEnded">
+		<operation name="reservationEnded">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
