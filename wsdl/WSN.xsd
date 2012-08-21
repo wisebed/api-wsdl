@@ -128,15 +128,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getSupportedVirtualLinkFilters">
-		<xs:sequence />
-	</xs:complexType>
-	<xs:complexType name="getSupportedVirtualLinkFiltersResponse">
-		<xs:sequence>
-			<xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
-		</xs:sequence>
-	</xs:complexType>
-
 	<xs:complexType name="getVersion">
 		<xs:sequence />
 	</xs:complexType>
@@ -236,8 +227,6 @@
 	<xs:element name="flashProgramsResponse" type="flashProgramsResponse" />
 	<xs:element name="getChannelPipelines" type="getChannelPipelines" />
 	<xs:element name="getChannelPipelinesResponse" type="getChannelPipelinesResponse" />
-	<xs:element name="getSupportedVirtualLinkFilters" type="getSupportedVirtualLinkFilters" />
-	<xs:element name="getSupportedVirtualLinkFiltersResponse" type="getSupportedVirtualLinkFiltersResponse" />
 	<xs:element name="getVersion" type="getVersion" />
 	<xs:element name="getVersionResponse" type="getVersionResponse" />
 	<xs:element name="removeController" type="removeController"/>

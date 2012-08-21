@@ -49,6 +49,15 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:complexType name="getSupportedVirtualLinkFilters">
+		<xs:sequence />
+	</xs:complexType>
+	<xs:complexType name="getSupportedVirtualLinkFiltersResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:complexType name="ChannelHandlerDescription">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
@@ -78,6 +87,8 @@
 	<xs:element name="getInstanceResponse" type="getInstanceResponse" />
 	<xs:element name="getSupportedChannelHandlers" type="getSupportedChannelHandlers" />
 	<xs:element name="getSupportedChannelHandlersResponse" type="getSupportedChannelHandlersResponse" />
+	<xs:element name="getSupportedVirtualLinkFilters" type="getSupportedVirtualLinkFilters" />
+	<xs:element name="getSupportedVirtualLinkFiltersResponse" type="getSupportedVirtualLinkFiltersResponse" />
 
 	<xs:element name="ExperimentNotRunningFault" type="ExperimentNotRunningFault" />
 	<xs:element name="UnknownReservationIdFault" type="UnknownReservationIdFault" />
