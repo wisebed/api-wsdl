@@ -12,6 +12,12 @@
 		</xs:schema>
 	</types>
 
+	<message name="nodesAttached">
+		<part name="parameters" element="controller:nodesAttached" />
+	</message>
+	<message name="nodesDetached">
+		<part name="parameters" element="controller:nodesDetached" />
+	</message>
 	<message name="reservationStarted">
 		<part name="parameters" element="controller:reservationStarted" />
 	</message>
@@ -29,6 +35,12 @@
 	</message>
 
 	<portType name="Controller">
+		<operation name="nodesAttached">
+			<input message="controller:nodesAttached" />
+		</operation>
+		<operation name="nodesDetached">
+			<input message="controller:nodesDetached" />
+		</operation>
 		<operation name="reservationStarted">
 			<input message="controller:reservationStarted" />
 		</operation>
@@ -48,6 +60,18 @@
 
 	<binding name="ControllerPortBinding" type="controller:Controller">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+		<operation name="nodesAttached">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+		</operation>
+		<operation name="nodesDetached">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+		</operation>
 		<operation name="reservationStarted">
 			<soap:operation soapAction="" />
 			<input>

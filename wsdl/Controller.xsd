@@ -7,6 +7,18 @@
 
 	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
 
+	<xs:complexType name="nodesAttached">
+		<xs:sequence>
+			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="nodesDetached">
+		<xs:sequence>
+			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:complexType name="reservationEnded">
 		<xs:sequence />
 	</xs:complexType>
@@ -56,6 +68,8 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:element name="nodesAttached" type="nodesAttached" />
+	<xs:element name="nodesDetached" type="nodesDetached" />
 	<xs:element name="reservationStarted" type="reservationStarted" />
 	<xs:element name="reservationEnded" type="reservationEnded" />
 	<xs:element name="receive" type="receive" />
