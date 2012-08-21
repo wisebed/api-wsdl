@@ -26,23 +26,23 @@
 	<message name="areNodesAliveResponse">
 		<part name="parameters" element="wsn:areNodesAliveResponse" />
 	</message>
-	<message name="destroyVirtualLink">
-		<part name="parameters" element="wsn:destroyVirtualLink" />
+	<message name="destroyVirtualLinks">
+		<part name="parameters" element="wsn:destroyVirtualLinks" />
 	</message>
-	<message name="destroyVirtualLinkResponse">
-		<part name="parameters" element="wsn:destroyVirtualLinkResponse" />
+	<message name="destroyVirtualLinksResponse">
+		<part name="parameters" element="wsn:destroyVirtualLinksResponse" />
 	</message>
-	<message name="disableNode">
-		<part name="parameters" element="wsn:disableNode" />
+	<message name="disableNodes">
+		<part name="parameters" element="wsn:disableNodes" />
 	</message>
-	<message name="disableNodeResponse">
-		<part name="parameters" element="wsn:disableNodeResponse" />
+	<message name="disableNodesResponse">
+		<part name="parameters" element="wsn:disableNodesResponse" />
 	</message>
-	<message name="disablePhysicalLink">
-		<part name="parameters" element="wsn:disablePhysicalLink" />
+	<message name="disablePhysicalLinks">
+		<part name="parameters" element="wsn:disablePhysicalLinks" />
 	</message>
-	<message name="disablePhysicalLinkResponse">
-		<part name="parameters" element="wsn:disablePhysicalLinkResponse" />
+	<message name="disablePhysicalLinksResponse">
+		<part name="parameters" element="wsn:disablePhysicalLinksResponse" />
 	</message>
 	<message name="disableVirtualization">
 		<part name="parameters" element="wsn:disableVirtualization" />
@@ -56,17 +56,17 @@
 	<message name="enableVirtualizationResponse">
 		<part name="parameters" element="wsn:enableVirtualizationResponse" />
 	</message>
-	<message name="enableNode">
-		<part name="parameters" element="wsn:enableNode" />
+	<message name="enableNodes">
+		<part name="parameters" element="wsn:enableNodes" />
 	</message>
-	<message name="enableNodeResponse">
-		<part name="parameters" element="wsn:enableNodeResponse" />
+	<message name="enableNodesResponse">
+		<part name="parameters" element="wsn:enableNodesResponse" />
 	</message>
-	<message name="enablePhysicalLink">
-		<part name="parameters" element="wsn:enablePhysicalLink" />
+	<message name="enablePhysicalLinks">
+		<part name="parameters" element="wsn:enablePhysicalLinks" />
 	</message>
-	<message name="enablePhysicalLinkResponse">
-		<part name="parameters" element="wsn:enablePhysicalLinkResponse" />
+	<message name="enablePhysicalLinksResponse">
+		<part name="parameters" element="wsn:enablePhysicalLinksResponse" />
 	</message>
 	<message name="flashPrograms">
 		<part name="parameters" element="wsn:flashPrograms" />
@@ -116,11 +116,11 @@
 	<message name="setChannelPipelineResponse">
 		<part name="parameters" element="wsn:setChannelPipelineResponse" />
 	</message>
-	<message name="setVirtualLink">
-		<part name="parameters" element="wsn:setVirtualLink" />
+	<message name="setVirtualLinks">
+		<part name="parameters" element="wsn:setVirtualLinks" />
 	</message>
-	<message name="setVirtualLinkResponse">
-		<part name="parameters" element="wsn:setVirtualLinkResponse" />
+	<message name="setVirtualLinksResponse">
+		<part name="parameters" element="wsn:setVirtualLinksResponse" />
 	</message>
 
 	<message name="VirtualizationNotSupported">
@@ -136,17 +136,17 @@
 			<input message="wsn:areNodesAlive" />
 			<output message="wsn:areNodesAliveResponse" />
 		</operation>
-		<operation name="destroyVirtualLink">
-			<input message="wsn:destroyVirtualLink" />
-			<output message="wsn:destroyVirtualLinkResponse" />
+		<operation name="destroyVirtualLinks">
+			<input message="wsn:destroyVirtualLinks" />
+			<output message="wsn:destroyVirtualLinksResponse" />
 		</operation>
-		<operation name="disableNode">
-			<input message="wsn:disableNode" />
-			<output message="wsn:disableNodeResponse" />
+		<operation name="disableNodes">
+			<input message="wsn:disableNodes" />
+			<output message="wsn:disableNodesResponse" />
 		</operation>
-		<operation name="disablePhysicalLink">
-			<input message="wsn:disablePhysicalLink" />
-			<output message="wsn:disablePhysicalLinkResponse" />
+		<operation name="disablePhysicalLinks">
+			<input message="wsn:disablePhysicalLinks" />
+			<output message="wsn:disablePhysicalLinksResponse" />
 		</operation>
 		<operation name="disableVirtualization">
 			<input message="wsn:disableVirtualization" />
@@ -158,13 +158,13 @@
 			<output message="wsn:enableVirtualizationResponse" />
 			<fault message="wsn:VirtualizationNotSupported" name="VirtualizationNotSupported" />
 		</operation>
-		<operation name="enableNode">
-			<input message="wsn:enableNode" />
-			<output message="wsn:enableNodeResponse" />
+		<operation name="enableNodes">
+			<input message="wsn:enableNodes" />
+			<output message="wsn:enableNodesResponse" />
 		</operation>
-		<operation name="enablePhysicalLink">
-			<input message="wsn:enablePhysicalLink" />
-			<output message="wsn:enablePhysicalLinkResponse" />
+		<operation name="enablePhysicalLinks">
+			<input message="wsn:enablePhysicalLinks" />
+			<output message="wsn:enablePhysicalLinksResponse" />
 		</operation>
 		<operation name="flashPrograms">
 			<input message="wsn:flashPrograms" />
@@ -198,9 +198,9 @@
 			<input message="wsn:setChannelPipeline" />
 			<output message="wsn:setChannelPipelineResponse" />
 		</operation>
-		<operation name="setVirtualLink">
-			<input message="wsn:setVirtualLink" />
-			<output message="wsn:setVirtualLinkResponse" />
+		<operation name="setVirtualLinks">
+			<input message="wsn:setVirtualLinks" />
+			<output message="wsn:setVirtualLinksResponse" />
 		</operation>
 	</portType>
 
@@ -224,7 +224,7 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="destroyVirtualLink">
+		<operation name="destroyVirtualLinks">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
@@ -233,7 +233,7 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="disableNode">
+		<operation name="disableNodes">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
@@ -242,7 +242,7 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="disablePhysicalLink">
+		<operation name="disablePhysicalLinks">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
@@ -275,7 +275,7 @@
 				<soap:fault name="VirtualizationNotSupported" use="literal"/>
 			</fault>
 		</operation>
-		<operation name="enableNode">
+		<operation name="enableNodes">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
@@ -284,7 +284,7 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="enablePhysicalLink">
+		<operation name="enablePhysicalLinks">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
@@ -365,7 +365,7 @@
 				<soap:body use="literal" />
 			</output>
 		</operation>
-		<operation name="setVirtualLink">
+		<operation name="setVirtualLinks">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
