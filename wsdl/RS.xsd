@@ -69,6 +69,7 @@
 	<xs:complexType name="ReservationConflictFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
+			<xs:element name="reservedNodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="deleteReservation">
