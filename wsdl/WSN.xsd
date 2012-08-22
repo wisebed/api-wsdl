@@ -9,14 +9,14 @@
 
 	<xs:complexType name="Link">
 		<xs:sequence>
-			<xs:element name="sourceNodeUrn" type="xs:string" maxOccurs="1" />
-			<xs:element name="targetNodeUrn" type="xs:string" maxOccurs="1" />
+			<xs:element name="sourceNodeUrn" type="common:NodeUrn" />
+			<xs:element name="targetNodeUrn" type="common:NodeUrn" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="addController">
 		<xs:sequence>
-			<xs:element name="controllerEndpointUrl" type="xs:string" maxOccurs="1"/>
+			<xs:element name="controllerEndpointUrl" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="addControllerResponse">
@@ -25,8 +25,8 @@
 
 	<xs:complexType name="areNodesAlive">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="areNodesAliveResponse">
@@ -35,21 +35,21 @@
 
 	<xs:complexType name="ChannelHandlerConfiguration">
 		<xs:sequence>
-			<xs:element name="name" type="xs:string" maxOccurs="1" />
+			<xs:element name="name" type="xs:string" />
 			<xs:element name="configuration" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="ChannelPipelinesMap">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="channelHandlers" type="ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="destroyVirtualLinks">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
+			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -59,8 +59,8 @@
 
 	<xs:complexType name="disableNodes">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disableNodesResponse">
@@ -69,7 +69,7 @@
 
 	<xs:complexType name="disablePhysicalLinks">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
+			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -93,8 +93,8 @@
 
 	<xs:complexType name="enableNodes">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enableNodesResponse">
@@ -103,7 +103,7 @@
 
 	<xs:complexType name="enablePhysicalLinks">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
+			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -113,7 +113,7 @@
 
 	<xs:complexType name="flashPrograms">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
+			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="configurations" type="FlashProgramsConfiguration" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -123,7 +123,7 @@
 
 	<xs:complexType name="getChannelPipelines">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getChannelPipelinesResponse">
@@ -137,20 +137,20 @@
 	</xs:complexType>
 	<xs:complexType name="getVersionResponse">
 		<xs:sequence>
-			<xs:element name="return" type="xs:string" maxOccurs="1" />
+			<xs:element name="return" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="FlashProgramsConfiguration">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="program" type="xs:base64Binary" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="removeController">
 		<xs:sequence>
-			<xs:element name="controllerEndpointUrl" type="xs:string" maxOccurs="1"/>
+			<xs:element name="controllerEndpointUrl" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="removeControllerResponse">
@@ -159,8 +159,8 @@
 
 	<xs:complexType name="resetNodes">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
-			<xs:element name="nodeUrns" type="xs:string"  maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="nodeUrns" type="common:NodeUrn"  maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="resetNodesResponse">
@@ -169,8 +169,8 @@
 
 	<xs:complexType name="send">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="message" type="xs:base64Binary" />
 		</xs:sequence>
 	</xs:complexType>
@@ -180,8 +180,8 @@
 
 	<xs:complexType name="setChannelPipeline">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
-			<xs:element name="nodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="channelHandlerConfigurations" type="ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -191,7 +191,7 @@
 
 	<xs:complexType name="setVirtualLinks">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" maxOccurs="1" />
+			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="VirtualLink" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
@@ -200,9 +200,9 @@
 	</xs:complexType>
 	<xs:complexType name="VirtualLink">
 		<xs:sequence>
-			<xs:element name="sourceNodeUrn" type="xs:string" maxOccurs="1" />
-			<xs:element name="targetNodeUrn" type="xs:string" maxOccurs="1" />
-			<xs:element name="remoteServiceInstance" type="xs:string" maxOccurs="1" />
+			<xs:element name="sourceNodeUrn" type="common:NodeUrn" />
+			<xs:element name="targetNodeUrn" type="common:NodeUrn" />
+			<xs:element name="remoteServiceInstance" type="xs:string" />
 			<xs:element name="parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="filters" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>

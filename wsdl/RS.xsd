@@ -20,7 +20,7 @@
 	<xs:complexType name="makeReservation">
 		<xs:sequence>
 			<xs:element name="secretAuthenticationKeys" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="from" type="xs:dateTime" />
 			<xs:element name="to" type="xs:dateTime" />
 		</xs:sequence>
@@ -28,7 +28,7 @@
 
 	<xs:complexType name="ConfidentialReservationData">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="from" type="xs:dateTime" />
 			<xs:element name="to" type="xs:dateTime" />
 			<xs:element name="keys" type="ConfidentialReservationDataKey"  maxOccurs="unbounded"/>
@@ -37,7 +37,7 @@
 
 	<xs:complexType name="ConfidentialReservationDataKey">
 		<xs:sequence>
-			<xs:element name="urnPrefix" type="xs:string" />
+			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
 			<xs:element name="username" type="xs:string" />
 			<xs:element name="secretReservationKey" type="xs:string" />
 		</xs:sequence>
@@ -45,7 +45,7 @@
 
 	<xs:complexType name="PublicReservationData">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="from" type="xs:dateTime" />
 			<xs:element name="to" type="xs:dateTime" />
 		</xs:sequence>
@@ -53,7 +53,7 @@
 
 	<xs:complexType name="getReservation">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ReservationNotFoundFault">
@@ -75,17 +75,17 @@
 	<xs:complexType name="ReservationConflictFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0"/>
-			<xs:element name="reservedNodeUrns" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="reservedNodeUrns" type="common:NodeUrn" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="deleteReservation">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="common:secretReservationKey" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getReservationsResponse">
 		<xs:sequence>
-			<xs:element name="reservations" type="PublicReservationData" nillable="false" maxOccurs="unbounded"/>
+			<xs:element name="reservations" type="PublicReservationData" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AuthorizationFault">
@@ -95,7 +95,7 @@
 	</xs:complexType>
 	<xs:complexType name="getReservationResponse">
 		<xs:sequence>
-			<xs:element name="reservationData" type="ConfidentialReservationData" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="reservationData" type="ConfidentialReservationData" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="getConfidentialReservations">

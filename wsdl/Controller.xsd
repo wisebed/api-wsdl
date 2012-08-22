@@ -9,13 +9,13 @@
 
 	<xs:complexType name="nodesAttached">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="nodesDetached">
 		<xs:sequence>
-			<xs:element name="nodeUrns" type="xs:string" maxOccurs="unbounded" />
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -29,42 +29,42 @@
 
 	<xs:complexType name="receive">
 		<xs:sequence>
-			<xs:element name="msg" type="common:message" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="msg" type="common:message" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="receiveNotification">
 		<xs:sequence>
-			<xs:element name="notifications" type="Notification" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="notifications" type="Notification" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="Notification">
 		<xs:sequence>
-			<xs:element name="nodeUrn" type="xs:string" minOccurs="0" maxOccurs="1" />
-			<xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
-			<xs:element name="msg" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="nodeUrn" type="common:NodeUrn" minOccurs="0" />
+			<xs:element name="timestamp" type="xs:dateTime" />
+			<xs:element name="msg" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="receiveStatus">
 		<xs:sequence>
-			<xs:element name="status" type="requestStatus" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="status" type="requestStatus" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="requestStatus">
 		<xs:sequence>
-			<xs:element name="requestId" type="common:requestId" minOccurs="1" maxOccurs="1" />
-			<xs:element name="status" type="status" nillable="true" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="requestId" type="common:requestId" />
+			<xs:element name="status" type="status" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="status">
 		<xs:sequence>
-			<xs:element name="nodeUrn" type="xs:string" minOccurs="1" maxOccurs="1" />
-			<xs:element name="value" type="xs:int" minOccurs="0" maxOccurs="1" />
-			<xs:element name="msg" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="nodeUrn" type="common:NodeUrn" />
+			<xs:element name="value" type="xs:int" minOccurs="0" />
+			<xs:element name="msg" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 

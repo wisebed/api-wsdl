@@ -4,13 +4,25 @@
 		   xmlns="http://wisebed.eu/api/v3/common"
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+	<xs:simpleType name="NodeUrn">
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value="urn:[a-zA-Z0-9][a-zA-Z0-9-]{1,31}:([a-zA-Z0-9()+,.:=@;$_!*'-]|%[0-9A-Fa-f]{2})+" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NodeUrnPrefix">
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value="urn:[a-zA-Z0-9][a-zA-Z0-9-]{0,31}((:([a-zA-Z0-9()+,.:=@;$_!*'-]|%[0-9A-Fa-f]{2})+):|:)" />
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:complexType name="getNetwork">
 		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="getNetworkResponse">
 		<xs:sequence>
-			<xs:element name="return" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="return" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -23,7 +35,7 @@
 
 	<xs:complexType name="message">
 		<xs:sequence>
-			<xs:element name="sourceNodeUrn" type="xs:string" />
+			<xs:element name="sourceNodeUrn" type="NodeUrn" />
 			<xs:element name="timestamp" type="xs:dateTime" />
 			<xs:element name="binaryData" type="xs:base64Binary" />
 		</xs:sequence>
@@ -33,14 +45,14 @@
 		<xs:sequence>
 			<xs:element name="username" type="xs:string"/>
 			<xs:element name="secretAuthenticationKey" type="xs:string"/>
-			<xs:element name="urnPrefix" type="xs:string"/>
+			<xs:element name="urnPrefix" type="NodeUrnPrefix"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="secretReservationKey">
 		<xs:sequence>
 			<xs:element name="secretReservationKey" type="xs:string"/>
-			<xs:element name="urnPrefix" type="xs:string"/>
+			<xs:element name="urnPrefix" type="NodeUrnPrefix"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -50,15 +62,15 @@
 
 	<xs:complexType name="UsernameUrnPrefixPair">
 		<xs:sequence>
-			<xs:element name="username" type= "xs:string" />
-			<xs:element name="urnPrefix" type= "xs:string" />
+			<xs:element name="username" type="xs:string" />
+			<xs:element name="urnPrefix" type="NodeUrnPrefix" />
 		</xs:sequence>
 	</xs:complexType>
 
     <xs:complexType name="usernameNodeUrnsMap">
         <xs:sequence>
-            <xs:element name="username" type="UsernameUrnPrefixPair" nillable="false"/>
-            <xs:element name="nodeUrns" type="xs:string" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="username" type="UsernameUrnPrefixPair" />
+            <xs:element name="nodeUrns" type="NodeUrn" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

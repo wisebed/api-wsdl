@@ -22,25 +22,25 @@
 
 	<xs:complexType name="authenticate">
 		<xs:sequence>
-			<xs:element name="authenticationData" type="authenticationTriple" nillable="false" maxOccurs="unbounded" />
+			<xs:element name="authenticationData" type="authenticationTriple" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="authenticateResponse">
 		<xs:sequence>
-			<xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" nillable="false" maxOccurs="unbounded" />
+			<xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="authenticationTriple">
 		<xs:sequence>
 			<xs:element name="password" type="xs:string" />
-			<xs:element name="urnPrefix" type="xs:string" />
+			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
 			<xs:element name="username" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="isAuthorized">
 		<xs:sequence>
-            <xs:element name="usernameNodeUrnsMapList" type="common:usernameNodeUrnsMap" nillable="false" maxOccurs="unbounded" />
+            <xs:element name="usernameNodeUrnsMapList" type="common:usernameNodeUrnsMap" maxOccurs="unbounded" />
 			<xs:element name="action" type="Action" />
 		</xs:sequence>
 	</xs:complexType>
@@ -54,7 +54,7 @@
     <xs:complexType name="AuthorizationResponse">
         <xs:sequence>
             <xs:element name="authorized" type="xs:boolean" />
-            <xs:element name="message" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="message" type="xs:string" minOccurs="0" />
         </xs:sequence>
     </xs:complexType>
 
