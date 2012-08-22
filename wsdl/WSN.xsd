@@ -202,7 +202,7 @@
 		<xs:sequence>
 			<xs:element name="sourceNodeUrn" type="common:NodeUrn" />
 			<xs:element name="targetNodeUrn" type="common:NodeUrn" />
-			<xs:element name="remoteServiceInstance" type="xs:string" />
+			<xs:element name="remoteWSNServiceEndpointUrl" type="xs:string" />
 			<xs:element name="parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="filters" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
