@@ -116,6 +116,12 @@
 	<message name="setChannelPipelineResponse">
 		<part name="parameters" element="wsn:setChannelPipelineResponse" />
 	</message>
+	<message name="setSerialPortParameters">
+		<part name="parameters" element="wsn:setSerialPortParameters" />
+	</message>
+	<message name="setSerialPortParametersResponse">
+		<part name="parameters" element="wsn:setSerialPortParametersResponse" />
+	</message>
 	<message name="setVirtualLinks">
 		<part name="parameters" element="wsn:setVirtualLinks" />
 	</message>
@@ -197,6 +203,10 @@
 		<operation name="setChannelPipeline">
 			<input message="wsn:setChannelPipeline" />
 			<output message="wsn:setChannelPipelineResponse" />
+		</operation>
+		<operation name="setSerialPortParameters">
+			<input message="wsn:setSerialPortParameters" />
+			<output message="wsn:setSerialPortParametersResponse" />
 		</operation>
 		<operation name="setVirtualLinks">
 			<input message="wsn:setVirtualLinks" />
@@ -357,6 +367,15 @@
 			</output>
 		</operation>
 		<operation name="setChannelPipeline">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="setSerialPortParameters">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />

@@ -189,6 +189,52 @@
 		<xs:sequence />
 	</xs:complexType>
 
+	<xs:complexType name="setSerialPortParameters">
+		<xs:sequence>
+			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
+			<xs:element name="parameters" type="SerialPortParameters" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="setSerialPortParametersResponse">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="SerialPortParameters">
+		<xs:sequence>
+			<xs:element name="baudRate" type="xs:int" />
+			<xs:element name="dataBits" type="DataBits" />
+			<xs:element name="stopBits" type="StopBits" />
+			<xs:element name="parity" type="Parity" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="DataBits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DATABITS_5" />
+			<xs:enumeration value="DATABITS_6" />
+			<xs:enumeration value="DATABITS_7" />
+			<xs:enumeration value="DATABITS_8" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StopBits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STOPBITS_1" />
+			<xs:enumeration value="STOPBITS_1_5" />
+			<xs:enumeration value="STOPBITS_2" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Parity">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PARITY_EVEN" />
+			<xs:enumeration value="PARITY_MARK" />
+			<xs:enumeration value="PARITY_NONE" />
+			<xs:enumeration value="PARITY_ODD" />
+			<xs:enumeration value="PARITY_SPACE" />
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:complexType name="setVirtualLinks">
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
@@ -261,6 +307,9 @@
 
 	<xs:element name="setChannelPipeline" type="setChannelPipeline" />
 	<xs:element name="setChannelPipelineResponse" type="setChannelPipelineResponse" />
+
+	<xs:element name="setSerialPortParameters" type="setSerialPortParameters" />
+	<xs:element name="setSerialPortParametersResponse" type="setSerialPortParametersResponse" />
 
 	<xs:element name="setVirtualLinks" type="setVirtualLinks" />
 	<xs:element name="setVirtualLinksResponse" type="setVirtualLinksResponse" />
