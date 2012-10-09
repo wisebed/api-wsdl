@@ -47,7 +47,7 @@
 
     <xs:complexType name="isAuthorizedResponse">
         <xs:sequence>
-            <xs:element name="resp" type="AuthorizationResponse" />
+            <xs:element name="authorizationResponse" type="AuthorizationResponse" />
         </xs:sequence>
     </xs:complexType>
 
@@ -55,8 +55,17 @@
         <xs:sequence>
             <xs:element name="authorized" type="xs:boolean" />
             <xs:element name="message" type="xs:string" minOccurs="0" />
+            <xs:element name="perNodeUrnAuthorizationResponses" type="PerNodeUrnAuthorizationResponse" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
+	<xs:complexType name="PerNodeUrnAuthorizationResponse">
+		<xs:sequence>
+			<xs:element name="nodeUrn" type="common:NodeUrn" />
+			<xs:element name="authorized" type="xs:boolean" />
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
 
     <xs:complexType name="isValid">
         <xs:sequence>
