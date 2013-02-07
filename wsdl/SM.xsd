@@ -73,10 +73,10 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="UnknownReservationIdFault">
+	<xs:complexType name="UnknownSecretReservationKeyFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0" />
-			<xs:element name="reservationId" type="xs:string" />
+			<xs:element name="secretReservationKey" type="common:secretReservationKey" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -92,6 +92,6 @@
 	<xs:element name="getSupportedVirtualLinkFiltersResponse" type="getSupportedVirtualLinkFiltersResponse" />
 
 	<xs:element name="ExperimentNotRunningFault" type="ExperimentNotRunningFault" />
-	<xs:element name="UnknownReservationIdFault" type="UnknownReservationIdFault" />
+	<xs:element name="UnknownSecretReservationKeyFault" type="UnknownSecretReservationKeyFault" />
 
 </xs:schema>

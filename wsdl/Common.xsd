@@ -51,8 +51,8 @@
 
 	<xs:complexType name="secretReservationKey">
 		<xs:sequence>
-			<xs:element name="secretReservationKey" type="xs:long"/>
 			<xs:element name="urnPrefix" type="NodeUrnPrefix"/>
+			<xs:element name="key" type="xs:long"/>
 		</xs:sequence>
 	</xs:complexType>
 
