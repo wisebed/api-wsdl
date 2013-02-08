@@ -54,8 +54,8 @@
 	<message name="ExperimentNotRunningFault">
 		<part name="fault" element="sm:ExperimentNotRunningFault" />
 	</message>
-	<message name="UnknownReservationIdFault">
-		<part name="fault" element="sm:UnknownReservationIdFault" />
+	<message name="UnknownSecretReservationKeyFault">
+		<part name="fault" element="common:UnknownSecretReservationKeyFault" />
 	</message>
 
 	<portType name="SessionManagement">
@@ -71,7 +71,7 @@
 			<input message="sm:getInstance" />
 			<output message="sm:getInstanceResponse" />
 			<fault message="sm:ExperimentNotRunningFault" name="ExperimentNotRunningFault" />
-			<fault message="sm:UnknownReservationIdFault" name="UnknownReservationIdFault" />
+			<fault message="sm:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault" />
 		</operation>
 		<operation name="getNetwork">
 			<input message="sm:getNetwork" />
@@ -118,8 +118,8 @@
 			<fault name="ExperimentNotRunningFault">
 				<soap:fault name="ExperimentNotRunningFault" use="literal" />
 			</fault>
-			<fault name="UnknownReservationIdFault">
-				<soap:fault name="UnknownReservationIdFault" use="literal" />
+			<fault name="UnknownSecretReservationKeyFault">
+				<soap:fault name="UnknownSecretReservationKeyFault" use="literal" />
 			</fault>
 		</operation>
 		<operation name="getNetwork">

@@ -73,13 +73,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="UnknownReservationIdFault">
-		<xs:sequence>
-			<xs:element name="message" type="xs:string" minOccurs="0" />
-			<xs:element name="reservationId" type="xs:string" />
-		</xs:sequence>
-	</xs:complexType>
-
 	<xs:element name="areNodesAlive" type="areNodesAlive" />
 	<xs:element name="areNodesAliveResponse" type="areNodesAliveResponse" />
 	<xs:element name="getConfiguration" type="getConfiguration" />
@@ -92,6 +85,5 @@
 	<xs:element name="getSupportedVirtualLinkFiltersResponse" type="getSupportedVirtualLinkFiltersResponse" />
 
 	<xs:element name="ExperimentNotRunningFault" type="ExperimentNotRunningFault" />
-	<xs:element name="UnknownReservationIdFault" type="UnknownReservationIdFault" />
 
 </xs:schema>

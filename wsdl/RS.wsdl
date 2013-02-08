@@ -3,6 +3,7 @@
 			 targetNamespace="http://wisebed.eu/api/v3/rs"
 			 xmlns="http://schemas.xmlsoap.org/wsdl/"
 			 xmlns:rs="http://wisebed.eu/api/v3/rs"
+			 xmlns:common="http://wisebed.eu/api/v3/common"
 			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 			 xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
@@ -34,8 +35,8 @@
 	<message name="getReservationResponse">
 		<part name="parameters" element="rs:getReservationResponse"/>
 	</message>
-	<message name="ReservationNotFoundFault">
-		<part name="fault" element="rs:ReservationNotFoundFault"/>
+	<message name="UnknownSecretReservationKeyFault">
+		<part name="fault" element="common:UnknownSecretReservationKeyFault"/>
 	</message>
 	<message name="deleteReservation">
 		<part name="parameters" element="rs:deleteReservation"/>
@@ -65,13 +66,13 @@
 			<input message="rs:getReservation"/>
 			<output message="rs:getReservationResponse"/>
 			<fault message="rs:RSFault" name="RSFault"/>
-			<fault message="rs:ReservationNotFoundFault" name="ReservationNotFoundFault"/>
+			<fault message="rs:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault"/>
 		</operation>
 		<operation name="deleteReservation">
 			<input message="rs:deleteReservation"/>
 			<output message="rs:deleteReservationResponse"/>
 			<fault message="rs:RSFault" name="RSFault"/>
-			<fault message="rs:ReservationNotFoundFault" name="ReservationNotFoundFault"/>
+			<fault message="rs:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault"/>
 		</operation>
 		<operation name="makeReservation">
 			<input message="rs:makeReservation"/>
@@ -129,8 +130,8 @@
 			<fault name="RSFault">
 				<soap:fault name="RSFault" use="literal"/>
 			</fault>
-			<fault name="ReservationNotFoundFault">
-				<soap:fault name="ReservationNotFoundFault" use="literal"/>
+			<fault name="UnknownSecretReservationKeyFault">
+				<soap:fault name="UnknownSecretReservationKeyFault" use="literal"/>
 			</fault>
 		</operation>
 		<operation name="deleteReservation">
@@ -144,8 +145,8 @@
 			<fault name="RSFault">
 				<soap:fault name="RSFault" use="literal"/>
 			</fault>
-			<fault name="ReservationNotFoundFault">
-				<soap:fault name="ReservationNotFoundFault" use="literal"/>
+			<fault name="UnknownSecretReservationKeyFault">
+				<soap:fault name="UnknownSecretReservationKeyFault" use="literal"/>
 			</fault>
 		</operation>
 		<operation name="makeReservation">
