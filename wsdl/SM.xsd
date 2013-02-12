@@ -7,14 +7,14 @@
 
 	<xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd" />
 
-	<xs:complexType name="areNodesAlive">
+	<xs:complexType name="areNodesConnected">
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="controllerEndpointUrl" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="areNodesAliveResponse">
+	<xs:complexType name="areNodesConnectedResponse">
 		<xs:sequence />
 	</xs:complexType>
 
@@ -73,8 +73,8 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="areNodesAlive" type="areNodesAlive" />
-	<xs:element name="areNodesAliveResponse" type="areNodesAliveResponse" />
+	<xs:element name="areNodesConnected" type="areNodesConnected" />
+	<xs:element name="areNodesConnectedResponse" type="areNodesConnectedResponse" />
 	<xs:element name="getConfiguration" type="getConfiguration" />
 	<xs:element name="getConfigurationResponse" type="getConfigurationResponse" />
 	<xs:element name="getInstance" type="getInstance" />

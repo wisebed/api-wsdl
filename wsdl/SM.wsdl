@@ -14,11 +14,11 @@
 		</xs:schema>
 	</types>
 
-	<message name="areNodesAlive">
-		<part name="parameters" element="sm:areNodesAlive" />
+	<message name="areNodesConnected">
+		<part name="parameters" element="sm:areNodesConnected" />
 	</message>
-	<message name="areNodesAliveResponse">
-		<part name="parameters" element="sm:areNodesAliveResponse" />
+	<message name="areNodesConnectedResponse">
+		<part name="parameters" element="sm:areNodesConnectedResponse" />
 	</message>
 	<message name="getConfiguration">
 		<part name="parameters" element="sm:getConfiguration" />
@@ -59,9 +59,9 @@
 	</message>
 
 	<portType name="SessionManagement">
-		<operation name="areNodesAlive">
-			<input message="sm:areNodesAlive" />
-			<output message="sm:areNodesAliveResponse" />
+		<operation name="areNodesConnected">
+			<input message="sm:areNodesConnected" />
+			<output message="sm:areNodesConnectedResponse" />
 		</operation>
 		<operation name="getConfiguration">
 			<input message="sm:getConfiguration" />
@@ -89,7 +89,7 @@
 
 	<binding name="SessionManagementPortBinding" type="sm:SessionManagement">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-		<operation name="areNodesAlive">
+		<operation name="areNodesConnected">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
