@@ -86,12 +86,6 @@
 	<message name="getNetworkResponse">
 		<part name="parameters" element="common:getNetworkResponse" />
 	</message>
-	<message name="getVersion">
-		<part name="parameters" element="wsn:getVersion" />
-	</message>
-	<message name="getVersionResponse">
-		<part name="parameters" element="wsn:getVersionResponse" />
-	</message>
 	<message name="removeController">
 		<part name="parameters" element="wsn:removeController"/>
 	</message>
@@ -183,10 +177,6 @@
 		<operation name="getNetwork">
 			<input message="wsn:getNetwork" />
 			<output message="wsn:getNetworkResponse" />
-		</operation>
-		<operation name="getVersion">
-			<input message="wsn:getVersion" />
-			<output message="wsn:getVersionResponse" />
 		</operation>
 		<operation name="removeController">
 			<input message="wsn:removeController"/>
@@ -322,15 +312,6 @@
 			</output>
 		</operation>
 		<operation name="getNetwork">
-			<soap:operation soapAction="" />
-			<input>
-				<soap:body use="literal" />
-			</input>
-			<output>
-				<soap:body use="literal" />
-			</output>
-		</operation>
-		<operation name="getVersion">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />

@@ -132,15 +132,6 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getVersion">
-		<xs:sequence />
-	</xs:complexType>
-	<xs:complexType name="getVersionResponse">
-		<xs:sequence>
-			<xs:element name="return" type="xs:string" />
-		</xs:sequence>
-	</xs:complexType>
-
 	<xs:complexType name="FlashProgramsConfiguration">
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
@@ -292,9 +283,6 @@
 
 	<xs:element name="getChannelPipelines" type="getChannelPipelines" />
 	<xs:element name="getChannelPipelinesResponse" type="getChannelPipelinesResponse" />
-
-	<xs:element name="getVersion" type="getVersion" />
-	<xs:element name="getVersionResponse" type="getVersionResponse" />
 
 	<xs:element name="removeController" type="removeController"/>
 	<xs:element name="removeControllerResponse" type="removeControllerResponse"/>

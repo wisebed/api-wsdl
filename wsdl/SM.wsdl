@@ -50,6 +50,12 @@
 	<message name="getSupportedVirtualLinkFiltersResponse">
 		<part name="parameters" element="sm:getSupportedVirtualLinkFiltersResponse" />
 	</message>
+	<message name="getVersion">
+		<part name="parameters" element="sm:getVersion" />
+	</message>
+	<message name="getVersionResponse">
+		<part name="parameters" element="sm:getVersionResponse" />
+	</message>
 
 	<message name="ExperimentNotRunningFault">
 		<part name="fault" element="sm:ExperimentNotRunningFault" />
@@ -84,6 +90,10 @@
 		<operation name="getSupportedVirtualLinkFilters">
 			<input message="sm:getSupportedVirtualLinkFilters" />
 			<output message="sm:getSupportedVirtualLinkFiltersResponse" />
+		</operation>
+		<operation name="getVersion">
+			<input message="sm:getVersion" />
+			<output message="sm:getVersionResponse" />
 		</operation>
 	</portType>
 
@@ -141,6 +151,15 @@
 			</output>
 		</operation>
 		<operation name="getSupportedVirtualLinkFilters">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+		<operation name="getVersion">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
