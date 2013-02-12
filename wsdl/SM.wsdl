@@ -57,9 +57,6 @@
 		<part name="parameters" element="sm:getVersionResponse" />
 	</message>
 
-	<message name="ExperimentNotRunningFault">
-		<part name="fault" element="sm:ExperimentNotRunningFault" />
-	</message>
 	<message name="UnknownSecretReservationKeyFault">
 		<part name="fault" element="common:UnknownSecretReservationKeyFault" />
 	</message>
@@ -76,7 +73,6 @@
 		<operation name="getInstance">
 			<input message="sm:getInstance" />
 			<output message="sm:getInstanceResponse" />
-			<fault message="sm:ExperimentNotRunningFault" name="ExperimentNotRunningFault" />
 			<fault message="sm:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault" />
 		</operation>
 		<operation name="getNetwork">
@@ -125,9 +121,6 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
-			<fault name="ExperimentNotRunningFault">
-				<soap:fault name="ExperimentNotRunningFault" use="literal" />
-			</fault>
 			<fault name="UnknownSecretReservationKeyFault">
 				<soap:fault name="UnknownSecretReservationKeyFault" use="literal" />
 			</fault>
