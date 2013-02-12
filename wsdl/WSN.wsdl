@@ -126,8 +126,11 @@
 	<message name="ReservationNotRunningFault">
 		<part name="fault" element="wsn:ReservationNotRunningFault" />
 	</message>
-	<message name="VirtualizationNotSupported">
-		<part name="fault" element="wsn:VirtualizationNotSupported" />
+	<message name="VirtualizationNotEnabledFault">
+		<part name="fault" element="wsn:VirtualizationNotEnabledFault" />
+	</message>
+	<message name="VirtualizationNotSupportedFault">
+		<part name="fault" element="wsn:VirtualizationNotSupportedFault" />
 	</message>
 
 	<portType name="WSN">
@@ -144,38 +147,43 @@
 			<input message="wsn:destroyVirtualLinks" />
 			<output message="wsn:destroyVirtualLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
 		<operation name="disableNodes">
 			<input message="wsn:disableNodes" />
 			<output message="wsn:disableNodesResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
 		<operation name="disablePhysicalLinks">
 			<input message="wsn:disablePhysicalLinks" />
 			<output message="wsn:disablePhysicalLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
 		<operation name="disableVirtualization">
 			<input message="wsn:disableVirtualization" />
 			<output message="wsn:disableVirtualizationResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
-			<fault message="wsn:VirtualizationNotSupported" name="VirtualizationNotSupported" />
+			<fault message="wsn:VirtualizationNotSupportedFault" name="VirtualizationNotSupportedFault" />
 		</operation>
 		<operation name="enableVirtualization">
 			<input message="wsn:enableVirtualization" />
 			<output message="wsn:enableVirtualizationResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
-			<fault message="wsn:VirtualizationNotSupported" name="VirtualizationNotSupported" />
+			<fault message="wsn:VirtualizationNotSupportedFault" name="VirtualizationNotSupportedFault" />
 		</operation>
 		<operation name="enableNodes">
 			<input message="wsn:enableNodes" />
 			<output message="wsn:enableNodesResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
 		<operation name="enablePhysicalLinks">
 			<input message="wsn:enablePhysicalLinks" />
 			<output message="wsn:enablePhysicalLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
 		<operation name="flashPrograms">
 			<input message="wsn:flashPrograms" />
@@ -190,7 +198,6 @@
 		<operation name="getNetwork">
 			<input message="wsn:getNetwork" />
 			<output message="wsn:getNetworkResponse" />
-			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 		</operation>
 		<operation name="removeController">
 			<input message="wsn:removeController"/>
@@ -220,6 +227,7 @@
 			<input message="wsn:setVirtualLinks" />
 			<output message="wsn:setVirtualLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
 	</portType>
 
@@ -257,6 +265,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+			<fault name="VirtualizationNotEnabledFault">
+				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
+			</fault>
 		</operation>
 		<operation name="disableNodes">
 			<soap:operation soapAction="" />
@@ -268,6 +279,9 @@
 			</output>
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
+			</fault>
+			<fault name="VirtualizationNotEnabledFault">
+				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
 		</operation>
 		<operation name="disablePhysicalLinks">
@@ -281,6 +295,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+			<fault name="VirtualizationNotEnabledFault">
+				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
+			</fault>
 		</operation>
 		<operation name="disableVirtualization">
 			<soap:operation soapAction="" />
@@ -293,8 +310,8 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
-			<fault name="VirtualizationNotSupported">
-				<soap:fault name="VirtualizationNotSupported" use="literal"/>
+			<fault name="VirtualizationNotSupportedFault">
+				<soap:fault name="VirtualizationNotSupportedFault" use="literal"/>
 			</fault>
 		</operation>
 		<operation name="enableVirtualization">
@@ -308,8 +325,8 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
-			<fault name="VirtualizationNotSupported">
-				<soap:fault name="VirtualizationNotSupported" use="literal"/>
+			<fault name="VirtualizationNotSupportedFault">
+				<soap:fault name="VirtualizationNotSupportedFault" use="literal"/>
 			</fault>
 		</operation>
 		<operation name="enableNodes">
@@ -323,6 +340,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+			<fault name="VirtualizationNotEnabledFault">
+				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
+			</fault>
 		</operation>
 		<operation name="enablePhysicalLinks">
 			<soap:operation soapAction="" />
@@ -334,6 +354,9 @@
 			</output>
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
+			</fault>
+			<fault name="VirtualizationNotEnabledFault">
+				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
 		</operation>
 		<operation name="flashPrograms">
@@ -368,9 +391,6 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
-			<fault name="ReservationNotRunningFault">
-				<soap:fault name="ReservationNotRunningFault" use="literal"/>
-			</fault>
 		</operation>
 		<operation name="removeController">
 			<soap:operation soapAction=""/>
@@ -439,6 +459,9 @@
 			</output>
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
+			</fault>
+			<fault name="VirtualizationNotEnabledFault">
+				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
 		</operation>
 	</binding>

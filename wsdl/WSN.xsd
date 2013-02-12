@@ -245,13 +245,19 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="VirtualizationNotSupported">
+	<xs:complexType name="ReservationNotRunningFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="ReservationNotRunningFault">
+	<xs:complexType name="VirtualizationNotEnabledFault">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VirtualizationNotSupportedFault">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" minOccurs="0" />
 		</xs:sequence>
@@ -309,7 +315,8 @@
 	<xs:element name="setVirtualLinksResponse" type="setVirtualLinksResponse" />
 
 	<xs:element name="ReservationNotRunningFault" type="ReservationNotRunningFault" />
-	<xs:element name="VirtualizationNotSupported" type="VirtualizationNotSupported" />
+	<xs:element name="VirtualizationNotEnabledFault" type="VirtualizationNotEnabledFault" />
+	<xs:element name="VirtualizationNotSupportedFault" type="VirtualizationNotSupportedFault" />
 
 </xs:schema>
 
