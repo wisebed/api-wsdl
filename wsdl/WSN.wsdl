@@ -26,11 +26,11 @@
 	<message name="areNodesAliveResponse">
 		<part name="parameters" element="wsn:areNodesAliveResponse" />
 	</message>
-	<message name="destroyVirtualLinks">
-		<part name="parameters" element="wsn:destroyVirtualLinks" />
+	<message name="disableVirtualLinks">
+		<part name="parameters" element="wsn:disableVirtualLinks" />
 	</message>
-	<message name="destroyVirtualLinksResponse">
-		<part name="parameters" element="wsn:destroyVirtualLinksResponse" />
+	<message name="disableVirtualLinksResponse">
+		<part name="parameters" element="wsn:disableVirtualLinksResponse" />
 	</message>
 	<message name="disableNodes">
 		<part name="parameters" element="wsn:disableNodes" />
@@ -116,11 +116,11 @@
 	<message name="setSerialPortParametersResponse">
 		<part name="parameters" element="wsn:setSerialPortParametersResponse" />
 	</message>
-	<message name="setVirtualLinks">
-		<part name="parameters" element="wsn:setVirtualLinks" />
+	<message name="enableVirtualLinks">
+		<part name="parameters" element="wsn:enableVirtualLinks" />
 	</message>
-	<message name="setVirtualLinksResponse">
-		<part name="parameters" element="wsn:setVirtualLinksResponse" />
+	<message name="enableVirtualLinksResponse">
+		<part name="parameters" element="wsn:enableVirtualLinksResponse" />
 	</message>
 
 	<message name="ReservationNotRunningFault">
@@ -143,9 +143,9 @@
 			<output message="wsn:areNodesAliveResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 		</operation>
-		<operation name="destroyVirtualLinks">
-			<input message="wsn:destroyVirtualLinks" />
-			<output message="wsn:destroyVirtualLinksResponse" />
+		<operation name="disableVirtualLinks">
+			<input message="wsn:disableVirtualLinks" />
+			<output message="wsn:disableVirtualLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
@@ -223,9 +223,9 @@
 			<output message="wsn:setSerialPortParametersResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 		</operation>
-		<operation name="setVirtualLinks">
-			<input message="wsn:setVirtualLinks" />
-			<output message="wsn:setVirtualLinksResponse" />
+		<operation name="enableVirtualLinks">
+			<input message="wsn:enableVirtualLinks" />
+			<output message="wsn:enableVirtualLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
 		</operation>
@@ -254,7 +254,7 @@
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
 		</operation>
-		<operation name="destroyVirtualLinks">
+		<operation name="disableVirtualLinks">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />
@@ -449,7 +449,7 @@
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
 		</operation>
-		<operation name="setVirtualLinks">
+		<operation name="enableVirtualLinks">
 			<soap:operation soapAction="" />
 			<input>
 				<soap:body use="literal" />

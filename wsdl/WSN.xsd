@@ -47,13 +47,13 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="destroyVirtualLinks">
+	<xs:complexType name="disableVirtualLinks">
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="destroyVirtualLinksResponse">
+	<xs:complexType name="disableVirtualLinksResponse">
 		<xs:sequence />
 	</xs:complexType>
 
@@ -226,13 +226,13 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:complexType name="setVirtualLinks">
+	<xs:complexType name="enableVirtualLinks">
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="VirtualLink" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="setVirtualLinksResponse">
+	<xs:complexType name="enableVirtualLinksResponse">
 		<xs:sequence />
 	</xs:complexType>
 	<xs:complexType name="VirtualLink">
@@ -269,8 +269,8 @@
 	<xs:element name="areNodesAlive" type="areNodesAlive" />
 	<xs:element name="areNodesAliveResponse" type="areNodesAliveResponse" />
 
-	<xs:element name="destroyVirtualLinks" type="destroyVirtualLinks" />
-	<xs:element name="destroyVirtualLinksResponse" type="destroyVirtualLinksResponse" />
+	<xs:element name="disableVirtualLinks" type="disableVirtualLinks" />
+	<xs:element name="disableVirtualLinksResponse" type="disableVirtualLinksResponse" />
 
 	<xs:element name="disableNodes" type="disableNodes" />
 	<xs:element name="disableNodesResponse" type="disableNodesResponse" />
@@ -311,8 +311,8 @@
 	<xs:element name="setSerialPortParameters" type="setSerialPortParameters" />
 	<xs:element name="setSerialPortParametersResponse" type="setSerialPortParametersResponse" />
 
-	<xs:element name="setVirtualLinks" type="setVirtualLinks" />
-	<xs:element name="setVirtualLinksResponse" type="setVirtualLinksResponse" />
+	<xs:element name="enableVirtualLinks" type="enableVirtualLinks" />
+	<xs:element name="enableVirtualLinksResponse" type="enableVirtualLinksResponse" />
 
 	<xs:element name="ReservationNotRunningFault" type="ReservationNotRunningFault" />
 	<xs:element name="VirtualizationNotEnabledFault" type="VirtualizationNotEnabledFault" />
