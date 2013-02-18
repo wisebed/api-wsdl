@@ -20,11 +20,15 @@
 	</xs:complexType>
 
 	<xs:complexType name="reservationEnded">
-		<xs:sequence />
+		<xs:sequence>
+			<xs:element name="timestamp" type="xs:dateTime" />
+		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="reservationStarted">
-		<xs:sequence />
+		<xs:sequence>
+			<xs:element name="timestamp" type="xs:dateTime" />
+		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="receive">
