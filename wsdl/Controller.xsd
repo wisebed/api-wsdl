@@ -9,12 +9,14 @@
 
 	<xs:complexType name="nodesAttached">
 		<xs:sequence>
+			<xs:element name="timestamp" type="xs:dateTime" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="nodesDetached">
 		<xs:sequence>
+			<xs:element name="timestamp" type="xs:dateTime" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
