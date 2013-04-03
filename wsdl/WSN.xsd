@@ -17,6 +17,7 @@
 	<xs:complexType name="addController">
 		<xs:sequence>
 			<xs:element name="controllerEndpointUrl" type="xs:string" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="addControllerResponse">
@@ -27,6 +28,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="areNodesAliveResponse">
@@ -51,6 +53,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disableVirtualLinksResponse">
@@ -61,6 +64,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disableNodesResponse">
@@ -71,6 +75,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disablePhysicalLinksResponse">
@@ -78,14 +83,18 @@
 	</xs:complexType>
 
 	<xs:complexType name="disableVirtualization">
-		<xs:sequence />
+		<xs:sequence>
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="disableVirtualizationResponse">
 		<xs:sequence />
 	</xs:complexType>
 
 	<xs:complexType name="enableVirtualization">
-		<xs:sequence />
+		<xs:sequence>
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enableVirtualizationResponse">
 		<xs:sequence />
@@ -95,6 +104,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enableNodesResponse">
@@ -105,6 +115,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="Link" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enablePhysicalLinksResponse">
@@ -115,6 +126,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="configurations" type="FlashProgramsConfiguration" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="flashProgramsResponse">
@@ -142,6 +154,7 @@
 	<xs:complexType name="removeController">
 		<xs:sequence>
 			<xs:element name="controllerEndpointUrl" type="xs:string" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="removeControllerResponse">
@@ -152,6 +165,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn"  maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="resetNodesResponse">
@@ -163,6 +177,7 @@
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="message" type="xs:base64Binary" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="sendResponse">
@@ -174,6 +189,7 @@
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="channelHandlerConfigurations" type="ChannelHandlerConfiguration" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="setChannelPipelineResponse">
@@ -184,6 +200,7 @@
 		<xs:sequence>
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="parameters" type="SerialPortParameters" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="setSerialPortParametersResponse">
@@ -230,6 +247,7 @@
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
 			<xs:element name="links" type="VirtualLink" maxOccurs="unbounded" />
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="enableVirtualLinksResponse">
