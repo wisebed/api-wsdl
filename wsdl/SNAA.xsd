@@ -69,21 +69,22 @@
 
     <xs:complexType name="isValid">
         <xs:sequence>
-            <xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey"/>
+            <xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="isValidResponse">
         <xs:sequence>
-            <xs:element name="ValidationResult">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="valid" type="xs:boolean" />
-                        <xs:element name="message" type="xs:string" />
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element name="validationResult" type="ValidationResult" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
+	<xs:complexType name="ValidationResult">
+		<xs:sequence>
+			<xs:element name="urnPrefix" type="xs:string" />
+			<xs:element name="valid" type="xs:boolean" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
 
 	<xs:simpleType name="Action">
 		<xs:restriction base="xs:string">
