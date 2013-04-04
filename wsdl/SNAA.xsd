@@ -69,12 +69,12 @@
 
     <xs:complexType name="isValid">
         <xs:sequence>
-            <xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
+            <xs:element name="secretAuthenticationKeys" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="isValidResponse">
         <xs:sequence>
-            <xs:element name="validationResult" type="ValidationResult" maxOccurs="unbounded" />
+            <xs:element name="validationResults" type="ValidationResult" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
