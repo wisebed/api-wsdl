@@ -23,6 +23,8 @@
 			<xs:element name="nodeUrns" type="common:NodeUrn" maxOccurs="unbounded" />
 			<xs:element name="from" type="xs:dateTime" />
 			<xs:element name="to" type="xs:dateTime" />
+			<xs:element name="description" type="xs:string" minOccurs="0" />
+			<xs:element name="options" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -32,6 +34,8 @@
 			<xs:element name="from" type="xs:dateTime" />
 			<xs:element name="to" type="xs:dateTime" />
 			<xs:element name="keys" type="ConfidentialReservationDataKey"  maxOccurs="unbounded"/>
+			<xs:element name="description" type="xs:string" minOccurs="0" />
+			<xs:element name="options" type="common:KeyValuePair" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
