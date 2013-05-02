@@ -82,10 +82,18 @@
 		</xs:sequence>
 	</xs:complexType>
 
+    <xs:complexType name="AuthorizationFault">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
 	<xs:element name="getNetwork" type="getNetwork" />
 	<xs:element name="getNetworkResponse" type="getNetworkResponse" />
 	<xs:element name="message" type="message" />
 
 	<xs:element name="UnknownSecretReservationKeyFault" type="UnknownSecretReservationKeyFault" />
+
+    <xs:element name="AuthorizationFault" type="AuthorizationFault"/>
 
 </xs:schema>

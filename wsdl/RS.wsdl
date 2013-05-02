@@ -9,6 +9,7 @@
 
 	<types>
 		<xs:schema>
+            <xs:import namespace="http://wisebed.eu/api/v3/common" schemaLocation="Common.xsd"/>
 			<xs:import namespace="http://wisebed.eu/api/v3/rs" schemaLocation="RS.xsd"/>
 		</xs:schema>
 	</types>
@@ -51,7 +52,7 @@
 		<part name="parameters" element="rs:makeReservationResponse"/>
 	</message>
 	<message name="AuthorizationFault">
-		<part name="fault" element="rs:AuthorizationFault"/>
+		<part name="fault" element="common:AuthorizationFault"/>
 	</message>
 	<message name="ReservationConflictFault">
 		<part name="fault" element="rs:ReservationConflictFault"/>

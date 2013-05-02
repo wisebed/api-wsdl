@@ -87,11 +87,6 @@
 			<xs:element name="reservations" type="PublicReservationData" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="AuthorizationFault">
-		<xs:sequence>
-			<xs:element name="message" type="xs:string" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="getReservationResponse">
 		<xs:sequence>
 			<xs:element name="reservationData" type="ConfidentialReservationData" maxOccurs="unbounded"/>
@@ -120,8 +115,6 @@
 	<xs:element name="getReservationsResponse" type="getReservationsResponse"/>
 	<xs:element name="makeReservation" type="makeReservation"/>
 	<xs:element name="makeReservationResponse" type="makeReservationResponse"/>
-
-	<xs:element name="AuthorizationFault" type="AuthorizationFault"/>
 	<xs:element name="RSFault" type="RSFault"/>
 	<xs:element name="ReservationConflictFault" type="ReservationConflictFault"/>
 
