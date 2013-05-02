@@ -132,102 +132,123 @@
 	<message name="VirtualizationNotSupportedFault">
 		<part name="fault" element="wsn:VirtualizationNotSupportedFault" />
 	</message>
+    <message name="AuthorizationFault">
+        <part name="fault" element="common:AuthorizationFault"/>
+    </message>
 
 	<portType name="WSN">
 		<operation name="addController">
 			<input message="wsn:addController"/>
 			<output message="wsn:addControllerResponse"/>
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="areNodesAlive">
 			<input message="wsn:areNodesAlive" />
 			<output message="wsn:areNodesAliveResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="disableVirtualLinks">
 			<input message="wsn:disableVirtualLinks" />
 			<output message="wsn:disableVirtualLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="disableNodes">
 			<input message="wsn:disableNodes" />
 			<output message="wsn:disableNodesResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="disablePhysicalLinks">
 			<input message="wsn:disablePhysicalLinks" />
 			<output message="wsn:disablePhysicalLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="disableVirtualization">
 			<input message="wsn:disableVirtualization" />
 			<output message="wsn:disableVirtualizationResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotSupportedFault" name="VirtualizationNotSupportedFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="enableVirtualization">
 			<input message="wsn:enableVirtualization" />
 			<output message="wsn:enableVirtualizationResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotSupportedFault" name="VirtualizationNotSupportedFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="enableNodes">
 			<input message="wsn:enableNodes" />
 			<output message="wsn:enableNodesResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="enablePhysicalLinks">
 			<input message="wsn:enablePhysicalLinks" />
 			<output message="wsn:enablePhysicalLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="flashPrograms">
 			<input message="wsn:flashPrograms" />
 			<output message="wsn:flashProgramsResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="getChannelPipelines">
 			<input message="wsn:getChannelPipelines" />
 			<output message="wsn:getChannelPipelinesResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="getNetwork">
 			<input message="wsn:getNetwork" />
 			<output message="wsn:getNetworkResponse" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="removeController">
 			<input message="wsn:removeController"/>
 			<output message="wsn:removeControllerResponse"/>
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="resetNodes">
 			<input message="wsn:resetNodes" />
 			<output message="wsn:resetNodesResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="send">
 			<input message="wsn:send" />
 			<output message="wsn:sendResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="setChannelPipeline">
 			<input message="wsn:setChannelPipeline" />
 			<output message="wsn:setChannelPipelineResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="setSerialPortParameters">
 			<input message="wsn:setSerialPortParameters" />
 			<output message="wsn:setSerialPortParametersResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		<operation name="enableVirtualLinks">
 			<input message="wsn:enableVirtualLinks" />
 			<output message="wsn:enableVirtualLinksResponse" />
 			<fault message="wsn:ReservationNotRunningFault" name="ReservationNotRunningFault" />
 			<fault message="wsn:VirtualizationNotEnabledFault" name="VirtualizationNotEnabledFault" />
+            <fault message="wsn:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 	</portType>
 
@@ -241,6 +262,9 @@
 			<output>
 				<soap:body use="literal"/>
 			</output>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="areNodesAlive">
 			<soap:operation soapAction="" />
@@ -253,6 +277,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="disableVirtualLinks">
 			<soap:operation soapAction="" />
@@ -268,6 +295,9 @@
 			<fault name="VirtualizationNotEnabledFault">
 				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="disableNodes">
 			<soap:operation soapAction="" />
@@ -283,6 +313,9 @@
 			<fault name="VirtualizationNotEnabledFault">
 				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="disablePhysicalLinks">
 			<soap:operation soapAction="" />
@@ -298,6 +331,9 @@
 			<fault name="VirtualizationNotEnabledFault">
 				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="disableVirtualization">
 			<soap:operation soapAction="" />
@@ -313,6 +349,9 @@
 			<fault name="VirtualizationNotSupportedFault">
 				<soap:fault name="VirtualizationNotSupportedFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="enableVirtualization">
 			<soap:operation soapAction="" />
@@ -328,6 +367,9 @@
 			<fault name="VirtualizationNotSupportedFault">
 				<soap:fault name="VirtualizationNotSupportedFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="enableNodes">
 			<soap:operation soapAction="" />
@@ -343,6 +385,9 @@
 			<fault name="VirtualizationNotEnabledFault">
 				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="enablePhysicalLinks">
 			<soap:operation soapAction="" />
@@ -358,6 +403,9 @@
 			<fault name="VirtualizationNotEnabledFault">
 				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="flashPrograms">
 			<soap:operation soapAction="" />
@@ -370,6 +418,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="getChannelPipelines">
 			<soap:operation soapAction="" />
@@ -382,6 +433,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="getNetwork">
 			<soap:operation soapAction="" />
@@ -391,6 +445,9 @@
 			<output>
 				<soap:body use="literal" />
 			</output>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="removeController">
 			<soap:operation soapAction=""/>
@@ -400,6 +457,9 @@
 			<output>
 				<soap:body use="literal"/>
 			</output>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="resetNodes">
 			<soap:operation soapAction="" />
@@ -412,6 +472,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="send">
 			<soap:operation soapAction="" />
@@ -424,6 +487,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="setChannelPipeline">
 			<soap:operation soapAction="" />
@@ -436,6 +502,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="setSerialPortParameters">
 			<soap:operation soapAction="" />
@@ -448,6 +517,9 @@
 			<fault name="ReservationNotRunningFault">
 				<soap:fault name="ReservationNotRunningFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 		<operation name="enableVirtualLinks">
 			<soap:operation soapAction="" />
@@ -463,6 +535,9 @@
 			<fault name="VirtualizationNotEnabledFault">
 				<soap:fault name="VirtualizationNotEnabledFault" use="literal"/>
 			</fault>
+            <fault name="AuthorizationFault">
+                <soap:fault name="AuthorizationFault" use="literal"/>
+            </fault>
 		</operation>
 	</binding>
 
