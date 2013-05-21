@@ -88,7 +88,6 @@
 			<input message="rs:getConfidentialReservations"/>
 			<output message="rs:getConfidentialReservationsResponse"/>
 			<fault message="rs:RSFault" name="RSFault"/>
-            <fault message="rs:AuthorizationFault" name="AuthorizationFault" />
 		</operation>
 		
 		
@@ -119,9 +118,6 @@
 			<fault name="RSFault">
 				<soap:fault name="RSFault" use="literal"/>
 			</fault>
-            <fault name="AuthorizationFault">
-                <soap:fault name="AuthorizationFault" use="literal"/>
-            </fault>
 		</operation>
 		
 		
