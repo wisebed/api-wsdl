@@ -40,7 +40,7 @@
 
 	<xs:complexType name="isAuthorized">
 		<xs:sequence>
-            <xs:element name="usernameNodeUrnsMapList" type="common:usernameNodeUrnsMap" maxOccurs="unbounded" />
+            <xs:element name="usernameNodeUrnsMapList" type="common:UsernameNodeUrnsMap" maxOccurs="unbounded" />
 			<xs:element name="action" type="Action" />
 		</xs:sequence>
 	</xs:complexType>

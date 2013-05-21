@@ -61,16 +61,10 @@
 		<xs:restriction base="xs:long" />
 	</xs:simpleType>
 
-	<xs:complexType name="UsernameUrnPrefixPair">
-		<xs:sequence>
+    <xs:complexType name="UsernameNodeUrnsMap">
+        <xs:sequence>
 			<xs:element name="username" type="xs:string" />
 			<xs:element name="urnPrefix" type="NodeUrnPrefix" />
-		</xs:sequence>
-	</xs:complexType>
-
-    <xs:complexType name="usernameNodeUrnsMap">
-        <xs:sequence>
-            <xs:element name="username" type="UsernameUrnPrefixPair" />
             <xs:element name="nodeUrns" type="NodeUrn" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
