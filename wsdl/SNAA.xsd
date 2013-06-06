@@ -80,7 +80,7 @@
 
 	<xs:complexType name="ValidationResult">
 		<xs:sequence>
-			<xs:element name="urnPrefix" type="xs:string" />
+			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
 			<xs:element name="valid" type="xs:boolean" />
 			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
