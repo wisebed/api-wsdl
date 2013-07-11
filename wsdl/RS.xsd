@@ -80,7 +80,7 @@
 
 	<xs:complexType name="getConfidentialReservations">
 		<xs:sequence>
-			<xs:element name="secretAuthenticationKey" type="common:secretAuthenticationKey" maxOccurs="unbounded"/>
+			<xs:element name="secretAuthenticationKeys" type="common:secretAuthenticationKey" maxOccurs="unbounded"/>
 			<xs:element name="from" type="xs:dateTime"/>
 			<xs:element name="to" type="xs:dateTime"/>
 			<xs:element name="offset" type="xs:int" minOccurs="0"/>

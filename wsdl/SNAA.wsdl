@@ -2,6 +2,7 @@
 <definitions name="SNAAService"
 			 targetNamespace="http://wisebed.eu/api/v3/snaa"
 			 xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 xmlns:common="http://wisebed.eu/api/v3/common"
 			 xmlns:snaa="http://wisebed.eu/api/v3/snaa"
 			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
              xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -19,7 +20,7 @@
         <part name="parameters" element="snaa:authenticateResponse"/>
     </message>
     <message name="AuthenticationFault">
-        <part name="fault" element="snaa:AuthenticationFault"/>
+        <part name="fault" element="common:AuthenticationFault"/>
     </message>
     <message name="SNAAFault">
         <part name="fault" element="snaa:SNAAFault"/>

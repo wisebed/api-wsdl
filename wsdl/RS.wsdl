@@ -54,6 +54,9 @@
 	<message name="AuthorizationFault">
 		<part name="fault" element="common:AuthorizationFault"/>
 	</message>
+	<message name="AuthenticationFault">
+		<part name="fault" element="common:AuthenticationFault"/>
+	</message>
 	<message name="ReservationConflictFault">
 		<part name="fault" element="rs:ReservationConflictFault"/>
 	</message>
@@ -75,13 +78,15 @@
 			<fault message="rs:RSFault" name="RSFault"/>
 			<fault message="rs:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault"/>
             <fault message="rs:AuthorizationFault" name="AuthorizationFault" />
+            <fault message="rs:AuthenticationFault" name="AuthenticationFault" />
 		</operation>
 		<operation name="makeReservation">
 			<input message="rs:makeReservation"/>
 			<output message="rs:makeReservationResponse"/>
-			<fault message="rs:AuthorizationFault" name="AuthorizationFault"/>
 			<fault message="rs:RSFault" name="RSFault"/>
 			<fault message="rs:ReservationConflictFault" name="ReservationConflictFault"/>
+			<fault message="rs:AuthorizationFault" name="AuthorizationFault"/>
+			<fault message="rs:AuthenticationFault" name="AuthenticationFault" />
 		</operation>
 		
 		<operation name="getConfidentialReservations">
@@ -89,6 +94,7 @@
 			<output message="rs:getConfidentialReservationsResponse"/>
 			<fault message="rs:RSFault" name="RSFault"/>
             <fault message="rs:AuthorizationFault" name="AuthorizationFault" />
+			<fault message="rs:AuthenticationFault" name="AuthenticationFault" />
 		</operation>
 		
 		
@@ -119,9 +125,12 @@
 			<fault name="RSFault">
 				<soap:fault name="RSFault" use="literal"/>
 			</fault>
-            <fault name="AuthorizationFault">
-                <soap:fault name="AuthorizationFault" use="literal"/>
-            </fault>
+			<fault name="AuthorizationFault">
+				<soap:fault name="AuthorizationFault" use="literal"/>
+			</fault>
+			<fault name="AuthenticationFault">
+				<soap:fault name="AuthenticationFault" use="literal"/>
+			</fault>
 		</operation>
 		
 		
@@ -157,6 +166,9 @@
             <fault name="AuthorizationFault">
                 <soap:fault name="AuthorizationFault" use="literal"/>
             </fault>
+			<fault name="AuthenticationFault">
+				<soap:fault name="AuthenticationFault" use="literal"/>
+			</fault>
 		</operation>
 		<operation name="makeReservation">
 			<soap:operation soapAction=""/>
@@ -168,6 +180,9 @@
 			</output>
 			<fault name="AuthorizationFault">
 				<soap:fault name="AuthorizationFault" use="literal"/>
+			</fault>
+			<fault name="AuthenticationFault">
+				<soap:fault name="AuthenticationFault" use="literal"/>
 			</fault>
 			<fault name="RSFault">
 				<soap:fault name="RSFault" use="literal"/>

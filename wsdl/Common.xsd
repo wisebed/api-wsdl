@@ -2,7 +2,6 @@
 <xs:schema version="1.0"
 		   targetNamespace="http://wisebed.eu/api/v3/common"
 		   xmlns="http://wisebed.eu/api/v3/common"
-		   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xs:simpleType name="NodeUrn">
@@ -82,12 +81,20 @@
         </xs:sequence>
     </xs:complexType>
 
+	<xs:complexType name="AuthenticationFault">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:element name="getNetwork" type="getNetwork" />
 	<xs:element name="getNetworkResponse" type="getNetworkResponse" />
 	<xs:element name="message" type="message" />
 
 	<xs:element name="UnknownSecretReservationKeyFault" type="UnknownSecretReservationKeyFault" />
 
+
+    <xs:element name="AuthenticationFault" type="AuthenticationFault"/>
     <xs:element name="AuthorizationFault" type="AuthorizationFault"/>
 
 </xs:schema>
