@@ -15,9 +15,14 @@
 	</xs:complexType>
 
 	<xs:complexType name="authenticate">
-		<xs:sequence>
-			<xs:element name="authenticationData" type="authenticationTriple" maxOccurs="unbounded" />
-		</xs:sequence>
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="authenticationData" type="authenticationTriple" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="certAuthenticationData" type="authenticationSAML" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="authenticateResponse">
 		<xs:sequence>
@@ -29,6 +34,12 @@
 			<xs:element name="password" type="xs:string" />
 			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
 			<xs:element name="username" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="authenticationSAML">
+		<xs:sequence>
+			<xs:element name="SAMLAssertion" type="xs:string" />
+			<xs:element name="urnPrefix" type="common:NodeUrnPrefix" />
 		</xs:sequence>
 	</xs:complexType>
 
