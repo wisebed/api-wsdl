@@ -62,15 +62,17 @@
 	<xs:complexType name="requestStatus">
 		<xs:sequence>
 			<xs:element name="requestId" type="common:requestId" />
-			<xs:element name="status" type="status" maxOccurs="unbounded" />
+			<xs:element name="status" type="SingleNodeRequestStatus" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="status">
+	<xs:complexType name="SingleNodeRequestStatus">
 		<xs:sequence>
 			<xs:element name="nodeUrn" type="common:NodeUrn" />
 			<xs:element name="value" type="xs:int" minOccurs="0" />
 			<xs:element name="msg" type="xs:string" minOccurs="0" />
+			<xs:element name="completed" type="xs:boolean" />
+			<xs:element name="success" type="xs:boolean" />
 		</xs:sequence>
 	</xs:complexType>
 
