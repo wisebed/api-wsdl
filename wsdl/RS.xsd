@@ -73,13 +73,13 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="deleteReservation">
+	<xs:complexType name="cancelReservation">
 		<xs:sequence>
 			<xs:element name="secretAuthenticationKeys" type="common:secretAuthenticationKey" maxOccurs="unbounded" />
 			<xs:element name="secretReservationKey" type="common:secretReservationKey" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="deleteReservationResponse">
+	<xs:complexType name="cancelReservationResponse">
 		<xs:sequence />
 	</xs:complexType>
 
@@ -112,8 +112,8 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:element name="deleteReservation" type="deleteReservation" />
-	<xs:element name="deleteReservationResponse" type="deleteReservationResponse" />
+	<xs:element name="cancelReservation" type="cancelReservation" />
+	<xs:element name="cancelReservationResponse" type="cancelReservationResponse" />
 	<xs:element name="getConfidentialReservations" type="getConfidentialReservations" />
 	<xs:element name="getConfidentialReservationsResponse" type="getConfidentialReservationsResponse" />
 	<xs:element name="getReservation" type="getReservation" />

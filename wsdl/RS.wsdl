@@ -39,11 +39,11 @@
 	<message name="UnknownSecretReservationKeyFault">
 		<part name="fault" element="common:UnknownSecretReservationKeyFault"/>
 	</message>
-	<message name="deleteReservation">
-		<part name="parameters" element="rs:deleteReservation"/>
+	<message name="cancelReservation">
+		<part name="parameters" element="rs:cancelReservation"/>
 	</message>
-	<message name="deleteReservationResponse">
-		<part name="parameters" element="rs:deleteReservationResponse"/>
+	<message name="cancelReservationResponse">
+		<part name="parameters" element="rs:cancelReservationResponse"/>
 	</message>
 	<message name="makeReservation">
 		<part name="parameters" element="rs:makeReservation"/>
@@ -72,9 +72,9 @@
 			<fault message="rs:RSFault" name="RSFault"/>
 			<fault message="rs:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault"/>
 		</operation>
-		<operation name="deleteReservation">
-			<input message="rs:deleteReservation"/>
-			<output message="rs:deleteReservationResponse"/>
+		<operation name="cancelReservation">
+			<input message="rs:cancelReservation"/>
+			<output message="rs:cancelReservationResponse"/>
 			<fault message="rs:RSFault" name="RSFault"/>
 			<fault message="rs:UnknownSecretReservationKeyFault" name="UnknownSecretReservationKeyFault"/>
             <fault message="rs:AuthorizationFault" name="AuthorizationFault" />
@@ -149,7 +149,7 @@
 				<soap:fault name="UnknownSecretReservationKeyFault" use="literal"/>
 			</fault>
 		</operation>
-		<operation name="deleteReservation">
+		<operation name="cancelReservation">
 			<soap:operation soapAction=""/>
 			<input>
 				<soap:body use="literal"/>
